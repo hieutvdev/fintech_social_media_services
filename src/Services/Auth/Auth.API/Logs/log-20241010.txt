@@ -1,0 +1,897 @@
+2024-10-10 16:11:13.082 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.API.Controllers.RoleController.Create(CreateRoleRequestDto createRoleRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\RoleController.cs:line 13
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:11:13.114 +07:00 [ERR] 2024-10-10 09:11:13 - ERROR - /roles - 0HN791DINIGLE:00000001 - IP:::1 - [POST] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}
+2024-10-10 16:19:25.168 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImpl(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType, EndPointCollection endpoints) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 723
+   at StackExchange.Redis.ConnectionMultiplexer.Connect(ConfigurationOptions configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 685
+   at StackExchange.Redis.ConnectionMultiplexer.Connect(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 663
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c__DisplayClass2_0.<AddRedisDbService>b__0(IServiceProvider _) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 87
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.Login(LoginRequestDto loginRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 24
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:19:25.205 +07:00 [ERR] 2024-10-10 09:19:25 - ERROR - /auth/login - 0HN791HGQ5J9F:00000005 - IP:::1 - [POST] - 0ms - Error:It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code. - InputParams:{}
+2024-10-10 16:21:50.626 +07:00 [ERR] Health check redis with status "Unhealthy" completed after 93.1181ms with message 'Healthcheck timed out'
+2024-10-10 16:21:50.626 +07:00 [ERR] Health check sqlserver with status "Unhealthy" completed after 94.0469ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 28
+2024-10-10 16:21:50.626 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 91.9869ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at HealthChecks.Kafka.KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.Kafka/KafkaHealthCheck.cs:line 35
+2024-10-10 16:32:15.531 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5074: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-10 16:33:14.062 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5074: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-10 16:37:28.732 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:28.769 +07:00 [ERR] 2024-10-10 09:37:28 - ERROR - /swagger/index.html - 0HN791SK1LBHE:00000001 - IP:::1 - [GET] - 1ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:28.941 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:28.941 +07:00 [ERR] 2024-10-10 09:37:28 - ERROR - /favicon.ico - 0HN791SK1LBHE:00000002 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:33.573 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:33.574 +07:00 [ERR] 2024-10-10 09:37:33 - ERROR - /api/v1/roles - 0HN791SK1LBHG:00000001 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:33.728 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:33.728 +07:00 [ERR] 2024-10-10 09:37:33 - ERROR - /favicon.ico - 0HN791SK1LBHG:00000002 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:47.018 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:47.019 +07:00 [ERR] 2024-10-10 09:37:47 - ERROR - /favicon.ico - 0HN791SK1LBHI:00000002 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:52.925 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:52.925 +07:00 [ERR] 2024-10-10 09:37:52 - ERROR - /favicon.ico - 0HN791SK1LBHK:00000002 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:53.564 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:53.564 +07:00 [ERR] 2024-10-10 09:37:53 - ERROR - /favicon.ico - 0HN791SK1LBHK:00000004 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:37:54.241 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method5(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:37:54.242 +07:00 [ERR] 2024-10-10 09:37:54 - ERROR - /favicon.ico - 0HN791SK1LBHK:00000006 - IP:::1 - [GET] - 0ms - Error:Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'. - InputParams:{}
+2024-10-10 16:41:26.703 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:26.733 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:26.736 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:41:26.744 +07:00 [ERR] Connection id "0HN791UKQOSPN", Request id "0HN791UKQOSPN:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-10 16:41:39.412 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:39.414 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:39.416 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:41:39.417 +07:00 [ERR] Connection id "0HN791UKQOSPP", Request id "0HN791UKQOSPP:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-10 16:41:43.522 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:43.524 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:41:43.525 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:41:43.526 +07:00 [ERR] Connection id "0HN791UKQOSPR", Request id "0HN791UKQOSPR:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-10 16:42:09.882 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Allow(StringValues value)
+   at Microsoft.AspNetCore.Routing.Matching.HttpMethodMatcherPolicy.<>c__DisplayClass13_0.<CreateRejectionEndpoint>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:42:09.885 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Allow(StringValues value)
+   at Microsoft.AspNetCore.Routing.Matching.HttpMethodMatcherPolicy.<>c__DisplayClass13_0.<CreateRejectionEndpoint>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 16:42:09.886 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Allow(StringValues value)
+   at Microsoft.AspNetCore.Routing.Matching.HttpMethodMatcherPolicy.<>c__DisplayClass13_0.<CreateRejectionEndpoint>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-10 16:42:09.887 +07:00 [ERR] Connection id "0HN791UKQOSPT", Request id "0HN791UKQOSPT:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Allow(StringValues value)
+   at Microsoft.AspNetCore.Routing.Matching.HttpMethodMatcherPolicy.<>c__DisplayClass13_0.<CreateRejectionEndpoint>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-10 16:53:54.680 +07:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address https://127.0.0.1:7002: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-10 16:53:59.289 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 10014.2504ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at HealthChecks.Kafka.KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.Kafka/KafkaHealthCheck.cs:line 35
+2024-10-10 16:55:17.728 +07:00 [ERR] Health check sqlserver with status "Unhealthy" completed after 154.2197ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.SqlServer/SqlServerHealthCheck.cs:line 32
+2024-10-10 16:55:17.727 +07:00 [ERR] Health check kafka with status "Unhealthy" completed after 147.5011ms with message 'null'
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Confluent.Kafka.Producer`2.ProduceAsync(TopicPartition topicPartition, Message`2 message, CancellationToken cancellationToken)
+   at HealthChecks.Kafka.KafkaHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.Kafka/KafkaHealthCheck.cs:line 35
+2024-10-10 17:01:12.437 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: User cannot register
+   at Auth.Infrastructure.Services.AuthService.LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 318
+   at Auth.Application.UseCases.V1.Commands.Auth.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\Login\LoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.Login(LoginRequestDto loginRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:01:12.477 +07:00 [ERR] 2024-10-10 10:01:12 - ERROR - /auth/login - 0HN7929Q2C6AP:00000005 - IP:::1 - [POST] - 0ms - Error:User cannot register - InputParams:{}
+2024-10-10 17:02:54.543 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Password is incorrect
+   at Auth.Infrastructure.Services.AuthService.LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 315
+   at Auth.Application.UseCases.V1.Commands.Auth.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\Login\LoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.Login(LoginRequestDto loginRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:02:54.577 +07:00 [ERR] 2024-10-10 10:02:54 - ERROR - /auth/login - 0HN792AGK9I8K:00000001 - IP:::1 - [POST] - 0ms - Error:Password is incorrect - InputParams:{}
+2024-10-10 17:03:04.490 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Password is incorrect
+   at Auth.Infrastructure.Services.AuthService.LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 315
+   at Auth.Application.UseCases.V1.Commands.Auth.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\Login\LoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.Login(LoginRequestDto loginRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:03:04.493 +07:00 [ERR] 2024-10-10 10:03:04 - ERROR - /auth/login - 0HN792AGK9I8L:00000001 - IP:::1 - [POST] - 0ms - Error:Password is incorrect - InputParams:{}
+2024-10-10 17:05:12.765 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Confirm password don't matching
+   at Auth.Infrastructure.Services.AuthService.ChangePasswordAsync(ChangePasswordRequestDto changePasswordRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 77
+   at Auth.Application.UseCases.V1.Commands.Auth.ChangePassword.ChangePasswordCommandHandler.Handle(ChangePasswordCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ChangePassword\ChangePasswordCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ChangePassword(ChangePasswordRequestDto changePassword) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:05:12.802 +07:00 [ERR] 2024-10-10 10:05:12 - ERROR - /auth/change-password - 0HN792BP946LC:00000001 - IP:::1 - [PATCH] - 0ms - Error:Confirm password don't matching - InputParams:{}
+2024-10-10 17:05:44.743 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Password is incorrect
+   at Auth.Infrastructure.Services.AuthService.LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 315
+   at Auth.Application.UseCases.V1.Commands.Auth.Login.LoginCommandHandler.Handle(LoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\Login\LoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.Login(LoginRequestDto loginRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:05:44.747 +07:00 [ERR] 2024-10-10 10:05:44 - ERROR - /auth/login - 0HN792BP946LE:00000001 - IP:::1 - [POST] - 0ms - Error:Password is incorrect - InputParams:{}
+2024-10-10 17:13:17.729 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Auth.Application.UseCases.V1.Queries.Role.GetRoles.GetRolesQuery,BuildingBlocks.CQRS.Common.ResultT`1[System.Collections.Generic.IEnumerable`1[Auth.Application.DTOs.Response.Role.RoleResponseDto]]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.RoleController.GetAll() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\RoleController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:13:17.752 +07:00 [ERR] 2024-10-10 10:13:17 - ERROR - /roles - 0HN792GIS93E2:00000005 - IP:::1 - [GET] - 0ms - Error:No service for type 'MediatR.IRequestHandler`2[Auth.Application.UseCases.V1.Queries.Role.GetRoles.GetRolesQuery,BuildingBlocks.CQRS.Common.ResultT`1[System.Collections.Generic.IEnumerable`1[Auth.Application.DTOs.Response.Role.RoleResponseDto]]]' has been registered. - InputParams:{}
+2024-10-10 17:14:26.834 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[Auth.Application.UseCases.V1.Commands.Role.CreateRole.CreateRoleCommand,BuildingBlocks.CQRS.Common.ResultT`1[System.Boolean]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.RoleController.Create(CreateRoleRequestDto createRoleRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\RoleController.cs:line 20
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 17:14:26.859 +07:00 [ERR] 2024-10-10 10:14:26 - ERROR - /roles - 0HN792GVV8GLM:00000009 - IP:::1 - [POST] - 0ms - Error:No service for type 'MediatR.IRequestHandler`2[Auth.Application.UseCases.V1.Commands.Role.CreateRole.CreateRoleCommand,BuildingBlocks.CQRS.Common.ResultT`1[System.Boolean]]' has been registered. - InputParams:{}
+2024-10-10 18:32:40.282 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 175
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 18:32:40.316 +07:00 [ERR] 2024-10-10 11:32:40 - ERROR - /api/v1/auth/confirm-email?Token=09&Email=980%3D980%3D - 0HN793SS6R664:00000005 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 18:37:25.682 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 175
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 18:37:25.709 +07:00 [ERR] 2024-10-10 11:37:25 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhqk3n1Bl%2BeNUK6Z%2FOw5b8F3fmtbUwNpSVXuppW7zD9NcN540%2B7RrbfieWyQzEE1n1zOGraqlvZSQ0IbAS4Zds6C8C68P8PN7KUG5uQ8zWjjgvKDbButXY0Mi30YEg42AqYyh%2BUvlR87fO0Dp1cxdsVnHhYBjsjrsH%2BYB8w%2F%2BOlzhBs8%2FIFJKFWQfZlNbc68yHcsDdTGZuRBv0eW8gI0FrSUg%2FBMn5mTCirIdRWuX433w%3D%3D&Email=admin%40gmail.com - 0HN793TSRNMMK:0000000F - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 18:38:00.850 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 175
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 18:38:00.853 +07:00 [ERR] 2024-10-10 11:38:00 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhqk3n1Bl%2BeNUK6Z%2FOw5b8F3fmtbUwNpSVXuppW7zD9NcN540%2B7RrbfieWyQzEE1n1zOGraqlvZSQ0IbAS4Zds6C8C68P8PN7KUG5uQ8zWjjgvKDbButXY0Mi30YEg42AqYyh%2BUvlR87fO0Dp1cxdsVnHhYBjsjrsH%2BYB8w%2F%2BOlzhBs8%2FIFJKFWQfZlNbc68yHcsDdTGZuRBv0eW8gI0FrSUg%2FBMn5mTCirIdRWuX433w%3D%3D&Email=admin%40gmail.com - 0HN793TSRNMML:00000001 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 18:39:54.837 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 176
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 18:39:54.867 +07:00 [ERR] 2024-10-10 11:39:54 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhqk3n1Bl%2BeNUK6Z%2FOw5b8F3fmtbUwNpSVXuppW7zD9NcN540%2B7RrbfieWyQzEE1n1zOGraqlvZSQ0IbAS4Zds6C8C68P8PN7KUG5uQ8zWjjgvKDbButXY0Mi30YEg42AqYyh%2BUvlR87fO0Dp1cxdsVnHhYBjsjrsH%2BYB8w%2F%2BOlzhBs8%2FIFJKFWQfZlNbc68yHcsDdTGZuRBv0eW8gI0FrSUg%2FBMn5mTCirIdRWuX433w%3D%3D&Email=admin%40gmail.com - 0HN7940UC7LKS:00000005 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 18:40:54.241 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 177
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 18:40:54.268 +07:00 [ERR] 2024-10-10 11:40:54 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhqk3n1Bl%2BeNUK6Z%2FOw5b8F3fmtbUwNpSVXuppW7zD9NcN540%2B7RrbfieWyQzEE1n1zOGraqlvZSQ0IbAS4Zds6C8C68P8PN7KUG5uQ8zWjjgvKDbButXY0Mi30YEg42AqYyh%2BUvlR87fO0Dp1cxdsVnHhYBjsjrsH%2BYB8w%2F%2BOlzhBs8%2FIFJKFWQfZlNbc68yHcsDdTGZuRBv0eW8gI0FrSUg%2FBMn5mTCirIdRWuX433w%3D%3D&Email=admin%40gmail.com - 0HN7941FQV8VO:00000005 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:16:00.724 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 177
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:16:00.764 +07:00 [ERR] 2024-10-10 12:16:00 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhQR%2FsZjPm%2FcA6McOMU5CvW3vdKY3ZfieU4inPaVlevGosK%2F4A6wxOolJp2H8FvxPd7BQE06iwC%2BKOpezLQ3tkBkMYnUeLvezGkky4u7FHTWr%2F9fLGvy5lS0Qf%2BGiTz3L94ICgHiJYQdj2WSdzWM0OWWil3VyHtQy41deSTb9EAre5lXveWC%2BVCiRJasVJoQNiJ0UCmq5ARhZug2e5c4sZqswFjU4GkZCfTLRTilyO%2Bdw%3D%3D&Email=admin%40gmail.com - 0HN794KL83KI9:00000009 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:16:37.972 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 177
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:16:37.975 +07:00 [ERR] 2024-10-10 12:16:37 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhQR%2FsZjPm%2FcA6McOMU5CvW3vdKY3ZfieU4inPaVlevGosK%2F4A6wxOolJp2H8FvxPd7BQE06iwC%2BKOpezLQ3tkBkMYnUeLvezGkky4u7FHTWr%2F9fLGvy5lS0Qf%2BGiTz3L94ICgHiJYQdj2WSdzWM0OWWil3VyHtQy41deSTb9EAre5lXveWC%2BVCiRJasVJoQNiJ0UCmq5ARhZug2e5c4sZqswFjU4GkZCfTLRTilyO%2Bdw%3D%3D&Email=admin%40gmail.com - 0HN794KL83KI9:0000000B - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:17:47.317 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 177
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:17:47.346 +07:00 [ERR] 2024-10-10 12:17:47 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhQR%2FsZjPm%2FcA6McOMU5CvW3vdKY3ZfieU4inPaVlevGosK%2F4A6wxOolJp2H8FvxPd7BQE06iwC%2BKOpezLQ3tkBkMYnUeLvezGkky4u7FHTWr%2F9fLGvy5lS0Qf%2BGiTz3L94ICgHiJYQdj2WSdzWM0OWWil3VyHtQy41deSTb9EAre5lXveWC%2BVCiRJasVJoQNiJ0UCmq5ARhZug2e5c4sZqswFjU4GkZCfTLRTilyO%2Bdw%3D%3D&Email=admin%40gmail.com - 0HN794LVUK3CG:00000005 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:23:50.525 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Value cannot be null. (Parameter 'source')
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 179
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:23:50.555 +07:00 [ERR] 2024-10-10 12:23:50 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexi%2BG7IxGwquv1uRzKyGyYSmDKsFdy8IgC0RYyQrt%2BS0Sm4m2kOWiwmJMDC69gayAFSpOkPzhX%2B412yWZLClF4gEjQJh8bEMIid99mPEjRykEI3ee2JZ4vOLCDE6Nz6NG8oQQedKiTQUd6xSNeSxEZYa7zdKhWAxWNR6O9Ilq3qm9F%2BroZFx7YZtLPUIalPQez0YznpinpZpXIHo7%2BZ79MDS2%2BqpTgjHOWr7tLqESd50Ig%3D%3D&Email=admin%40gmail.com - 0HN794O030PMS:00000011 - IP:::1 - [PATCH] - 0ms - Error:Value cannot be null. (Parameter 'source') - InputParams:{}
+2024-10-10 19:26:42.180 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Value cannot be null. (Parameter 'source')
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 179
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:26:42.218 +07:00 [ERR] 2024-10-10 12:26:42 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexiobs5JtG5oqS30qn8JPx23IM4AypuH6oMkvwN%2FdB9O%2BdI1rUHlM6h3ELiBOkujLKvLiyM0cY5%2BSQXhU%2B5zc5junarFpa%2FWe5qDoB2QiFOGjiB%2F1xDToXzzAW5t5WuRLhnY7jl5J%2FdQ0shAyT%2FM6Ysl6WW2sb0ZcNqjIZV2LDreMjU7iy2Rq98oW05CqIg3DTxtQq4B9nrri8mvSL5sS%2FZ5dO1nBtOopCjHY7aCDAHh1w%3D%3D&Email=admin%40gmail.com - 0HN794QQTMVRB:00000007 - IP:::1 - [PATCH] - 0ms - Error:Value cannot be null. (Parameter 'source') - InputParams:{}
+2024-10-10 19:27:49.605 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 179
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:27:49.646 +07:00 [ERR] 2024-10-10 12:27:49 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexiobs5JtG5oqS30qn8JPx23IM4AypuH6oMkvwN%2FdB9O%2BdI1rUHlM6h3ELiBOkujLKvLiyM0cY5%2BSQXhU%2B5zc5junarFpa%2FWe5qDoB2QiFOGjiB%2F1xDToXzzAW5t5WuRLhnY7jl5J%2FdQ0shAyT%2FM6Ysl6WW2sb0ZcNqjIZV2LDreMjU7iy2Rq98oW05CqIg3DTxtQq4B9nrri8mvSL5sS%2FZ5dO1nBtOopCjHY7aCDAHh1w%3D%3D&Email=admin%40gmail.com - 0HN794RMFU9C7:00000005 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:29:54.008 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 180
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:29:54.036 +07:00 [ERR] 2024-10-10 12:29:54 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhvIV4j51Tv1WOMm58M7Iig6Qa8yZrhIHmSVEFiNM3as4teUVRRnrFWvqlCWf6hA1BWSQQwBpWFh3e%2BiPqJOpEAKFNb5F5nv2h4A7jSg3tXyp77co9gKfyusz%2BagT3KycsJsRlpYon0ft1p5uz3QHqWQDbQmK7ZRJ5PPFbj8iko%2BxO%2BOvc9m%2FZAUx0gSjr8ejs8nh1xvZ%2F06u%2Fbmt5gmABPzjVIp1%2FxwozM91cEYPF4wQ%3D%3D&Email=admin%40gmail.com - 0HN794SK62N82:00000001 - IP:::1 - [PATCH] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-10 19:30:26.070 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Value cannot be null. (Parameter 'source')
+   at Auth.Infrastructure.Services.AuthService.ConfirmEmailAsync(ConfirmEmailRequestDto confirmEmailRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 180
+   at Auth.Application.UseCases.V1.Commands.Auth.ConfirmEmail.ConfirmEmailCommandHandler.Handle(ConfirmEmailCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\ConfirmEmail\ConfirmEmailCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.ConfirmEmail(ConfirmEmailRequestDto confirmEmailRequest) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-10 19:30:26.100 +07:00 [ERR] 2024-10-10 12:30:26 - ERROR - /api/v1/auth/confirm-email?Token=CfDJ8DFBDG%2B%2F4k1GjDE3xTsPexhvIV4j51Tv1WOMm58M7Iig6Qa8yZrhIHmSVEFiNM3as4teUVRRnrFWvqlCWf6hA1BWSQQwBpWFh3e%2BiPqJOpEAKFNb5F5nv2h4A7jSg3tXyp77co9gKfyusz%2BagT3KycsJsRlpYon0ft1p5uz3QHqWQDbQmK7ZRJ5PPFbj8iko%2BxO%2BOvc9m%2FZAUx0gSjr8ejs8nh1xvZ%2F06u%2Fbmt5gmABPzjVIp1%2FxwozM91cEYPF4wQ%3D%3D&Email=admin%40gmail.com - 0HN794T7E497P:00000005 - IP:::1 - [PATCH] - 0ms - Error:Value cannot be null. (Parameter 'source') - InputParams:{}

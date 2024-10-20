@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="DependencyInjection\Options\" />
+      <Folder Include="DTOs\Request\Claim\" />
+      <Folder Include="DTOs\Response\Claim\" />
+      <Folder Include="UseCases\V1\Commands\Claim\" />
+      <Folder Include="UseCases\V1\Events\Domain\" />
+      <Folder Include="UseCases\V1\Events\Integrations\" />
+      <Folder Include="UseCases\V2\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\..\..\Shared\ShredKernel\ShredKernel\ShredKernel.csproj" />
+      <ProjectReference Include="..\Auth.Domain\Auth.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.Kafka" Version="8.0.1" />
+        <PackageReference Include="AutoMapper" Version="13.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="8.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="8.0.2" />
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+  
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\bin\Debug\net8.0\Search.Infrastructure.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\bin\Debug\net8.0\Search.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\bin\Debug\net8.0\Search.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\refint\Search.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\Search.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Infrastructure\obj\Debug\net8.0\ref\Search.Infrastructure.dll

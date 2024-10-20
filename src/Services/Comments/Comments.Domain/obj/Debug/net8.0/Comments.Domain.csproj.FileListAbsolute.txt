@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\bin\Debug\net8.0\Comments.Domain.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\bin\Debug\net8.0\Comments.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\bin\Debug\net8.0\Comments.Domain.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\refint\Comments.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\Comments.Domain.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Comments\Comments.Domain\obj\Debug\net8.0\ref\Comments.Domain.dll

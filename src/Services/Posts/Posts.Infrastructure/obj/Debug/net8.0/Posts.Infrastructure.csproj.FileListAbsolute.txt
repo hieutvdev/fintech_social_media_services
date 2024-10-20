@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\bin\Debug\net8.0\Posts.Infrastructure.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\bin\Debug\net8.0\Posts.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\bin\Debug\net8.0\Posts.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\refint\Posts.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\Posts.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Posts\Posts.Infrastructure\obj\Debug\net8.0\ref\Posts.Infrastructure.dll

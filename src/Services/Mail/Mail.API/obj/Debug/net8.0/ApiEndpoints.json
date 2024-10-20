@@ -1,0 +1,25 @@
+[
+  {
+    "ContainingType": "Mail.API.Endpoints.AuthEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRoutes\u003Eb__0_0",
+    "RelativePath": "email/confirm-account",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Mail.API.Endpoints.ConfirmAccountRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ConfirmEmail"
+  }
+]

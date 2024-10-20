@@ -1,0 +1,743 @@
+2024-10-12 00:07:28.461 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CachingParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:07:28.691 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CachingParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:09.119 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:32:09.144 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:32:09.148 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:32:09.149 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:09.157 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:00000007": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:32:34.833 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:32:34.835 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:32:34.838 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:34.839 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:34.841 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:00000009": An unhandled exception was thrown by the application.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:32:38.307 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:32:38.309 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:32:38.312 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:38.313 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:38.314 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:0000000B": An unhandled exception was thrown by the application.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:32:47.219 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:32:47.221 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:32:47.222 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:47.223 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:32:47.224 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:0000000D": An unhandled exception was thrown by the application.
+System.InvalidOperationException: OnStarting cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.OnStarting(Func`2 callback, Object state)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.EvaluateAndApplyPolicy(HttpContext context, CorsPolicy corsPolicy)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.Invoke(HttpContext context)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:33:30.504 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:33:30.505 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:33:30.506 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:33:30.508 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:33:30.510 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:00000011": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:33:46.710 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:33:46.711 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:33:46.713 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:33:46.713 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:33:46.714 +07:00 [ERR] Connection id "0HN7A3A0G93MA", Request id "0HN7A3A0G93MA:00000013": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:35:32.682 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:35:32.709 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:35:32.730 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:35:32.746 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:35:32.751 +07:00 [ERR] Connection id "0HN7A3C5GU18V", Request id "0HN7A3C5GU18V:00000005": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 130
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:36:13.803 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 129
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:36:13.833 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 129
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:36:13.852 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 129
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:36:13.872 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 129
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:36:13.875 +07:00 [ERR] Connection id "0HN7A3CK1KARK", Request id "0HN7A3CK1KARK:00000005": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__3_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 129
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:49:32.378 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.Services.JwtTokenService.GetUserFromClaimToken() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\JwtTokenService.cs:line 91
+   at Auth.API.Middleware.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middleware\AuthMiddlewareV1.cs:line 21
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:49:32.665 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.Services.JwtTokenService.GetUserFromClaimToken() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\JwtTokenService.cs:line 91
+   at Auth.API.Middleware.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middleware\AuthMiddlewareV1.cs:line 21
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:50:23.571 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token 111111111
+   at Auth.API.Middleware.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middleware\AuthMiddlewareV1.cs:line 25
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:50:23.784 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token 111111111
+   at Auth.API.Middleware.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middleware\AuthMiddlewareV1.cs:line 25
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:54:46.948 +07:00 [ERR] Exception occurred while processing message.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 140
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:54:46.978 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 140
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:54:46.982 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 140
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:54:46.984 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 140
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:54:46.988 +07:00 [ERR] Connection id "0HN7A3MGC11MG", Request id "0HN7A3MGC11MG:00000001": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 140
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 00:56:03.795 +07:00 [ERR] Exception occurred while processing message.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: Invalid token. User ID claim is missing.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 145
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-12 00:56:03.815 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: Invalid token. User ID claim is missing.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 145
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:56:03.817 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: Invalid token. User ID claim is missing.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 145
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 00:56:03.818 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: Invalid token. User ID claim is missing.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 145
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-12 00:56:03.821 +07:00 [ERR] Connection id "0HN7A3NOQITU4", Request id "0HN7A3NOQITU4:00000005": An unhandled exception was thrown by the application.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: Invalid token. User ID claim is missing.
+   at Auth.Infrastructure.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<<AddJwtTokenService>b__4_2>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 145
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+   at BuildingBlocks.Middleware.IpLoggingMiddleware.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Middleware\IpLoggingMiddleware.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-10-12 01:04:14.272 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.API.Attributes.AuthAttribute.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Attributes\AuthAttribute.cs:line 19
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 01:04:14.305 +07:00 [ERR] 2024-10-11 18:04:14 - ERROR - /api/v1/auth/test-auth - 0HN7A3S7V0ABI:00000019 - IP:::1 - [GET] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-12 01:12:35.261 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 34
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 01:12:35.285 +07:00 [ERR] 2024-10-11 18:12:35 - ERROR - /api/v1/auth/test-auth - 0HN7A412G83DE:00000005 - IP:::1 - [GET] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-12 23:48:16.035 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Invalid token
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 32
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 23:48:16.070 +07:00 [ERR] 2024-10-12 16:48:16 - ERROR - /api/v1/auth/test-auth - 0HN7ARLJ4KC7L:0000001D - IP:::1 - [GET] - 0ms - Error:Invalid token - InputParams:{}
+2024-10-12 23:50:10.114 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: WRONGTYPE Operation against a key holding the wrong kind of value
+   at Auth.Infrastructure.Services.AuthService.VerifyLoginCodeAsync(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 266
+   at Auth.Application.UseCases.V1.Commands.Auth.VerifyCodeLogin.VerifyCodeLoginCommandHandler.Handle(VerifyCodeLoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\VerifyCodeLogin\VerifyCodeLoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.VerifyCodeLogin(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 99
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 37
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 23:50:10.156 +07:00 [ERR] 2024-10-12 16:50:10 - ERROR - /api/v1/auth/verify-code-login - 0HN7ARNCRA43B:00000007 - IP:::1 - [POST] - 0ms - Error:WRONGTYPE Operation against a key holding the wrong kind of value - InputParams:{}
+2024-10-12 23:52:19.787 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: WRONGTYPE Operation against a key holding the wrong kind of value
+   at Auth.Infrastructure.Services.AuthService.VerifyLoginCodeAsync(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\Services\AuthService.cs:line 267
+   at Auth.Application.UseCases.V1.Commands.Auth.VerifyCodeLogin.VerifyCodeLoginCommandHandler.Handle(VerifyCodeLoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\VerifyCodeLogin\VerifyCodeLoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.VerifyCodeLogin(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 99
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 37
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 23:52:19.818 +07:00 [ERR] 2024-10-12 16:52:19 - ERROR - /api/v1/auth/verify-code-login - 0HN7AROLDF4FK:00000007 - IP:::1 - [POST] - 0ms - Error:WRONGTYPE Operation against a key holding the wrong kind of value - InputParams:{}
+2024-10-12 23:56:47.310 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: WRONGTYPE Operation against a key holding the wrong kind of value
+   at Auth.Infrastructure.Services.AuthService.VerifyLoginCodeAsync(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto, CancellationToken cancellationToken)
+   at Auth.Application.UseCases.V1.Commands.Auth.VerifyCodeLogin.VerifyCodeLoginCommandHandler.Handle(VerifyCodeLoginCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Application\UseCases\V1\Commands\Auth\VerifyCodeLogin\VerifyCodeLoginCommandHandler.cs:line 12
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Auth.API.Controllers.AuthController.VerifyCodeLogin(VerifyLoginCodeRequestDto verifyLoginCodeRequestDto) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Controllers\AuthController.cs:line 99
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 37
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-12 23:56:47.336 +07:00 [ERR] 2024-10-12 16:56:47 - ERROR - /api/v1/auth/verify-code-login - 0HN7ARPIII7IL:00000007 - IP:127.0.0.1 - [POST] - 0ms - Error:WRONGTYPE Operation against a key holding the wrong kind of value - InputParams:{}

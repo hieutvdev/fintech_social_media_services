@@ -1,0 +1,15 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\BuildingBlocks.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\BuildingBlocks.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\BuildingBlocks.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.csproj.AssemblyReference.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\refint\BuildingBlocks.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\ref\BuildingBlocks.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\ShredKernel.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\ShredKernel.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\Building.E30AA46F.Up2Date

@@ -1,0 +1,12 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.csproj.AssemblyReference.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\bin\Debug\net8.0\BuildingBlocks.Messaging.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\bin\Debug\net8.0\BuildingBlocks.Messaging.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\bin\Debug\net8.0\BuildingBlocks.Messaging.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\refint\BuildingBlocks.Messaging.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\BuildingBlocks.Messaging.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\obj\Debug\net8.0\ref\BuildingBlocks.Messaging.dll

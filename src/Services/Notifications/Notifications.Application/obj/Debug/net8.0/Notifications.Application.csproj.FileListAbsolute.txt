@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\bin\Debug\net8.0\Notifications.Application.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\bin\Debug\net8.0\Notifications.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\bin\Debug\net8.0\Notifications.Application.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\refint\Notifications.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\Notifications.Application.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Notifications\Notifications.Application\obj\Debug\net8.0\ref\Notifications.Application.dll

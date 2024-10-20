@@ -1,0 +1,139 @@
+2024-10-05 00:24:20.979 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.AggregateException: One or more errors occurred. (Incorrect Content-Type: )
+ ---> System.InvalidOperationException: Incorrect Content-Type: 
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 16
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:24:21.020 +07:00 [ERR] 2024-10-04 17:24:21 - ERROR - /api/v1/upload/locals/single-file - 0HN74J5DHEVI9:00000003 - IP:::1 - [POST] - 0ms - Error:One or more errors occurred. (Incorrect Content-Type: ) - InputParams:{}
+2024-10-05 00:26:15.224 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: File size exceeds the 1 MB limits
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:26:15.226 +07:00 [ERR] 2024-10-04 17:26:15 - ERROR - /api/v1/upload/locals/single-file - 0HN74J5DHEVIC:00000001 - IP:::1 - [POST] - 0ms - Error:File size exceeds the 1 MB limits - InputParams:{}
+2024-10-05 00:29:06.568 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: File size exceeds the 1 MB limits
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:29:06.627 +07:00 [ERR] 2024-10-04 17:29:06 - ERROR - /api/v1/upload/locals/single-file - 0HN74J7I9503B:00000001 - IP:::1 - [POST] - 1ms - Error:File size exceeds the 1 MB limits - InputParams:{}
+2024-10-05 00:31:50.753 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: File size exceeds the 1 MB limits
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:31:50.768 +07:00 [ERR] 2024-10-04 17:31:50 - ERROR - /api/v1/upload/locals/single-file - 0HN74J7I9503B:00000002 - IP:::1 - [POST] - 0ms - Error:File size exceeds the 1 MB limits - InputParams:{}
+2024-10-05 00:33:02.825 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: File size exceeds the 1 MB limits
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:33:02.847 +07:00 [ERR] 2024-10-04 17:33:02 - ERROR - /api/v1/upload/locals/single-file - 0HN74JAAND7R9:00000001 - IP:::1 - [POST] - 0ms - Error:File size exceeds the 1 MB limits - InputParams:{}
+2024-10-05 00:33:40.015 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unsupported file type
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:33:40.040 +07:00 [ERR] 2024-10-04 17:33:40 - ERROR - /api/v1/upload/locals/single-file - 0HN74JALOLUJB:00000001 - IP:::1 - [POST] - 0ms - Error:Unsupported file type - InputParams:{}
+2024-10-05 00:33:46.105 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unsupported file type
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:33:46.106 +07:00 [ERR] 2024-10-04 17:33:46 - ERROR - /api/v1/upload/locals/single-file - 0HN74JALOLUJB:00000002 - IP:::1 - [POST] - 0ms - Error:Unsupported file type - InputParams:{}
+2024-10-05 00:34:02.476 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unsupported file type
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 38
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:34:02.499 +07:00 [ERR] 2024-10-04 17:34:02 - ERROR - /api/v1/upload/locals/single-file - 0HN74JASOMBEF:00000001 - IP:::1 - [POST] - 0ms - Error:Unsupported file type - InputParams:{}
+2024-10-05 00:35:33.059 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unsupported file type
+   at Upload.API.Services.Upload.UploadService.UploadFileAsync(IFormFile file, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Services\Upload\UploadService.cs:line 39
+   at Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal.UploadFileLocalCommandHandler.Handle(UploadFileLocalCommand request, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\UseCases\V1\Commands\Upload\UploadFileLocal\UploadFileLocalCommandHandler.cs:line 21
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Upload.API.Endpoints.UploadLocalEndpoint.UploadFileFromLocalEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspace\BE\microservices\fintech_social_media\src\Services\Upload\Upload.API\Endpoints\UploadLocalEndpoint\UploadFileFromLocalEndpoint.cs:line 18
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-05 00:35:33.083 +07:00 [ERR] 2024-10-04 17:35:33 - ERROR - /api/v1/upload/locals/single-file - 0HN74JBO99B66:00000001 - IP:::1 - [POST] - 0ms - Error:Unsupported file type - InputParams:{}

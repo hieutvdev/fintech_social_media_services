@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\bin\Debug\net8.0\Chat.Application.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\bin\Debug\net8.0\Chat.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\bin\Debug\net8.0\Chat.Application.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\refint\Chat.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\Chat.Application.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Application\obj\Debug\net8.0\ref\Chat.Application.dll

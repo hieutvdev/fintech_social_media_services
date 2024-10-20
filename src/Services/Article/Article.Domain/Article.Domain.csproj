@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj" />
+      <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\..\..\Shared\ShredKernel\ShredKernel\ShredKernel.csproj" />
+    </ItemGroup>
+
+</Project>

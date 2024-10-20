@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\bin\Debug\net8.0\User.Persistence.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\bin\Debug\net8.0\User.Persistence.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\bin\Debug\net8.0\User.Persistence.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\refint\User.Persistence.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\User.Persistence.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\User\User.Persistence\obj\Debug\net8.0\ref\User.Persistence.dll

@@ -1,0 +1,12 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\bin\Debug\net8.0\ShredKernel.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\bin\Debug\net8.0\ShredKernel.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\bin\Debug\net8.0\ShredKernel.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.csproj.AssemblyReference.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\refint\ShredKernel.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ref\ShredKernel.dll

@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\bin\Debug\net8.0\Search.Domain.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\bin\Debug\net8.0\Search.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\bin\Debug\net8.0\Search.Domain.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\refint\Search.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\Search.Domain.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Search\Search.Domain\obj\Debug\net8.0\ref\Search.Domain.dll

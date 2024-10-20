@@ -1,0 +1,11 @@
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\bin\Debug\net8.0\Chat.Infrastructure.deps.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\bin\Debug\net8.0\Chat.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\bin\Debug\net8.0\Chat.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.AssemblyInfoInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.AssemblyInfo.cs
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.csproj.CoreCompileInputs.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\refint\Chat.Infrastructure.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\Chat.Infrastructure.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Infrastructure\obj\Debug\net8.0\ref\Chat.Infrastructure.dll
