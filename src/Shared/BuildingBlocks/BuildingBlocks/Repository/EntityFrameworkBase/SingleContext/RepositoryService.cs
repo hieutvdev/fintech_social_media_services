@@ -39,6 +39,15 @@ where TContext : DbContext
         await _context.AddRangeAsync(entities, cancellationToken);
     }
 
+    public  async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
+    {
+        if (entity == null)
+        {
+            throw new BadRequestException($"Add {nameof(TEntity)} error!");
+        }
+        await _context.AddAsync(entity, cancellationToken);
+    }
+
     public EntityEntry Update(TEntity entity)
     {
         return (object)entity != null ? this._context.Set<TEntity>().Update(entity) : throw new BadRequestException($"Update {nameof(TEntity)} error!");

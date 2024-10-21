@@ -23,3 +23,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Infrastructure\bin\Debug\net8.0\Article.Application.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Infrastructure\bin\Debug\net8.0\Article.Domain.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Infrastructure\obj\Debug\net8.0\Article.Infrastructure.genruntimeconfig.cache
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Infrastructure\obj\Debug\net8.0\Article.Infrastructure.sourcelink.json

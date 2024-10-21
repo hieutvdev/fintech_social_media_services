@@ -1,42 +1,58 @@
 using Article.Application.DependencyInjection.Extensions;
 using Article.Infrastructure.DependencyInjection.Extensions;
+using BuildingBlocks.DependencyInjection.Extensions;
 using BuildingBlocks.Logging;
 using BuildingBlocks.Middleware;
+using Carter;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCarter();
+builder.Services.AddApplicationService(builder.Configuration)
+    .AddInfrastructureService(builder.Configuration)
+    .AddSwaggerOptions();
+
 builder.Services.AddSerilogService(builder.Configuration, builder.Host);
 
-builder.Services.AddApplicationService(builder.Configuration)
-    .AddInfrastructureService(builder.Configuration);
 
 
+builder.Services.AddApiVersioningService();
+
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 var app = builder.Build();
-app.UseMiddleware<IpLoggingMiddleware>();
 app.UseApplicationService();
+app.MapCarter();
+app.UseRouting();
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.ConfigureSwagger();
 }
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseHttpsRedirection();
+app.MapControllers();
 
 try
 {
-
-}
-catch (Exception e)
+    Log.Information("Application Starting");
+    await app.RunAsync();
+    Log.Information("Application Started");
+}catch(Exception e)
 {
-    Console.WriteLine(e);
-    throw;
+    Log.Fatal(e, "Application start Failed");
 }
 finally
 {
-    
+    Log.CloseAndFlush();
+    await app.DisposeAsync();
 }
-app.Run();
-
+public partial class Program { }

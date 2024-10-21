@@ -16,11 +16,7 @@
 
     <ItemGroup>
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="Exceptions\" />
       <Folder Include="Extensions\" />
-      <Folder Include="UseCases\V1\Commands\" />
-      <Folder Include="UseCases\V1\Queries\" />
-      <Folder Include="UseCases\V1\Validations\" />
     </ItemGroup>
 
     <ItemGroup>

@@ -9,9 +9,11 @@ using FluentValidation;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.FeatureManagement;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace Article.Application.DependencyInjection.Extensions;
 
@@ -69,6 +71,23 @@ public static class ServiceCollectionConfiguration
         
         return services;
     }
+    
+    public static void ConfigureSwagger(this WebApplication app)
+    {
+        app.UseSwagger();
+
+        app.UseSwaggerUI(options =>
+        {
+            foreach (var version in app.DescribeApiVersions().Select(version => version.GroupName))
+                options.SwaggerEndpoint($"/swagger/{version}/swagger.json", version);
+            
+            options.DisplayRequestDuration();
+            options.EnableTryItOutByDefault();
+            options.DocExpansion(DocExpansion.None);
+        });
+
+        app.MapGet("/", () => Results.Redirect("swagger/index.html")).WithTags(string.Empty);
+    }
 
     private static IServiceCollection AddHealthCheckServices(this IServiceCollection services, IConfiguration configuration)
     {
@@ -84,6 +103,7 @@ public static class ServiceCollectionConfiguration
 
     public static WebApplication UseApplicationService(this WebApplication app)
     {
+        
         app.UseMiddleware<IpLoggingMiddleware>();
         app.UseExceptionHandler(configs => { });
         app.UseCors(CorName);

@@ -19,3 +19,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Application\obj\Debug\net8.0\refint\Article.Application.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Application\obj\Debug\net8.0\Article.Application.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Application\obj\Debug\net8.0\ref\Article.Application.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Application\obj\Debug\net8.0\Article.Application.sourcelink.json

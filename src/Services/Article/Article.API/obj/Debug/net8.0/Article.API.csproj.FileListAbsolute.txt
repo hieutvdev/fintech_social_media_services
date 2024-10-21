@@ -277,3 +277,13 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\System.CodeDom.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Asp.Versioning.Http.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Carter.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Carter.Analyzers.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\obj\Debug\net8.0\Article.API.sourcelink.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\MicroElements.OpenApi.FluentValidation.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.API\bin\Debug\net8.0\MicroElements.Swashbuckle.FluentValidation.dll

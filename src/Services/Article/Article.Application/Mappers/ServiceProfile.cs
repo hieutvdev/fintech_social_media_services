@@ -14,10 +14,17 @@ public class ServiceProfile : Profile
         CreateMap<CreateCategoryRequestDto, Category>()
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
-            .ForMember(dest => dest.Id, opt => opt.Ignore());
+            .ForMember(dest => dest.Slug, opt => opt.Ignore())  // Slug is generated in the entity
+            .ForMember(dest => dest.Id, opt => opt.Ignore())     // Id is assigned elsewhere
+            .ForMember(dest => dest.CategoryStatus, opt => opt.Ignore());
         
         CreateMap<Category, CategoryResponseBaseDto>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value.ToString()));
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value.ToString())) 
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
+            .ForMember(dest => dest.Slug, opt => opt.MapFrom(src => src.Slug))
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => (int)src.CategoryStatus))
+            .ForMember(dest => dest.LastUpdateAt, opt => opt.Ignore());
         #endregion
     }
 }

@@ -21,3 +21,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infras
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\obj\Debug\net8.0\ref\Auth.Infrastructure.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\bin\Debug\net8.0\BuildingBlocks.Messaging.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\bin\Debug\net8.0\BuildingBlocks.Messaging.pdb
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Infrastructure\obj\Debug\net8.0\Auth.Infrastructure.sourcelink.json

@@ -15,6 +15,8 @@ public interface IRepositoryService<in T, TEntity, TContext>
     Task<TEntity?> GetByIdAsync(T? id, CancellationToken cancellationToken = default!);
     
     Task AddAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default!);
+
+    Task AddAsync(TEntity entity, CancellationToken cancellationToken = default!);
     
     EntityEntry Update(TEntity entity);
     

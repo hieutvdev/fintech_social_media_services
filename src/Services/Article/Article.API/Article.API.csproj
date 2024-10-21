@@ -13,12 +13,13 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="6.0.0" />
+        <PackageReference Include="Carter" Version="8.2.1" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="DependencyInjection\Extensions\" />
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="Endpoints\" />
       <Folder Include="Middlewares\" />
     </ItemGroup>
 

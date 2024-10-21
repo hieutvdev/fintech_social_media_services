@@ -13,3 +13,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\Bui
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\ShredKernel.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\bin\Debug\net8.0\ShredKernel.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\Building.E30AA46F.Up2Date
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\obj\Debug\net8.0\BuildingBlocks.sourcelink.json

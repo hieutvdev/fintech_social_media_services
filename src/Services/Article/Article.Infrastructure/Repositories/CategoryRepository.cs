@@ -3,15 +3,14 @@ using Article.Application.DTOs.Response.Category;
 using Article.Application.Repositories;
 using Article.Domain.Models;
 using Article.Domain.ValueObjects;
+using Article.Infrastructure.Data;
 using AutoMapper;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Article.Infrastructure.Repositories;
 
-public class CategoryRepository(IRepositoryServiceV2 repositoryServiceV2, IMapper mapper)
+public class CategoryRepository(IRepositoryService<string, Category, ApplicationDbContext> repositoryService, IMapper mapper)
 : ICategoryRepository
 {
     public async Task<bool> CreateAsync(CreateCategoryRequestDto createCategoryRequestDto, CancellationToken cancellationToken = default)
@@ -21,8 +20,8 @@ public class CategoryRepository(IRepositoryServiceV2 repositoryServiceV2, IMappe
             var categoryId = CategoryId.Of(Guid.NewGuid());
             mapper.Map<Category>(createCategoryRequestDto);
             var category = Category.Create(categoryId, createCategoryRequestDto.Name, createCategoryRequestDto.Description);
-            var createCategory = await repositoryServiceV2.AddAsync(category, cancellationToken);
-            var res = await repositoryServiceV2.SaveChangesAsync(cancellationToken) > 0;
+            await repositoryService.AddAsync(category, cancellationToken);
+            var res = await repositoryService.SaveChangeAsync(cancellationToken) > 0;
             return res;
         }
         catch (Exception e)
@@ -31,11 +30,11 @@ public class CategoryRepository(IRepositoryServiceV2 repositoryServiceV2, IMappe
         }
     }
 
-    public async Task<IEnumerable<CategoryResponseBaseDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<Category>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try
         {
-            var response = await repositoryServiceV2.Table<Category>().Select(r => mapper.Map<CategoryResponseBaseDto>(r)).ToListAsync(cancellationToken);
+            var response = await repositoryService.GetAllAsync(cancellationToken);
 
             return response;
         }

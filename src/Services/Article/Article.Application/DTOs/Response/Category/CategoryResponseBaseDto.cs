@@ -7,5 +7,5 @@ public record CategoryResponseBaseDto(
     string Name,
     string Slug,
     string Description,
-    CategoryStatus Status,
+    int Status,
     DateTime? LastUpdateAt);

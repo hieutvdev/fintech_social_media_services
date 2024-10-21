@@ -17,3 +17,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Domain\obj\Debug\net8.0\refint\Article.Domain.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Domain\obj\Debug\net8.0\Article.Domain.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Domain\obj\Debug\net8.0\ref\Article.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Article\Article.Domain\obj\Debug\net8.0\Article.Domain.sourcelink.json

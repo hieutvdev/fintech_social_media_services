@@ -1,9 +1,16 @@
-﻿using BuildingBlocks.Repository.Cache;
+﻿using BuildingBlocks.DependencyInjection.Options;
+using BuildingBlocks.Repository.Cache;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace BuildingBlocks.DependencyInjection.Extensions;
 
@@ -13,7 +20,7 @@ public static class ServiceCollectionConfiguration
     {
         var cacheType = new CacheSetting();
         configuration.GetSection("CacheSettings").Bind(cacheType);
-            
+
         switch (cacheType.CacheType)
         {
             case nameof(CacheOptions.Redis):
@@ -36,7 +43,7 @@ public static class ServiceCollectionConfiguration
                 services.AddMemoryCache();
                 services.AddScoped<MemoryCacheService>();
                 return services;
-            
+
             default:
                 return services;
         }
@@ -62,13 +69,76 @@ public static class ServiceCollectionConfiguration
         return services;
     }
 
+    public static IServiceCollection AddSwaggerOptions(this IServiceCollection services)
+    {
+        services.AddSwaggerGen(options =>
+        {
+            options.AddSecurityDefinition(name: "Bearer", securityScheme: new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Description = "Enter thr bearer authorization token: `Bearer Generated-JWT-Token`",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
+            });
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = JwtBearerDefaults.AuthenticationScheme
+                        }
+                    },
+                    new string[] { }
+                }
+            });
+        });
+
+        services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigurationSwaggerOptions>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddApiVersioningService(this IServiceCollection services)
+    {
+        services.AddApiVersioning(options => options.ReportApiVersions = true)
+            .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
+
+        return services;
+    }
 
 
-    public static WebApplication UseCompressionService(this WebApplication app)
+public static WebApplication UseCompressionService(this WebApplication app)
     {
         app.UseResponseCompression();
         return app;
     }
-    
-    
+
+
+    public static WebApplication UseSwaggerOption(this WebApplication app)
+    {
+        app.UseSwagger();
+
+        app.UseSwaggerUI(options =>
+        {
+            foreach (var version in app.DescribeApiVersions().Select(version => version.GroupName))
+                options.SwaggerEndpoint($"/swagger/{version}/swagger.json", version);
+            
+            options.DisplayRequestDuration();
+            options.EnableTryItOutByDefault();
+            options.DocExpansion(DocExpansion.None);
+        });
+
+        app.MapGet("/", () => Results.Redirect("swagger/index.html")).WithTags(string.Empty);
+
+        return app;
+    }
+
 }

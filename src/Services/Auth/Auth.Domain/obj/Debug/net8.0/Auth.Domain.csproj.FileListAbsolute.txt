@@ -1,5 +1,4 @@
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\Auth.Domain.deps.json
-D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\Auth.Domain.runtimeconfig.json
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\Auth.Domain.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\Auth.Domain.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\BuildingBlocks.dll
@@ -15,5 +14,7 @@ D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\Auth.Domain.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\refint\Auth.Domain.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\Auth.Domain.pdb
-D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\Auth.Domain.genruntimeconfig.cache
 D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\ref\Auth.Domain.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\Auth.Domain.sourcelink.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\bin\Debug\net8.0\Auth.Domain.runtimeconfig.json
+D:\workspace\BE\microservices\fintech_social_media\src\Services\Auth\Auth.Domain\obj\Debug\net8.0\Auth.Domain.genruntimeconfig.cache

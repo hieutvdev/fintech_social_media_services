@@ -1,6 +1,10 @@
 ﻿using Article.Application.Data;
+using Article.Application.Repositories;
+using Article.Application.Services;
 using Article.Infrastructure.Data;
 using Article.Infrastructure.Data.Interceptors;
+using Article.Infrastructure.Repositories;
+using Article.Infrastructure.Services;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
 using Microsoft.EntityFrameworkCore;
@@ -69,13 +73,15 @@ public static class ServiceCollectionConfiguration
     private static IServiceCollection RegisterRepos(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepositoryService<,,>), typeof(RepositoryService<,,>));
-        services.AddScoped<IRepositoryServiceV2, RepositoryServiceV2>();
+        //services.AddTransient<IRepositoryServiceV2, RepositoryServiceV2>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
         return services;
     }
     
     
     private static IServiceCollection RegisterServices(this IServiceCollection services)
     {
+        services.AddScoped<ICategoryService, CategoryService>();
         return services;
     }
 }

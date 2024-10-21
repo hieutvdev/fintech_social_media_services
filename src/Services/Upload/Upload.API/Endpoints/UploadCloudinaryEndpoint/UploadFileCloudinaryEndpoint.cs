@@ -3,7 +3,6 @@ using Carter;
 using MediatR;
 using Upload.API.UseCases.V1.Commands.Cloudinary.UploadMultipleFile;
 using Upload.API.UseCases.V1.Commands.Cloudinary.UploadSingleFile;
-using Upload.API.UseCases.V1.Commands.Upload.UploadFileLocal;
 
 namespace Upload.API.Endpoints.UploadCloudinaryEndpoint;
 

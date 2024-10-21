@@ -10,3 +10,4 @@ D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredK
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\refint\ShredKernel.dll
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.pdb
 D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ref\ShredKernel.dll
+D:\workspace\BE\microservices\fintech_social_media\src\Shared\ShredKernel\ShredKernel\obj\Debug\net8.0\ShredKernel.sourcelink.json

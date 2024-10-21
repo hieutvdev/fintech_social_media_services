@@ -27,6 +27,7 @@ public class Category : Entity<CategoryId>, IAggregateRoot
         {
             Id = categoryId,
             Name = name,
+            Description = description,
             Slug = SlugHelper.GenerateSlug(name),
             CategoryStatus = CategoryStatus.Active
         };
