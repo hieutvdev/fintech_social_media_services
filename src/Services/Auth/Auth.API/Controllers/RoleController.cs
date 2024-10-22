@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Auth.API.Controllers;
 
 [ApiController]
+
 [Route("/api/v1/roles")]
 public class RoleController(IMediator mediator): Controller
 {

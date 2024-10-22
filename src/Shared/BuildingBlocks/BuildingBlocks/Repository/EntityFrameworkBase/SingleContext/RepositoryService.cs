@@ -60,6 +60,11 @@ where TContext : DbContext
             : throw new BadRequestException($"Remove {nameof(TEntity)} error!");
     }
 
+    public void DeleteAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
+    {
+        this._context.Set<TEntity>().RemoveRange(entities);
+    }
+
     public async Task<int> SaveChangeAsync(CancellationToken cancellationToken = default)
     {
         return await _context.SaveChangesAsync(cancellationToken);
@@ -100,6 +105,12 @@ where TContext : DbContext
             .ToListAsync(cancellationToken); 
         return new PaginatedResult<TEntity>(paginationRequest.PageIndex, paginationRequest.PageSize, totalRecords,
             dataResponses);
+    }
+
+    public async Task<IEnumerable<TResult>> GetSelectorAsync<TResult>(Expression<Func<TEntity, TResult>> selector, CancellationToken cancellationToken = default)
+    {
+        var dataResponse = await this._context.Set<TEntity>().AsNoTracking<TEntity>().Select(selector).ToListAsync(cancellationToken);
+        return dataResponse;
     }
 
     public async Task<PaginatedResult<TResult>> GetSelectAsync<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TEntity, bool>>? expression, PaginationRequest paginationRequest,
@@ -153,4 +164,11 @@ where TContext : DbContext
         return new PaginatedResult<TEntity>(paginationRequest.PageIndex, paginationRequest.PageSize, totalRecords,
             dataResponses);
     }
+
+    public IQueryable<TEntity> Table()
+    {
+        return this._context.Set<TEntity>().AsQueryable().AsNoTracking();
+    }
+
+
 }

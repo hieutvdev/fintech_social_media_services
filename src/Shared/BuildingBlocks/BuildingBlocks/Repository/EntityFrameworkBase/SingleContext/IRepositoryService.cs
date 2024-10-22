@@ -21,6 +21,8 @@ public interface IRepositoryService<in T, TEntity, TContext>
     EntityEntry Update(TEntity entity);
     
     EntityEntry Delete(TEntity entity);
+
+    void DeleteAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default!);
     
     Task<int> SaveChangeAsync(CancellationToken cancellationToken = default!);
     
@@ -35,6 +37,9 @@ public interface IRepositoryService<in T, TEntity, TContext>
     Task<PaginatedResult<TEntity>> GetPageAsync(PaginationRequest paginationRequest, Expression<Func<TEntity, bool>>? expression,
         CancellationToken cancellationToken = default!);
 
+
+    Task<IEnumerable<TResult>> GetSelectorAsync<TResult>(Expression<Func<TEntity, TResult>> selector,
+        CancellationToken cancellationToken = default!);
     Task<PaginatedResult<TResult>> GetSelectAsync<TResult>(
         Expression<Func<TEntity, TResult>> selector,
         Expression<Func<TEntity, bool>>? expression, 
@@ -47,7 +52,6 @@ public interface IRepositoryService<in T, TEntity, TContext>
         Expression<Func<TEntity, object>>? orderByExpression, PaginationRequest paginationRequest,
         CancellationToken cancellationToken = default!);
 
-
-
+    IQueryable<TEntity> Table();
 
 }

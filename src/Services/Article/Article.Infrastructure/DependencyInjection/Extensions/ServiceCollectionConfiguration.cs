@@ -5,8 +5,10 @@ using Article.Infrastructure.Data;
 using Article.Infrastructure.Data.Interceptors;
 using Article.Infrastructure.Repositories;
 using Article.Infrastructure.Services;
+using BuildingBlocks.DependencyInjection.Extensions;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
+using BuildingBlocks.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +27,8 @@ public static class ServiceCollectionConfiguration
         services.AddDatabaseServices(configuration);
         services.RegisterRepos();
         services.RegisterServices();
+        services.AddAuthenticationService(configuration);
+        
         return services;
     }
 
@@ -82,6 +86,7 @@ public static class ServiceCollectionConfiguration
     private static IServiceCollection RegisterServices(this IServiceCollection services)
     {
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IAuthorizeExtension, AuthorizeExtension>();
         return services;
     }
 }

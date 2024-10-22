@@ -1,4 +1,6 @@
-﻿using BuildingBlocks.DependencyInjection.Options;
+﻿using System.Text;
+using BuildingBlocks.DependencyInjection.Options;
+using BuildingBlocks.Exceptions;
 using BuildingBlocks.Repository.Cache;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -7,7 +9,10 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using ShredKernel.BaseClasses.Configurations;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
@@ -99,6 +104,55 @@ public static class ServiceCollectionConfiguration
 
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigurationSwaggerOptions>();
 
+        return services;
+    }
+
+
+    public static IServiceCollection AddAuthenticationService(this IServiceCollection services,
+        IConfiguration configuration)
+    {
+
+        services.AddHttpContextAccessor();
+        var jwtToken = new JwtConfiguration();
+        configuration.GetSection("JwtConfiguration").Bind(jwtToken);
+
+        var key = Encoding.UTF8.GetBytes(jwtToken.Secret);
+        var signingKey = new SymmetricSecurityKey(key);
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(x =>
+        {
+            x.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidIssuer = jwtToken.Issuer,
+                ValidAudience = jwtToken.Audience,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero
+            };
+
+            x.Events = new JwtBearerEvents
+            {
+                OnAuthenticationFailed = context =>
+                {
+                    if (context.Exception is SecurityTokenExpiredException)
+                    {
+                        Log.Error("Token invalid");
+                        throw new UnauthorizedException("Token-Expired");
+                    }
+                    else
+                    {
+                        Log.Error("Token invalid");
+                        throw new UnauthorizedException("Token-Invalid");
+                    }
+                }
+            };
+        });
         return services;
     }
 

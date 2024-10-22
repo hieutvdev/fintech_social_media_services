@@ -34,4 +34,13 @@ public class Category : Entity<CategoryId>, IAggregateRoot
         return category;
     }
 
+    public void Update( string name, string description, CategoryStatus categoryStatus)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        Name = name;
+        Description = description;
+        Slug = SlugHelper.GenerateSlug(name);
+        CategoryStatus = categoryStatus;
+    }
+
 }

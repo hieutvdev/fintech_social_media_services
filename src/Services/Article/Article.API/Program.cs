@@ -23,7 +23,6 @@ builder.Services.AddSerilogService(builder.Configuration, builder.Host);
 
 builder.Services.AddApiVersioningService();
 
-builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 var app = builder.Build();
 app.UseApplicationService();
