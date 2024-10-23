@@ -9,7 +9,7 @@ public class DeleteRoleCommandHandler
     public async Task<Result> Handle(DeleteRoleCommand request, CancellationToken cancellationToken)
     {
         var result = await roleService.DeleteRoleAsync(request.RoleName, cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(new Error("40001", "Delete Role failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

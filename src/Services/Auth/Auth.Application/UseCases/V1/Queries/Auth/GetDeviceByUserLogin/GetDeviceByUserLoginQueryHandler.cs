@@ -14,7 +14,7 @@ public class GetDeviceByUserLoginQueryHandler
             throw new ArgumentNullException("Value cannot be empty or whitespace");
         }
         var result = await authService.GetDeviceLoginByUserAsync(request.Email, cancellationToken);
-        var response = Result.Success(value: result);
+        var response = Result.Create(result);
 
         return response;
     }

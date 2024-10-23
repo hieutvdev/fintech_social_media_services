@@ -10,6 +10,6 @@ public class ConfirmAccountCommandHandler(ISendMailService mailService)
     public async Task<Result> Handle(ConfirmAccountCommand request, CancellationToken cancellationToken)
     {
         await mailService.SendMailConfirmAccountAsync(request.Url, cancellationToken);
-        return Result.Success();
+        return Result.Create(true);
     }
 }

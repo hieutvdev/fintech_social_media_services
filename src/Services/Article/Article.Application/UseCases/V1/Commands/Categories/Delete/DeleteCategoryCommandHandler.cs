@@ -1,6 +1,10 @@
-﻿using Article.Application.Services;
+﻿
+using Article.Application.DTOs.Request.Category;
+using Article.Application.Services;
 using BuildingBlocks.CQRS.Commands;
 using BuildingBlocks.CQRS.Common;
+using BuildingBlocks.Exceptions.ErrorCodeResponse;
+using BuildingBlocks.Helpers;
 
 namespace Article.Application.UseCases.V1.Commands.Categories.Delete;
 
@@ -8,8 +12,13 @@ public class DeleteCategoryCommandHandler
 (ICategoryService categoryService)
 : ICommandHandler<DeleteCategoryCommand, bool>
 {
-    public Task<ResultT<bool>> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+    public async Task<ResultT<bool>> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var result = await categoryService.DeleteAsync(new DeleteCategoryRequestDto(request.Ids), cancellationToken);
+        var response = result
+            ? Result.Success<bool>("Update category successful")
+            : Result.Failure<bool>(CodeResponseHelper.GetErrorByCode(HttpStatusCode.ErrBadRequest), "Update categoryFailure");
+        return response;
     }
 }
+

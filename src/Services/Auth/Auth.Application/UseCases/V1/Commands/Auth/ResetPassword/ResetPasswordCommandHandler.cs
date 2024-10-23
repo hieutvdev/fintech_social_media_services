@@ -9,7 +9,7 @@ public class ResetPasswordCommandHandler
     public async Task<Result> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
     {
         var result = await authService.ResetPasswordAsync(request.ResetPasswordRequestDto, cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(new Error("40001", "Reset password failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

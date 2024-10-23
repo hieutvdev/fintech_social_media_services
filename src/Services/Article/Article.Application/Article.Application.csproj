@@ -17,7 +17,6 @@
     <ItemGroup>
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="Extensions\" />
-      <Folder Include="UseCases\V1\Commands\Categories\Update\" />
     </ItemGroup>
 
     <ItemGroup>

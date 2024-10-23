@@ -9,6 +9,6 @@ public class CreateRoleCommandHandler(IRoleService roleService)
   {
       var response = await roleService.CreateRoleAsync(request.CreateRoleRequestDto, cancellationToken);
 
-      return response ? Result.Create(value: response) : Result.Failure<bool>(error: new Error("", "Create role failure"));
+      return Result.Create(response);
   }
 }

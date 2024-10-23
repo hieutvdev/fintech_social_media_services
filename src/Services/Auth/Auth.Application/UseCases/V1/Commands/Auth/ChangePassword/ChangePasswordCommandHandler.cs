@@ -15,10 +15,8 @@ public class ChangePasswordCommandHandler(IAuthService authService)
         {
             return Result.Failure(new Error("400", "ChangePassword failure"));
         }
-        var response = Result.Success(new 
-        {
-            message = "ChangePassword successful"
-        });
+
+        var response = Result.Create(result);
         return response;
     }
 }

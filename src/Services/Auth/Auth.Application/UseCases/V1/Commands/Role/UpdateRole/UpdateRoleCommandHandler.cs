@@ -9,7 +9,7 @@ public class UpdateRoleCommandHandler
     public async Task<Result> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
     {
         var result = await roleService.UpdateRoleAsync(request.UpdateRoleRequestDto, cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(new Error("40001", "Update Role Failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

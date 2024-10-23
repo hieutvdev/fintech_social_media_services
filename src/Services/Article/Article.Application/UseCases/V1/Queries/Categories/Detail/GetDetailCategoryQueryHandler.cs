@@ -17,7 +17,7 @@ public class GetDetailCategoryQueryHandler
         var result = await categoryService.GetDetailsAsync(request.Id, cancellationToken);
         var response = result is not null
             ? Result.Create(value: result)
-            : Result.Failure<Category>(CodeResponseHelper.GetErrorByCode(HttpStatusCode.ErrNotFound));
+            : Result.Failure<Category>(CodeResponseHelper.GetErrorByCode(HttpStatusCode.ErrNotFound), "Category not found");
         return response;
     }
 }

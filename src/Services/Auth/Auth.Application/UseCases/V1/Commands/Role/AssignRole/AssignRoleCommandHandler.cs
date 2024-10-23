@@ -9,9 +9,7 @@ public class AssignRoleCommandHandler
     public async Task<Result> Handle(AssignRoleCommand request, CancellationToken cancellationToken)
     {
         var result = await roleService.AssignRoleAsync(request.AssignRoleRequestDto, cancellationToken);
-        var response = result
-            ? Result.Success()
-            : Result.Failure(new Error("40001", $"Assign Role for {request.AssignRoleRequestDto.UserName} failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

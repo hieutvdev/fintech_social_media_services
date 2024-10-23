@@ -9,7 +9,7 @@ public class SwitchTwoFactorCommandHandler
     public async Task<Result> Handle(SwitchTwoFactorCommand request, CancellationToken cancellationToken)
     {
         var result = await authService.SwitchTwoFactorAsync(cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(new Error("40001", "Switch two factor failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

@@ -9,7 +9,7 @@ public class LogoutDeviceCommandHandler
     public async Task<Result> Handle(LogoutDeviceCommand request, CancellationToken cancellationToken)
     {
         var result = await authService.LogoutDeviceAsync(request.DeviceLoginResponseDtos, cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(new Error("11100", "Logout Device Failure"));
+        var response = Result.Create(result);
         return response;
     }
 }

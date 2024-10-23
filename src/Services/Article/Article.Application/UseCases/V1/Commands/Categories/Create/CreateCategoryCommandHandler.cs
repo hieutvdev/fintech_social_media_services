@@ -13,7 +13,7 @@ public class CreateCategoryCommandHandler(ICategoryService categoryService)
     public async Task<Result> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         var result = await categoryService.CreateAsync(request.CreateCategoryRequestDto, cancellationToken);
-        var response = result ? Result.Success() : Result.Failure(CodeResponseHelper.GetErrorByCode(HttpStatusCode.ErrBadRequest));
+        var response = Result.Create(result);
         return response;
     }
 }

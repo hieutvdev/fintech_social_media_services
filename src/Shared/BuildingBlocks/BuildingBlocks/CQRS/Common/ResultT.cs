@@ -4,7 +4,7 @@ public class ResultT<TValue> : Result
 {
     private readonly TValue? _value;
 
-    protected internal ResultT(TValue? value, bool isSuccess, Error error) : base(isSuccess, error) => _value = value;
+    protected internal ResultT(TValue? value, bool isSuccess, Error error, string message) : base(isSuccess, error, message) => _value = value;
 
     public TValue Value => IsSuccess
         ? _value!
