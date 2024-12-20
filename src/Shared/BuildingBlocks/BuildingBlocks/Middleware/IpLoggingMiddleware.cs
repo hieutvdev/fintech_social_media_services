@@ -25,10 +25,11 @@ public class IpLoggingMiddleware
         string path = request.Path;
         string requestMethod = request.Method;
         string url = path + request.QueryString;
-        string ipRequest = context.Connection.RemoteIpAddress?.ToString()!;
         string clientIp = context.Request.Headers["X-Forwarded-For"].FirstOrDefault() ?? "";
         var trackId = context.TraceIdentifier;
         string inputParam = "{}";
+        string ipRequest = context.Request.Headers["X-Forwarded-For"].FirstOrDefault() 
+                           ?? context.Connection.RemoteIpAddress?.ToString();
 
         if (requestMethod == HttpMethod.Get.ToString())
         {

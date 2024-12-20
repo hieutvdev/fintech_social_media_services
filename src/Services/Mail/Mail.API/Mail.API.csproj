@@ -11,31 +11,52 @@
     <PackageReference Include="Asp.Versioning.Http" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
     <PackageReference Include="Carter" Version="8.2.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
     <PackageReference Include="MailKit" Version="4.7.1" />
+    <PackageReference Include="Microsoft.FeatureManagement" Version="3.2.0" />
     <PackageReference Include="MimeKit" Version="4.7.1" />
     <PackageReference Include="Serilog" Version="4.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-	  <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="DependencyInjection\Options\" />
     <Folder Include="Events\Domain\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Libs\" />
     <Folder Include="Logs\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj" />
-    <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
-    <ProjectReference Include="..\..\..\Shared\ShredKernel\ShredKernel\ShredKernel.csproj" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <Reference Include="BuildingBlocks">-->
+<!--      <HintPath>Libs/BuildingBlocks.dll</HintPath>-->
+<!--      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--    </Reference>-->
+<!--    <Reference Include="ShredKernel">-->
+<!--      <HintPath>Libs/ShredKernel.dll</HintPath>-->
+<!--      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--    </Reference>-->
+<!--    <Reference Include="BuildingBlocks.Messaging">-->
+<!--      <HintPath>Libs/BuildingBlocks.Messaging.dll</HintPath>-->
+<!--      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--    </Reference>-->
+<!--  </ItemGroup>-->
+
+
 
   <ItemGroup>
     <Content Include="..\..\..\.dockerignore">
       <Link>.dockerignore</Link>
     </Content>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj" />
+    <ProjectReference Include="..\..\..\Shared\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\..\Shared\ShredKernel\ShredKernel\ShredKernel.csproj" />
   </ItemGroup>
 
 </Project>

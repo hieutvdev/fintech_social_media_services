@@ -7,16 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data\" />
-      <Folder Include="DependencyInjection\Extensions\" />
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="DTOs\" />
       <Folder Include="Exceptions\" />
       <Folder Include="Extensions\" />
-      <Folder Include="Mappers\" />
       <Folder Include="Repositories\" />
       <Folder Include="Services\" />
       <Folder Include="UseCases\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Groups.Domain\Groups.Domain.csproj" />
     </ItemGroup>
 
 </Project>

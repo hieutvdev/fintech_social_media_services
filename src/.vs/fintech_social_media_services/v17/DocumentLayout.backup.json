@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\mail\\mail.api\\usecases\\commands\\confirmaccount\\confirmaccountcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|solutionrelative:services\\mail\\mail.api\\usecases\\commands\\confirmaccount\\confirmaccountcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\article\\article.infrastructure\\data\\interceptors\\auditableentityinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|solutionrelative:services\\article\\article.infrastructure\\data\\interceptors\\auditableentityinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\mail\\mail.api\\usecases\\commands\\confirmaccount\\confirmaccountcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|solutionrelative:services\\mail\\mail.api\\usecases\\commands\\confirmaccount\\confirmaccountcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\article\\article.infrastructure\\article.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|solutionrelative:services\\article\\article.infrastructure\\article.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\mail\\mail.api\\mail.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9BDC2EF2-87EC-407C-ACC2-5E9941E71C1F}|Services\\Mail\\Mail.API\\Mail.API.csproj|solutionrelative:services\\mail\\mail.api\\mail.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7139455-7C64-4711-A86E-E785CB4FBC23}|Services\\Article\\Article.API\\Article.API.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\article\\article.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7139455-7C64-4711-A86E-E785CB4FBC23}|Services\\Article\\Article.API\\Article.API.csproj|solutionrelative:services\\article\\article.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\article\\article.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|solutionrelative:services\\article\\article.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\services\\article\\article.infrastructure\\dependencyinjection\\extensions\\servicecollectionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F52E0513-DF34-4620-B290-05598C1BDEBA}|Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj|solutionrelative:services\\article\\article.infrastructure\\dependencyinjection\\extensions\\servicecollectionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05B413C2-BA3E-4716-A2F6-C09992967CE5}|Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj|d:\\workspace\\be\\microservices\\fintech_social_media\\src\\shared\\shredkernel\\shredkernel\\aggregates\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B413C2-BA3E-4716-A2F6-C09992967CE5}|Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj|solutionrelative:shared\\shredkernel\\shredkernel\\aggregates\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,45 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241018123717_InitDb.cs",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs",
-              "RelativeToolTip": "Services\\Article\\Article.Infrastructure\\Data\\Migrations\\20241018123717_InitDb.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAqwDkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:37:17.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuditableEntityInterceptor.cs",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\Interceptors\\AuditableEntityInterceptor.cs",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.Infrastructure\\Data\\Interceptors\\AuditableEntityInterceptor.cs",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\Interceptors\\AuditableEntityInterceptor.cs",
-              "RelativeToolTip": "Services\\Article\\Article.Infrastructure\\Data\\Interceptors\\AuditableEntityInterceptor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ConfirmAccountCommandHandler.cs",
+              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommandHandler.cs",
+              "RelativeDocumentMoniker": "Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommandHandler.cs",
+              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommandHandler.cs",
+              "RelativeToolTip": "Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:36:36.805Z",
+              "WhenOpened": "2024-10-31T17:24:03.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Article.Infrastructure",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj",
-              "RelativeToolTip": "Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Title": "Mail.API",
+              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\Mail.API.csproj",
+              "RelativeDocumentMoniker": "Services\\Mail\\Mail.API\\Mail.API.csproj",
+              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\Mail.API.csproj",
+              "RelativeToolTip": "Services\\Mail\\Mail.API\\Mail.API.csproj",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-18T12:35:48.543Z",
+              "WhenOpened": "2024-10-31T17:23:06.81Z",
               "EditorCaption": ""
             },
             {
@@ -89,41 +68,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConfirmAccountCommand.cs",
+              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommand.cs",
+              "RelativeDocumentMoniker": "Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommand.cs",
+              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommand.cs",
+              "RelativeToolTip": "Services\\Mail\\Mail.API\\UseCases\\Commands\\ConfirmAccount\\ConfirmAccountCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T17:23:16.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.API\\Program.cs",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.API\\Program.cs",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.API\\Program.cs",
-              "RelativeToolTip": "Services\\Article\\Article.API\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Title": "IDomainEvent.cs",
+              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\Aggregates\\IDomainEvent.cs",
+              "RelativeDocumentMoniker": "Shared\\ShredKernel\\ShredKernel\\Aggregates\\IDomainEvent.cs",
+              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\Aggregates\\IDomainEvent.cs",
+              "RelativeToolTip": "Shared\\ShredKernel\\ShredKernel\\Aggregates\\IDomainEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:30:33.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Services\\Article\\Article.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvxEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:30:14.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceCollectionConfiguration.cs",
-              "DocumentMoniker": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\DependencyInjection\\Extensions\\ServiceCollectionConfiguration.cs",
-              "RelativeDocumentMoniker": "Services\\Article\\Article.Infrastructure\\DependencyInjection\\Extensions\\ServiceCollectionConfiguration.cs",
-              "ToolTip": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\DependencyInjection\\Extensions\\ServiceCollectionConfiguration.cs",
-              "RelativeToolTip": "Services\\Article\\Article.Infrastructure\\DependencyInjection\\Extensions\\ServiceCollectionConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:28:27.973Z",
+              "WhenOpened": "2024-10-31T17:11:55.336Z",
               "EditorCaption": ""
             }
           ]

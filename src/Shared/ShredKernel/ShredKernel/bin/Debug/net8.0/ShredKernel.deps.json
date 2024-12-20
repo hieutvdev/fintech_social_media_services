@@ -9,8 +9,7 @@
       "ShredKernel/1.0.0": {
         "dependencies": {
           "MassTransit": "8.2.5",
-          "MassTransit.RabbitMQ": "8.2.5",
-          "MediatR": "12.0.1"
+          "MassTransit.RabbitMQ": "8.2.5"
         },
         "runtime": {
           "ShredKernel.dll": {}
@@ -49,26 +48,6 @@
           "lib/net8.0/MassTransit.RabbitMqTransport.dll": {
             "assemblyVersion": "8.2.5.0",
             "fileVersion": "8.2.5.0"
-          }
-        }
-      },
-      "MediatR/12.0.1": {
-        "dependencies": {
-          "MediatR.Contracts": "2.0.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
-        },
-        "runtime": {
-          "lib/net6.0/MediatR.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.1.0"
-          }
-        }
-      },
-      "MediatR.Contracts/2.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {
-            "assemblyVersion": "2.0.1.0",
-            "fileVersion": "2.0.1.0"
           }
         }
       },
@@ -226,20 +205,6 @@
       "sha512": "sha512-gIBF5plL/BZo5/SNDo0C6BjOZoGqJu5YdqoDm0MI6A7kJad9H/5qfWdB4AK1A97vpK7At3i3uXTuriqx5+UKMg==",
       "path": "masstransit.rabbitmq/8.2.5",
       "hashPath": "masstransit.rabbitmq.8.2.5.nupkg.sha512"
-    },
-    "MediatR/12.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vfxplMielft+g5jxGO31xjjQpI6yqe4r2YGt0Q8x23phwbpJNmUQGY+cCNNFMKKViXRM67ajUlAiwirMeuJWTQ==",
-      "path": "mediatr/12.0.1",
-      "hashPath": "mediatr.12.0.1.nupkg.sha512"
-    },
-    "MediatR.Contracts/2.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
-      "path": "mediatr.contracts/2.0.1",
-      "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
       "type": "package",

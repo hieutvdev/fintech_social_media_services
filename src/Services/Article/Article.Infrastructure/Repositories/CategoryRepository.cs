@@ -12,6 +12,9 @@ using BuildingBlocks.Pagination;
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
 using BuildingBlocks.Security;
 using JasperFx.Core;
+using Microsoft.EntityFrameworkCore;
+using ShredKernel.BaseClasses;
+using ShredKernel.Specifications;
 
 namespace Article.Infrastructure.Repositories;
 
@@ -126,9 +129,11 @@ public class CategoryRepository(IRepositoryService<string, Category, Application
     {
         try
         {
-            var categoryFound =
-                await repositoryService.FirstOrDefaultAsync(c => c.Id.Value.ToString() == id, cancellationToken) ??
-                throw new CategoryNotFoundException("Cannot be to find category");
+            var parsedId = CategoryId.Of(Guid.Parse(id)); 
+
+            var categoryFound = await repositoryService.FirstOrDefaultAsync(c => c.Id == parsedId, cancellationToken)
+                                ?? throw new CategoryNotFoundException("Cannot find category");
+            
             return categoryFound;
         }
         catch (Exception e)
@@ -136,4 +141,39 @@ public class CategoryRepository(IRepositoryService<string, Category, Application
             throw new BadRequestException(e.Message);
         }
     }
+
+    public async Task<PaginatedResult<CategoryResponseBaseDto>> GetListAsync(PaginationRequest paginationRequest,SearchBaseModel searchBaseModel, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var categories = await repositoryService.Table()
+                .Select(r => r.CategoryToBaseDto())
+                .WhereIf(!string.IsNullOrEmpty(searchBaseModel.KeySearch),r => r.Name.ToLower().Contains(searchBaseModel.KeySearch!))
+                .ToListAsync(cancellationToken);
+
+            if (!string.IsNullOrEmpty(searchBaseModel.SortBy))
+            {
+                var sortBy = QueryableExtensions.GetPropertyGetter<CategoryResponseBaseDto>(searchBaseModel.SortBy);
+                categories = searchBaseModel.IsAscending 
+                    ? categories.OrderBy(sortBy).ToList()
+                    : categories.OrderByDescending(sortBy).ToList();
+            }
+            
+            long totalRecords = categories.Count();
+            var dataResponse = categories.Skip(paginationRequest.PageIndex * paginationRequest.PageSize)
+                .Take(paginationRequest.PageSize);
+
+            PaginatedResult<CategoryResponseBaseDto> response =
+                new PaginatedResult<CategoryResponseBaseDto>(paginationRequest.PageIndex, paginationRequest.PageSize,
+                    totalRecords, dataResponse);
+
+            return response;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+        
+    }
+    
 }

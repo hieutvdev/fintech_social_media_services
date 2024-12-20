@@ -15,8 +15,6 @@ public static class SerilogCollection
             .CreateLogger();
 
         host.UseSerilog();
-        
-        
 
         return services;
     }

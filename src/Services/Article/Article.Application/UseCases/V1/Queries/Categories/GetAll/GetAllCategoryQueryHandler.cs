@@ -1,6 +1,5 @@
 ﻿
 using Article.Application.Services;
-using Article.Domain.Models;
 using BuildingBlocks.CQRS.Common;
 using BuildingBlocks.CQRS.Queries;
 

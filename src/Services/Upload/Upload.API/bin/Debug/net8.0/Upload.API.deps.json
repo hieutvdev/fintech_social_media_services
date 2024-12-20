@@ -936,6 +936,18 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
+      "Scrutor/4.2.2": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
+          "Microsoft.Extensions.DependencyModel": "8.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Scrutor.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
       "Serilog/4.0.1": {
         "runtime": {
           "lib/net8.0/Serilog.dll": {
@@ -1478,12 +1490,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Text.RegularExpressions/4.3.1": {
@@ -1507,20 +1513,26 @@
       },
       "BuildingBlocks/1.0.0": {
         "dependencies": {
+          "Asp.Versioning.Http": "8.1.0",
+          "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
           "Confluent.Kafka": "2.5.3",
           "Dapper": "2.1.35",
           "FluentValidation": "11.9.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR": "12.0.1",
+          "MicroElements.Swashbuckle.FluentValidation": "6.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
           "Microsoft.FeatureManagement.AspNetCore": "3.2.0",
           "Newtonsoft.Json": "13.0.3",
+          "Scrutor": "4.2.2",
           "Serilog": "4.0.1",
           "Serilog.AspNetCore": "8.0.2",
-          "ShredKernel": "1.0.0"
+          "ShredKernel": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
           "BuildingBlocks.dll": {
@@ -1545,8 +1557,7 @@
       "ShredKernel/1.0.0": {
         "dependencies": {
           "MassTransit": "8.2.5",
-          "MassTransit.RabbitMQ": "8.2.5",
-          "MediatR": "12.0.1"
+          "MassTransit.RabbitMQ": "8.2.5"
         },
         "runtime": {
           "ShredKernel.dll": {
@@ -2171,6 +2182,13 @@
       "sha512": "sha512-leXiwfiIkW7Gmn7cgnNcdtNAU70SjmKW3jxGj1iKHOvdn0zRWsgv/l2OJUO5zdGdiv2VRFnAsxxhDgMzofPdWg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.2",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512"
+    },
+    "Scrutor/4.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t5VIYA7WJXoJJo7s4DoHakMGwTu+MeEnZumMOhTCH7kz9xWha24G7dJNxWrHPlu0ZdZAS4jDZCxxAnyaBh7uYw==",
+      "path": "scrutor/4.2.2",
+      "hashPath": "scrutor.4.2.2.nupkg.sha512"
     },
     "Serilog/4.0.1": {
       "type": "package",

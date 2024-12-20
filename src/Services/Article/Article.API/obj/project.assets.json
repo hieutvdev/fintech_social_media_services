@@ -2952,10 +2952,12 @@
           "MicroElements.Swashbuckle.FluentValidation": "6.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.8",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
           "Microsoft.FeatureManagement.AspNetCore": "3.2.0",
           "Newtonsoft.Json": "13.0.3",
+          "Scrutor": "4.2.2",
           "Serilog": "4.0.1",
           "Serilog.AspNetCore": "8.0.2",
           "ShredKernel": "1.0.0",
@@ -2988,8 +2990,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "MassTransit": "8.2.5",
-          "MassTransit.RabbitMQ": "8.2.5",
-          "MediatR": "12.0.1"
+          "MassTransit.RabbitMQ": "8.2.5"
         },
         "compile": {
           "bin/placeholder/ShredKernel.dll": {}
@@ -7745,33 +7746,31 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.API\\Article.API.csproj",
+      "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.API\\Article.API.csproj",
       "projectName": "Article.API",
-      "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.API\\Article.API.csproj",
+      "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.API\\Article.API.csproj",
       "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.API\\obj\\",
+      "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.API\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Application\\Article.Application.csproj": {
-              "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Application\\Article.Application.csproj"
+            "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.Application\\Article.Application.csproj": {
+              "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.Application\\Article.Application.csproj"
             },
-            "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj": {
-              "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj"
+            "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj": {
+              "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.Infrastructure\\Article.Infrastructure.csproj"
             }
           }
         }
@@ -7780,6 +7779,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7828,7 +7832,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

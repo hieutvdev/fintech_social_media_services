@@ -2,6 +2,7 @@
 using Article.Application.DTOs.Response.Category;
 using Article.Domain.Models;
 using BuildingBlocks.Pagination;
+using ShredKernel.BaseClasses;
 
 namespace Article.Application.Services;
 
@@ -17,5 +18,7 @@ public interface ICategoryService
     Task<bool> UpdateAsync(UpdateCategoryRequestDto categoryRequestDto,CancellationToken cancellationToken = default!);
     
     Task<Category> GetDetailsAsync(string id, CancellationToken cancellationToken = default!);
+    
+    Task<PaginatedResult<CategoryResponseBaseDto>> GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken = default!);
 
 }

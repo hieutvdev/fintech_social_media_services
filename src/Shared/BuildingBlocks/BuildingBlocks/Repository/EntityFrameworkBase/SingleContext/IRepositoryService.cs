@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Linq.Expressions;
 using BuildingBlocks.Pagination;
 using Microsoft.EntityFrameworkCore;
@@ -53,5 +53,8 @@ public interface IRepositoryService<in T, TEntity, TContext>
         CancellationToken cancellationToken = default!);
 
     IQueryable<TEntity> Table();
+
+    Task<bool> ExecuteInTransactionAsync(Func<Task> operation, CancellationToken cancellationToken = default!);
+
 
 }

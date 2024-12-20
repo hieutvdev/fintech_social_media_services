@@ -44,4 +44,8 @@ public interface IAuthService
 
     Task<TokenResponse> RefreshTokenAsync(CancellationToken cancellationToken = default!);
 
+    Task<bool> ChangePasswordForAdminAsync(ChangePasswordForAdminRequestDto request,
+        CancellationToken cancellationToken = default!
+    );
+
 }

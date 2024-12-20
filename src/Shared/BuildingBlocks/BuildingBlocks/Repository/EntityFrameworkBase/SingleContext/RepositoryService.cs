@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Linq.Expressions;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Pagination;
@@ -83,9 +83,9 @@ where TContext : DbContext
         return queryable;
     }
 
-    public Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity?, bool>> expression, CancellationToken cancellationToken = default)
+    public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity?, bool>> expression, CancellationToken cancellationToken = default)
     {
-        return this._context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(expression, cancellationToken);
+        return await this._context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(expression, cancellationToken);
     }
 
     public async Task<PaginatedResult<TEntity>> GetPageAsync(PaginationRequest paginationRequest,Expression<Func<TEntity, bool>>? expression, CancellationToken cancellationToken)
@@ -170,5 +170,31 @@ where TContext : DbContext
         return this._context.Set<TEntity>().AsQueryable().AsNoTracking();
     }
 
+    public async Task<bool> ExecuteInTransactionAsync(Func<Task> operation, CancellationToken cancellationToken = default)
+    {
+        var executionStrategy = _context.Database.CreateExecutionStrategy();
+        return await executionStrategy.ExecuteAsync(async () =>
+        {
+            await using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
+            try
+            {
+                await operation();
+                var saveResult = await _context.SaveChangesAsync(cancellationToken);
+                if (saveResult > 0)
+                {
+                    await transaction.CommitAsync(cancellationToken);
+                    return true;
+                }
+
+                await transaction.RollbackAsync(cancellationToken);
+                return false;
+            }
+            catch
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                throw new BadRequestException("There was an error saving changes (transaction) or committing changes.");
+            }
+        });
+    }
 
 }

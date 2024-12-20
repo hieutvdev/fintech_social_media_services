@@ -4,6 +4,7 @@ using Article.Application.Repositories;
 using Article.Application.Services;
 using Article.Domain.Models;
 using BuildingBlocks.Pagination;
+using ShredKernel.BaseClasses;
 
 namespace Article.Infrastructure.Services;
 
@@ -43,4 +44,11 @@ public class CategoryService (ICategoryRepository categoryRepository) : ICategor
     {
         return await categoryRepository.GetDetailsAsync(id, cancellationToken);
     }
+
+    public async Task<PaginatedResult<CategoryResponseBaseDto>> GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel,
+        CancellationToken cancellationToken = default)
+    {
+        return await categoryRepository.GetListAsync(paginationRequest, searchBaseModel, cancellationToken);
+    }
+    
 }

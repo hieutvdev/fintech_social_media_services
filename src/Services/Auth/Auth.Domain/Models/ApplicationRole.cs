@@ -5,6 +5,7 @@ namespace Auth.Domain.Models;
 
 public class ApplicationRole: IdentityRole, IDateTracking
 {
+    public bool Active { get; set; }
     public string Descriptions { get; set; } = default!;
     public DateTime? CreatedAt { get; set; }
     public string? CreatedBy { get; set; }

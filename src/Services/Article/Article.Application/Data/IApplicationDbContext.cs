@@ -15,5 +15,8 @@ public interface IApplicationDbContext
     
     DbSet<Tag> Tags { get; }
     
+    DbSet<ArticleRequestPublish> ArticleRequestPublishes { get; }
+    
+    DbSet<ProcessingStep> ProcessingSteps { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

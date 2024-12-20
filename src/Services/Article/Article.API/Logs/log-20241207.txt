@@ -1,0 +1,324 @@
+2024-12-07 00:01:51.087 +07:00 [ERR] Token invalid
+2024-12-07 00:01:51.112 +07:00 [ERR] Exception occurred while processing message.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-12-07 00:01:51.128 +07:00 [ERR] Token invalid
+2024-12-07 00:01:51.129 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:01:51.134 +07:00 [ERR] 2024-12-06 17:01:51 - ERROR - /api/v1/tags - 0HN8M2UH2BP49:0000000D - IP:::1 - [GET] - 0ms - Error:Token-Invalid - InputParams:{}
+2024-12-07 00:02:35.932 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at Article.Application.UseCases.V1.Queries.Tags.GetPage.GetPageTagQueryHandler.Handle(GetPageTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetPage\GetPageTagQueryHandler.cs:line 11
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 76
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:02:35.952 +07:00 [ERR] 2024-12-06 17:02:35 - ERROR - /api/v1/tags/get-page?PageIndex=1&PageSize=10 - 0HN8M2UH2BP49:00000017 - IP:::1 - [GET] - 0ms - Error:The method or operation is not implemented. - InputParams:{}
+2024-12-07 00:30:44.895 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 181
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:30:44.905 +07:00 [ERR] 2024-12-06 17:30:44 - ERROR - /api/v1/tags/get-list - 0HN8M2UH2BP4B:00000003 - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:33:52.165 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 188
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:33:52.220 +07:00 [ERR] 2024-12-06 17:33:52 - ERROR - /api/v1/tags/get-list - 0HN8M3GCCUJIS:0000000D - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:34:13.226 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 188
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:34:13.228 +07:00 [ERR] 2024-12-06 17:34:13 - ERROR - /api/v1/tags/get-list?PageIndex=0&PageSize=11 - 0HN8M3GCCUJIS:0000000F - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:37:10.396 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 182
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:37:10.452 +07:00 [ERR] 2024-12-06 17:37:10 - ERROR - /api/v1/tags/get-list - 0HN8M3HQDNSB8:0000000F - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:39:13.036 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 182
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:39:13.066 +07:00 [ERR] 2024-12-06 17:39:13 - ERROR - /api/v1/tags/get-list - 0HN8M3JFFKUU0:0000000D - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:39:41.903 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 182
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:39:41.905 +07:00 [ERR] 2024-12-06 17:39:41 - ERROR - /api/v1/tags/get-list?PageIndex=1&PageSize=1 - 0HN8M3JFFKUU0:0000000F - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:40:06.274 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 182
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:40:06.277 +07:00 [ERR] 2024-12-06 17:40:06 - ERROR - /api/v1/tags/get-list?PageIndex=1&PageSize=1 - 0HN8M3JFFKUU0:00000011 - IP:::1 - [GET] - 0ms - Error:Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Application.DTOs.Response.Tag.TagResponseBaseDto]'. - InputParams:{}
+2024-12-07 00:43:02.643 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error fetching tags: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Domain.Models.Tag]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Domain.Models.Tag]'.
+   at Article.Infrastructure.Repositories.TagRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\TagRepository.cs:line 183
+   at Article.Infrastructure.Services.TagService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\TagService.cs:line 53
+   at Article.Application.UseCases.V1.Queries.Tags.GetList.GetListTagQueryHandler.Handle(GetListTagQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Tags\GetList\GetListTagQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.TagEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\TagEndpoint.cs:line 105
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:43:02.675 +07:00 [ERR] 2024-12-06 17:43:02 - ERROR - /api/v1/tags/get-list - 0HN8M3LGHB62C:0000000D - IP:::1 - [GET] - 0ms - Error:Error fetching tags: Unable to cast object of type 'Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[Article.Domain.Models.Tag]' to type 'Marten.Linq.MartenLinqQueryable`1[Article.Domain.Models.Tag]'. - InputParams:{}
+2024-12-07 00:54:26.255 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'Article.Infrastructure.Data.ApplicationDbContext'.
+System.InvalidOperationException: The configured execution strategy 'NpgsqlRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The configured execution strategy 'NpgsqlRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-07 00:54:26.288 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: There was an error saving changes (transaction) or committing changes.).
+   at Article.Infrastructure.Repositories.ArticleRepository.CreateAsync(CreateArticleRequestDto createArticleRequest, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 57
+   at Article.Infrastructure.Services.ArticleService.CreateAsync(CreateArticleRequestDto createArticleRequest, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 15
+   at Article.Application.UseCases.V1.Commands.Articles.Create.CreateArticleCommandHandler.Handle(CreateArticleCommand request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Commands\Articles\Create\CreateArticleCommandHandler.cs:line 13
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_0>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 19
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 00:54:26.295 +07:00 [ERR] 2024-12-06 17:54:26 - ERROR - /api/v1/articles - 0HN8M3PO4KHD1:00000001 - IP:::1 - [POST] - 0ms - Error:There was an error saving changes (transaction) or committing changes.). - InputParams:{}
+2024-12-07 01:05:47.794 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Cannot find category
+   at Article.Infrastructure.Repositories.CategoryRepository.GetDetailsAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\CategoryRepository.cs:line 141
+   at Article.Infrastructure.Services.CategoryService.GetDetailsAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\CategoryService.cs:line 45
+   at Article.Application.UseCases.V1.Queries.Categories.Detail.GetDetailCategoryQueryHandler.Handle(GetDetailCategoryQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Categories\Detail\GetDetailCategoryQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_2>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 49
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 01:05:47.830 +07:00 [ERR] 2024-12-06 18:05:47 - ERROR - /api/v1/articles/639ecdd7-d98b-4ab0-9a1b-102341dbf42e - 0HN8M40BRC8R4:0000000B - IP:::1 - [GET] - 0ms - Error:Cannot find category - InputParams:{}
+2024-12-07 18:03:31.514 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The source 'IQueryable' doesn't implement 'IAsyncEnumerable<Article.Application.DTOs.Response.Article.ArticleResponseBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 210
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 18:03:31.550 +07:00 [ERR] 2024-12-07 11:03:31 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MLQJLN9L7:0000000D - IP:::1 - [GET] - 0ms - Error:The source 'IQueryable' doesn't implement 'IAsyncEnumerable<Article.Application.DTOs.Response.Article.ArticleResponseBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations. - InputParams:{}
+2024-12-07 18:06:32.328 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 218
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 18:06:32.356 +07:00 [ERR] 2024-12-07 11:06:32 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MLSITUPSD:0000000D - IP:::1 - [GET] - 0ms - Error:The provider for the source 'IQueryable' doesn't implement 'IAsyncQueryProvider'. Only providers that implement 'IAsyncQueryProvider' can be used for Entity Framework asynchronous operations. - InputParams:{}
+2024-12-07 18:16:20.236 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Object reference not set to an instance of an object.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 214
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 18:16:20.257 +07:00 [ERR] 2024-12-07 11:16:20 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MM1TK8A0H:0000000D - IP:::1 - [GET] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}
+2024-12-07 18:18:00.594 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Object reference not set to an instance of an object.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 214
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 18:18:00.618 +07:00 [ERR] 2024-12-07 11:18:00 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MM2UVEU5D:0000000D - IP:::1 - [GET] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}
+2024-12-07 18:19:54.201 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Object reference not set to an instance of an object.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 213
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 18:19:54.222 +07:00 [ERR] 2024-12-07 11:19:54 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MM40MMQL5:0000000D - IP:::1 - [GET] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}
+2024-12-07 20:48:05.112 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Article.Infrastructure.Data.ApplicationDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-12-07 20:48:05.447 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 327
+   at Article.Infrastructure.Services.ArticleService.GetListAsync(PaginationRequest paginationRequest, SearchBaseModel searchBaseModel, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 36
+   at Article.Application.UseCases.V1.Queries.Articles.GetList.GetListArticleQueryHandler.Handle(GetListArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\GetList\GetListArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_5>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 106
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-07 20:48:05.472 +07:00 [ERR] 2024-12-07 13:48:05 - ERROR - /api/v1/articles/get-list?PageIndex=0 - 0HN8MON05QCSG:00000001 - IP:::1 - [GET] - 0ms - Error:A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913. - InputParams:{}

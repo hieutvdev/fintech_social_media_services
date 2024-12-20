@@ -1,0 +1,150 @@
+2024-12-09 08:44:50.749 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Article not found
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 463
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:44:50.795 +07:00 [ERR] 2024-12-09 01:44:50 - ERROR - /api/v1/articles/get-detail/4451f8d7-f7b2-4fed-95fb-a250a7d35de5 - 0HN8NUBSELTL4:00000013 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Article not found - InputParams:{}
+2024-12-09 08:46:50.795 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Article not found
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 463
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:46:50.798 +07:00 [ERR] 2024-12-09 01:46:50 - ERROR - /api/v1/articles/get-detail/4451f8d7-f7b2-4fed-95fb-a250a7d35de5 - 0HN8NUBSELTL4:0000001B - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Article not found - InputParams:{}
+2024-12-09 08:47:02.329 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Article.Infrastructure.Data.ApplicationDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-12-09 08:47:02.332 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 463
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:47:02.334 +07:00 [ERR] 2024-12-09 01:47:02 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e - 0HN8NUBSELTL4:0000001D - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913. - InputParams:{}
+2024-12-09 08:50:55.485 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Article.Infrastructure.Data.ApplicationDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-12-09 08:50:57.345 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 463
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:50:57.352 +07:00 [ERR] 2024-12-09 01:50:57 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e - 0HN8NUEALBGJ1:00000001 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913. - InputParams:{}
+2024-12-09 08:53:10.708 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 455
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:53:10.732 +07:00 [ERR] 2024-12-09 01:53:10 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e. - 0HN8NUGS7VLGC:00000001 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx). - InputParams:{}
+2024-12-09 08:53:49.766 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 455
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:53:49.815 +07:00 [ERR] 2024-12-09 01:53:49 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e. - 0HN8NUH6VE263:00000001 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx). - InputParams:{}
+2024-12-09 08:54:04.297 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 455
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:54:04.299 +07:00 [ERR] 2024-12-09 01:54:04 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e. - 0HN8NUH6VE263:00000002 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx). - InputParams:{}
+2024-12-09 08:59:51.523 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error while fetching article details: Operation is not valid due to the current state of the object.
+   at Article.Infrastructure.Repositories.ArticleRepository.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Repositories\ArticleRepository.cs:line 463
+   at Article.Infrastructure.Services.ArticleService.GetRelateDetails(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Infrastructure\Services\ArticleService.cs:line 56
+   at Article.Application.UseCases.V1.Queries.Articles.DetailRelated.DetailRelatedArticleQueryHandler.Handle(DetailRelatedArticleQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.Application\UseCases\V1\Queries\Articles\DetailRelated\DetailRelatedArticleQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at Article.API.Endpoints.ArticleEndpoint.<>c.<<AddRoutes>b__1_6>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Article\Article.API\Endpoints\ArticleEndpoint.cs:line 127
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-09 08:59:51.555 +07:00 [ERR] 2024-12-09 01:59:51 - ERROR - /api/v1/articles/get-detail/639ecdd7-d98b-4ab0-9a1b-102341dbf42e - 0HN8NUKJMLK74:00000001 - IP:::1 - [GET] - 0ms - Error:Error while fetching article details: Operation is not valid due to the current state of the object. - InputParams:{}

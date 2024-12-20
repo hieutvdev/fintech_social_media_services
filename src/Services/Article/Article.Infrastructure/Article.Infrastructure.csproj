@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Configuration\" />
       <Folder Include="Data\Extensions\" />
       <Folder Include="Data\Migrations\" />
       <Folder Include="DependencyInjection\Options\" />

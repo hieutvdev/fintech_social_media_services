@@ -16,6 +16,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKernel", "{056B0DEC-C751-4F4C-B750-9A46B2E241D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{16AB687D-94C4-4D46-93C2-34F6A6880AE9}"
+	ProjectSection(SolutionItems) = preProject
+		Services\Auth\docker-compose.yaml = Services\Auth\docker-compose.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Upload", "Upload", "{9FA62F1E-C3A7-4908-9E6E-EA4409FCB47A}"
 EndProject
@@ -24,7 +27,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Article", "Article", "{3F3E7FC3-9C48-4B74-A22A-427EF060E48E}"
 	ProjectSection(SolutionItems) = preProject
 		Services\Article\docker-compose.yaml = Services\Article\docker-compose.yaml
-		Services\Article\DockerFile = Services\Article\DockerFile
+		Services\Article\Document.txt = Services\Article\Document.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posts", "Posts", "{673BA6B3-C2D1-41EC-96CF-B9D335F30683}"

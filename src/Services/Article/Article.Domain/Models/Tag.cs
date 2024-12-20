@@ -26,5 +26,10 @@ public class Tag : Entity<TagId>
         };
         return tag;
     }
-   
+    public void Update( string name)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(name);
+        Name = name;
+        Slug = SlugHelper.GenerateSlug(name);
+    }
 }

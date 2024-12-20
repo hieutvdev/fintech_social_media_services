@@ -431,6 +431,35 @@ public class AuthService : IAuthService
         }
     }
 
+    public async Task<bool> ChangePasswordForAdminAsync(ChangePasswordForAdminRequestDto request,
+        CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var user = await _userManager.FindByIdAsync(request.UserId);
+            if (user is null)
+            {
+                throw new UserNotFoundException("Cannot be to find user with card id");
+            }
+
+            if (!string.Equals(request.Password, request.ConfirmPassword))
+            {
+                throw new BadRequestException("Password don't matching");
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var isUpdatePassword = await _userManager.ResetPasswordAsync(user, token, request.Password);
+            return isUpdatePassword.Succeeded;
+
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
+    
+
     public async Task<LoginResponseDto> LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken = default)
     {
         try

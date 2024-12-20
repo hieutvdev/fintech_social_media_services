@@ -25,6 +25,8 @@ public class Article : Entity<ArticleId>
     public string Slug { get; private set; } = default!;
     
     public ArticleStatus Status { get; private set; } = default!;
+    
+    public ArticleType Type { get; private set; } = default!;
 
     public AuthorId AuthorId { get; private set; } = default!;
     
@@ -48,10 +50,32 @@ public class Article : Entity<ArticleId>
             Slug = SlugHelper.GenerateSlug(title),
             MainImageUrl = mainImageUrl,
             Status = ArticleStatus.Draft,
-            AuthorId = authorId
+            AuthorId = authorId,
+            Type = (ArticleType)1
         };
 
         return article;
+    }
+
+    public string TagsToString()
+    {
+        return string.Join("||", this._articleTags);
+    }
+
+    public string CategoriesToString() => string.Join("||", this._articleCategories);
+
+    public void Update(string title, string description, string content, string mainImageUrl, AuthorId authorId)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(title);
+        ArgumentException.ThrowIfNullOrWhiteSpace(description);
+        ArgumentException.ThrowIfNullOrWhiteSpace(content);
+        ArgumentException.ThrowIfNullOrWhiteSpace(mainImageUrl);
+        Title = title;
+        Description = description;
+        Content = content;
+        MainImageUrl = mainImageUrl;
+        AuthorId = authorId;
+        Type = (ArticleType)1;
     }
     
    

@@ -9,6 +9,8 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 
+builder.Services.AddSerilogService(builder.Configuration, builder.Host);
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,14 +19,14 @@ builder.Services.AddApplicationService(builder.Configuration)
     .AddInfrastructureService(builder.Configuration)
     .AddSwaggerOptions();
 
-builder.Services.AddSerilogService(builder.Configuration, builder.Host);
-
 
 
 builder.Services.AddApiVersioningService();
 
 builder.Services.AddAuthorization();
+
 var app = builder.Build();
+app.UseForwardedHeaders();
 app.UseApplicationService();
 app.MapCarter();
 app.UseRouting();

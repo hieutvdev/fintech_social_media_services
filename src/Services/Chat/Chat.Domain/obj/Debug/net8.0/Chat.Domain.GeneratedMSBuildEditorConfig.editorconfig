@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Chat.Domain
-build_property.ProjectDir = D:\workspace\BE\microservices\fintech_social_media\src\Services\Chat\Chat.Domain\
+build_property.ProjectDir = D:\workspaces\backend\net\fintech_social_media\src\Services\Chat\Chat.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

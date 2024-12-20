@@ -1,0 +1,19 @@
+2024-10-25 16:17:00.223 +07:00 [ERR] Token invalid
+2024-10-25 16:17:00.242 +07:00 [ERR] Exception occurred while processing message.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Expired
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 146
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-10-25 16:17:00.263 +07:00 [ERR] Token invalid
+2024-10-25 16:17:00.265 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspace\BE\microservices\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 151
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-10-25 16:17:00.271 +07:00 [ERR] 2024-10-25 09:17:00 - ERROR - /api/v1/categories - 0HN7KQM7CSJF2:00000001 - IP:::1 - [GET] - 0ms - Error:Token-Invalid - InputParams:{}

@@ -1,39 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {}
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
         "projectName": "Auth.Domain",
-        "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+        "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+        "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-                "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+              "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+                "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
               },
-              "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
-                "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
+              "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
+                "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
               }
             }
           }
@@ -42,6 +40,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -79,37 +82,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
         "projectName": "BuildingBlocks",
-        "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
-                "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
+              "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
+                "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
               }
             }
           }
@@ -118,6 +119,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -168,6 +174,10 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -183,6 +193,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
             },
             "Serilog": {
               "target": "Package",
@@ -213,29 +227,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
+        "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
         "projectName": "ShredKernel",
-        "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
+        "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
+        "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -248,6 +260,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -261,10 +278,6 @@
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[8.2.5, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.0.1, )"
             }
           },
           "imports": [
@@ -283,7 +296,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,4 +2,4 @@
 
 namespace Mail.API.UseCases.Commands.ConfirmAccount;
 
-public record ConfirmAccountCommand(string Url) : ICommand;
+public record ConfirmAccountCommand(string Url) : ICommand<bool>;

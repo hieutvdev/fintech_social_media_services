@@ -12,10 +12,14 @@ using Auth.Infrastructure.Repositories;
 using Auth.Infrastructure.Services;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Messaging.Messaging.Kafka;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
@@ -24,29 +28,24 @@ using Microsoft.IdentityModel.Tokens;
 using ShredKernel.BaseClasses.Configurations;
 using StackExchange.Redis;
 
-
 namespace Auth.Infrastructure.DependencyInjection.Extensions;
 
 public static class ServiceCollectionConfiguration
 {
-    public static IServiceCollection AddInfrastructureService(this IServiceCollection services,
-        IConfiguration configuration)
+    public static IServiceCollection AddInfrastructureService(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ICacheService, CacheService>();
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IRoleService, RoleService>();
-        
-
 
         services.AddRedisDbService(configuration);
         services.AddDatabaseService(configuration);
         services.AddKafkaService(configuration);
         services.AddAuthenticationServices(configuration);
         
-        
-        
+
         return services;
     }
 
@@ -64,12 +63,12 @@ public static class ServiceCollectionConfiguration
             options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
             options.UseSqlServer(connectionString);
         });
+
         services.AddIdentity<ApplicationUser, ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-        
 
         return services;
     }
@@ -91,96 +90,118 @@ public static class ServiceCollectionConfiguration
 
         return services;
     }
+
     private static string GetDeviceInfo(HttpContext context)
     {
-        var ipAddress = context!.Connection.RemoteIpAddress?.ToString();
-        var userAgent = context.Request.Headers.UserAgent.ToString();
-        string deviceInfor = $"{ipAddress}-{userAgent}";
+        var ipAddress = context.Connection.RemoteIpAddress?.ToString();
+        var userAgent = context.Request.Headers["User-Agent"].ToString();
+        string deviceInfo = $"{ipAddress}-{userAgent}";
 
-        while (deviceInfor.Contains(" ")) {
-            deviceInfor = deviceInfor.Replace(" ", "");
-        }
-        return deviceInfor;
+        return deviceInfo.Replace(" ", string.Empty);  // Remove spaces
+    }
+
+    private static IServiceCollection AddCookiePolicyOptions(this IServiceCollection services)
+    {
+        services.Configure<CookiePolicyOptions>(options =>
+        {
+            options.HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always; 
+            options.CheckConsentNeeded = context => true;
+            options.MinimumSameSitePolicy = SameSiteMode.Lax;
+        });
+        return services;
     }
 
     private static IServiceCollection AddJwtTokenService(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddHttpContextAccessor();
-        var jwtToken = new JwtConfiguration();
 
+        var jwtTokenConfig = new JwtConfiguration();
+        configuration.GetSection("JwtConfiguration").Bind(jwtTokenConfig);
+        var key = Encoding.UTF8.GetBytes(jwtTokenConfig.Secret);
 
-        configuration.GetSection("JwtConfiguration").Bind(jwtToken);
-        var key = Encoding.UTF8.GetBytes(jwtToken.Secret);
+        var signingKey = new SymmetricSecurityKey(key);
+        services.AddDistributedMemoryCache(); 
 
-        var singingKey = new SymmetricSecurityKey(key);
         services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(x =>
-        {
-            x.TokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = singingKey,
-                ValidateIssuer = true,
-                ValidIssuer= jwtToken.Issuer,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidAudience= jwtToken.Audience,
-                ClockSkew = TimeSpan.Zero,
-
-            };
-
-            x.Events = new JwtBearerEvents
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
             {
-                // OnTokenValidated = async context =>
-                // {
-                //     var cacheService = context.HttpContext.RequestServices.GetRequiredService<ICacheService>();
-                //     var userIdClaim = context.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
-                //     if (userIdClaim == null)
-                //     {
-                //         throw new SecurityTokenException("Invalid token. User ID claim is missing.");
-                //     }
-                //     var userId = userIdClaim.Value;
-                //     var cacheKey = $"{CacheKey.Domain}{CacheKey.Auth.AccessToken}{userId}{GetDeviceInfo(context.HttpContext)}";
-                //     var tokenExists = await cacheService.GetCacheAsync(cacheKey);
-                //     if (string.IsNullOrEmpty(tokenExists))
-                //     {
-                //         throw new SecurityTokenException("Invalid token. No matching token found in cache.");
-                //     }
-                // },
-                OnAuthenticationFailed = context =>
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    if (context.Exception is SecurityTokenExpiredException)
-                    {
-                        context.Response.Headers.Append("Token-Expired", "true");
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        return context.Response.WriteAsync("Token is expired");
-                    }
-                    else
-                    {
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        return context.Response.WriteAsync("Token invalid.");
-                    }
-                }
-            };
-        });
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = signingKey,
+                    ValidateIssuer = true,
+                    ValidIssuer = jwtTokenConfig.Issuer,
+                    ValidateAudience = true,
+                    ValidAudience = jwtTokenConfig.Audience,
+                    ClockSkew = TimeSpan.Zero,
+                };
 
-        var tokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = singingKey,
-            ValidateIssuer = false,
-            ValidIssuer = jwtToken.Issuer,
-            ValidateAudience = false,
-            ValidAudience = jwtToken.Audience,
-            RequireExpirationTime = true,
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero
-        };
+                x.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (!context.Response.HasStarted)
+                        {
+                            if (context.Exception is SecurityTokenExpiredException)
+                            {
+                                context.Response.Headers.Append("Token-Expired", "true");
+                                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                                return context.Response.WriteAsync("Token is expired");
+                            }
+                            else
+                            {
+                                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                                return context.Response.WriteAsync("Token invalid.");
+                            }
+                        }
 
-        services.AddSingleton(tokenValidationParameters);
+                        return Task.CompletedTask;
+                    },
+                    
+                };
+            });
+        
+        services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie()
+            .AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = configuration["SSO:Facebook:AppId"]!;
+                facebookOptions.AppSecret = configuration["SSO:Facebook:AppSecret"]!;
+
+                facebookOptions.Events = new OAuthEvents()
+                {
+                    OnRedirectToAuthorizationEndpoint = context =>
+                    {
+                        Console.WriteLine(context.RedirectUri);
+                        return   Task.CompletedTask;
+                    }
+            
+                };
+            })
+            .AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = configuration["SSO:Google:ClientId"]!;
+                googleOptions.ClientSecret = configuration["SSO:Google:ClientSecret"]!;
+              
+                
+                googleOptions.Events = new OAuthEvents{
+                    OnRedirectToAuthorizationEndpoint = context =>
+                    {
+                        Console.WriteLine(context.RedirectUri);
+                        return   Task.CompletedTask;
+                    }
+            
+                };
+            });
         
 
         return services;
@@ -212,20 +233,14 @@ public static class ServiceCollectionConfiguration
         return services;
     }
 
-
     private static IServiceCollection AddKafkaService(this IServiceCollection services, IConfiguration configuration)
     {
-
         services.Configure<KafkaSettings>(configuration.GetSection("Kafka"));
         services.AddSingleton<IKafkaProducerService<string, string>, KafkaProducerService<string, string>>();
-        
+
         return services;
     }
 
-
- 
-
-    
     public static WebApplication UseInfrastructureService(this WebApplication app)
     {
         return app;

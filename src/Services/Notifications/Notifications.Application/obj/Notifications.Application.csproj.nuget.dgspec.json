@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj": {}
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj": {
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj",
+        "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj",
         "projectName": "Notifications.Application",
-        "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj",
+        "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\Notifications.Application.csproj",
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\obj\\",
+        "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Notifications\\Notifications.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +33,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -56,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

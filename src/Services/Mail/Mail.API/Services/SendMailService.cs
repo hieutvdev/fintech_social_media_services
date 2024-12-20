@@ -56,12 +56,12 @@ public class SendMailService : ISendMailService
 
     public async Task SendMailConfirmAccountAsync(string url, CancellationToken cancellationToken = default)
     {
-        var email = "trinhhieu758@gmail.com";
+        var email = "nguyenhoang.miyuka@gmail.com";
         var mailRequest = new MailRequest
         {
             ToEmail = email,
-            Body = url,
-            Subject = "Confirm Email"
+            Body = "Hoang bu lon",
+            Subject = "Bu lon di"
         };
         await SendMailAsync(mailRequest, cancellationToken);
         _logger.LogInformation("Send successful----------------------");

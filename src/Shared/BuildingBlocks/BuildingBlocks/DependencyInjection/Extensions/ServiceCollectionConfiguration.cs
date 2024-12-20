@@ -1,7 +1,12 @@
-﻿using System.Text;
+﻿using System.Reflection;
+using System.Text;
+using BuildingBlocks.Behaviors;
 using BuildingBlocks.DependencyInjection.Options;
 using BuildingBlocks.Exceptions;
+using BuildingBlocks.Exceptions.Handler;
+using BuildingBlocks.Logging;
 using BuildingBlocks.Repository.Cache;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -9,9 +14,11 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.FeatureManagement;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Serilog.Core;
 using ShredKernel.BaseClasses.Configurations;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -138,6 +145,20 @@ public static class ServiceCollectionConfiguration
 
             x.Events = new JwtBearerEvents
             {
+                // OnMessageReceived = context =>
+                // {
+                //     var token = context.Request.Headers["Authorization"].FirstOrDefault();
+                //     if (!string.IsNullOrEmpty(token) && !token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+                //     {
+                //         context.Token = $"Bearer {token}";
+                //     }
+                //     else
+                //     {
+                //         context.Token = token;
+                //     }
+                //     return Task.CompletedTask;
+                // },
+                
                 OnAuthenticationFailed = context =>
                 {
                     if (context.Exception is SecurityTokenExpiredException)
@@ -156,6 +177,22 @@ public static class ServiceCollectionConfiguration
         return services;
     }
 
+    public static IServiceCollection AddMediaRService(this IServiceCollection services)
+    {
+        services.AddExceptionHandler<CustomExceptionHandler>();
+        services.AddMediatR(configs =>
+        {
+            configs.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            configs.AddOpenBehavior(typeof(ValidationBehavior<,>));
+            configs.AddOpenBehavior(typeof(PerformancePipelineBehavior<,>));
+        });
+
+        services.AddFeatureManagement();
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+        return services;
+    }
+
     public static IServiceCollection AddApiVersioningService(this IServiceCollection services)
     {
         services.AddApiVersioning(options => options.ReportApiVersions = true)
@@ -168,6 +205,33 @@ public static class ServiceCollectionConfiguration
         return services;
     }
 
+
+    public static IServiceCollection AddDistributedCacheService(this IServiceCollection services, IConfiguration  configuration)
+    {
+        var redisConfiguration = new RedisConfiguration();
+        configuration.GetSection("RedisConfiguration").Bind(redisConfiguration);
+
+        if (!redisConfiguration.Enabled)
+        {
+            throw new BadRequestException("REDIS configuration is missing required value");
+        }
+        Log.Information("REDIS LOADING...");
+
+        services.AddSingleton(redisConfiguration);
+        services.AddSingleton<IConnectionMultiplexer>(_ =>
+            ConnectionMultiplexer.Connect($"{redisConfiguration.Host}:{redisConfiguration.Port}"));
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = $"{redisConfiguration.Host}:{redisConfiguration.Port}";
+        });
+
+        services.AddScoped(typeof(ILoggingExtension<>), typeof(LoggingExtension<>));
+        services.AddScoped<IDistributedCacheService, DistributedCacheService>();
+        services.Decorate<IDistributedCacheService, LoggingDistributedCacheService>();
+
+        Log.Information("REDIS LOADING SUCCESS...");
+        return services;
+    }
 
 public static WebApplication UseCompressionService(this WebApplication app)
     {

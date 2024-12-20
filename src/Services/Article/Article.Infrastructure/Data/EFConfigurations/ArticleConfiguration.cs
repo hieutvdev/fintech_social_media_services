@@ -1,4 +1,5 @@
-﻿using Article.Domain.Models;
+﻿using Article.Domain.Enums;
+using Article.Domain.Models;
 using Article.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -20,12 +21,17 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article.Domain.Mode
         builder.Property(a => a.AuthorId).HasConversion(
             authorId => authorId.Value, dbId => AuthorId.Of(dbId));
 
+        builder.Property(a => a.Type).HasDefaultValue((ArticleType)1);
+        
+
         builder.HasMany(a => a.ArticleCategories)
             .WithOne()
-            .HasForeignKey(a => a.ArticleId);
+            .HasForeignKey(a => a.ArticleId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(a => a.ArticleTags)
             .WithOne()
-            .HasForeignKey(a => a.ArticleId);
+            .HasForeignKey(a => a.ArticleId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

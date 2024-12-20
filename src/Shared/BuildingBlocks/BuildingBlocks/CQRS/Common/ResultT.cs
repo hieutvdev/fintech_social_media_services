@@ -9,6 +9,7 @@ public class ResultT<TValue> : Result
     public TValue Value => IsSuccess
         ? _value!
         : throw new InvalidOperationException("The value of a failure result can not be accessed");
+    
 
     public static implicit operator ResultT<TValue>(TValue value) => Create(value);
 }

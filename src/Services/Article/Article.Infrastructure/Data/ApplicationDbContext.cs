@@ -23,6 +23,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<ArticleCategory> ArticleCategories => Set<ArticleCategory>();
 
     public DbSet<Tag> Tags => Set<Tag>();
+    public DbSet<ArticleRequestPublish> ArticleRequestPublishes => Set<ArticleRequestPublish>();
+    public DbSet<ProcessingStep> ProcessingSteps => Set<ProcessingStep>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

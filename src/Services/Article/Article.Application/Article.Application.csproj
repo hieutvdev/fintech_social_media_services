@@ -16,7 +16,7 @@
 
     <ItemGroup>
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="Extensions\" />
+      <Folder Include="UseCases\V1\Models\Commands\" />
     </ItemGroup>
 
     <ItemGroup>

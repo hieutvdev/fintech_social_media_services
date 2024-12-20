@@ -1,8 +1,10 @@
 ﻿
 using BuildingBlocks.Exceptions.Handler;
+
+using System.Reflection;
+using BuildingBlocks.Behaviors;
 using FluentValidation;
 using Microsoft.FeatureManagement;
-using System.Reflection;
 
 namespace Mail.API.Installers;
 

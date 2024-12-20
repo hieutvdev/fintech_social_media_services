@@ -9,10 +9,14 @@
     <ItemGroup>
       <Folder Include="Configuration\" />
       <Folder Include="Data\" />
-      <Folder Include="DependencyInjection\Extensions\" />
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="Repositories\" />
       <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Groups.Application\Groups.Application.csproj" />
+      <ProjectReference Include="..\Groups.Domain\Groups.Domain.csproj" />
     </ItemGroup>
 
 </Project>

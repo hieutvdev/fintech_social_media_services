@@ -57,7 +57,7 @@ public class JwtTokenService : IJwtTokenService
             Audience = _jwtConfiguration.Audience,
             Subject = new ClaimsIdentity(claims),
             SigningCredentials = new SigningCredentials(singingKey, SecurityAlgorithms.HmacSha256),
-            Expires = DateTime.UtcNow.AddDays(2)
+            Expires = DateTime.UtcNow.AddDays(30)
         };
 
         var token = tokenHandler.CreateToken(tokenDescriptor);

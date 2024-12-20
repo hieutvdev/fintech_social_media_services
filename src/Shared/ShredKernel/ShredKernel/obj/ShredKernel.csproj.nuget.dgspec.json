@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {}
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
+    "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
+        "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
         "projectName": "ShredKernel",
-        "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
+        "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj",
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
+        "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +33,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,10 +51,6 @@
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[8.2.5, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.0.1, )"
             }
           },
           "imports": [
@@ -70,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -34,7 +34,6 @@ public class KafkaConsumerBackgroundService : BackgroundService
 
             using (var scope = _serviceProvider.CreateScope())
             {
-              
                 var sendMailService = scope.ServiceProvider.GetRequiredService<ISendMailService>();
                 await sendMailService.SendMailConfirmAccountAsync(value, stoppingToken);
             }

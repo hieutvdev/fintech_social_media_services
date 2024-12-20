@@ -10,6 +10,6 @@ public class ApplicationRoleConfiguration : IEntityTypeConfiguration<Application
     {
        
         builder.ToTable("tbl.Roles");
-        
+        builder.Property(r => r.Active).HasDefaultValue(true);
     }
 }

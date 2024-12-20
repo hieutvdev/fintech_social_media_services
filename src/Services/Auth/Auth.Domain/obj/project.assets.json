@@ -1598,6 +1598,23 @@
           }
         }
       },
+      "Scrutor/4.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyModel": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Scrutor.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Scrutor.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Serilog/4.0.1": {
         "type": "package",
         "compile": {
@@ -2435,10 +2452,12 @@
           "MicroElements.Swashbuckle.FluentValidation": "6.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
           "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.8",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "8.0.1",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.1",
           "Microsoft.FeatureManagement.AspNetCore": "3.2.0",
           "Newtonsoft.Json": "13.0.3",
+          "Scrutor": "4.2.2",
           "Serilog": "4.0.1",
           "Serilog.AspNetCore": "8.0.2",
           "ShredKernel": "1.0.0",
@@ -2456,8 +2475,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "MassTransit": "8.2.5",
-          "MassTransit.RabbitMQ": "8.2.5",
-          "MediatR": "12.0.1"
+          "MassTransit.RabbitMQ": "8.2.5"
         },
         "compile": {
           "bin/placeholder/ShredKernel.dll": {}
@@ -4795,6 +4813,29 @@
         "rabbitmq.client.nuspec"
       ]
     },
+    "Scrutor/4.2.2": {
+      "sha512": "t5VIYA7WJXoJJo7s4DoHakMGwTu+MeEnZumMOhTCH7kz9xWha24G7dJNxWrHPlu0ZdZAS4jDZCxxAnyaBh7uYw==",
+      "type": "package",
+      "path": "scrutor/4.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Scrutor.dll",
+        "lib/net461/Scrutor.pdb",
+        "lib/net461/Scrutor.xml",
+        "lib/net6.0/Scrutor.dll",
+        "lib/net6.0/Scrutor.pdb",
+        "lib/net6.0/Scrutor.xml",
+        "lib/netcoreapp3.1/Scrutor.dll",
+        "lib/netcoreapp3.1/Scrutor.pdb",
+        "lib/netcoreapp3.1/Scrutor.xml",
+        "lib/netstandard2.0/Scrutor.dll",
+        "lib/netstandard2.0/Scrutor.pdb",
+        "lib/netstandard2.0/Scrutor.xml",
+        "scrutor.4.2.2.nupkg.sha512",
+        "scrutor.nuspec"
+      ]
+    },
     "Serilog/4.0.1": {
       "sha512": "pzeDRXdpSLSsgBHpZcmpIDxqMy845Ab4s+dfnBg0sN9h8q/4Wo3vAoe0QCGPze1Q06EVtEPupS+UvLm8iXQmTQ==",
       "type": "package",
@@ -6160,33 +6201,31 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+      "projectUniqueName": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
       "projectName": "Auth.Domain",
-      "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
+      "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\Auth.Domain.csproj",
       "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\obj\\",
+      "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Auth\\Auth.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
-              "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
+            "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+              "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
             },
-            "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
-              "projectPath": "D:\\workspace\\BE\\microservices\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
+            "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj": {
+              "projectPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\ShredKernel.csproj"
             }
           }
         }
@@ -6195,6 +6234,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6232,7 +6276,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
