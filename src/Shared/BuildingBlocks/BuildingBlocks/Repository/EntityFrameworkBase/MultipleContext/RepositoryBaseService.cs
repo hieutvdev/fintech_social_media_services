@@ -143,7 +143,13 @@ public class RepositoryBaseService<TContext> : IRepositoryBaseService<TContext> 
 
     public T QueryFirst<T>(string qr = "", object pr = null, CommandType commandType = CommandType.Text)
     {
-        throw new NotImplementedException();
+        DbConnection connection = this._sqlConnection;
+        string str = qr;
+        object obj = pr;
+        CommandType? type1 = new CommandType?(commandType);
+        int? type2 = new int?();
+        CommandType? type3 = type1;
+        return SqlMapper.QueryFirst<T>((IDbConnection)connection, str, obj, (IDbTransaction)null, type2, type3);
     }
 
     public Task<IEnumerable<T>> QueryAsync<T>(string qr = "", object pr = null, CommandType commandType = CommandType.Text)
