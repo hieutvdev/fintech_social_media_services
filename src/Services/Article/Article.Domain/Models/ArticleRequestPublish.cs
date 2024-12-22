@@ -14,6 +14,9 @@ public class ArticleRequestPublish : Entity<ArticleRequestPublishId>
     
     public int Status { get; private set; }
     
+    private readonly List<ProcessingStep> _processingSteps = new();
+    public IReadOnlyList<ProcessingStep> ProcessingSteps => _processingSteps.AsReadOnly();
+    
     
     public static ArticleRequestPublish Create(ArticleRequestPublishId articleRequestPublishId, ArticleId articleId, string name, string description)
     {
@@ -32,7 +35,7 @@ public class ArticleRequestPublish : Entity<ArticleRequestPublishId>
         return articleRequestPublish;
     }
     
-    public void Update(string name, string description, int status)
+    public void Update(ArticleId articleId,string name, string description, int status)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);
         ArgumentException.ThrowIfNullOrWhiteSpace(description);
@@ -41,7 +44,7 @@ public class ArticleRequestPublish : Entity<ArticleRequestPublishId>
         {
             throw new ArgumentOutOfRangeException(nameof(status), "Invalid status value.");
         }
-        
+        ArticleId = articleId;
         Name = name;
         Description = description;
         Status = status;

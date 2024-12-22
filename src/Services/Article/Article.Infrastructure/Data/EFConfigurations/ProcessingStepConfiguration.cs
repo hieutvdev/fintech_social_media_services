@@ -1,4 +1,5 @@
 ﻿using Article.Domain.Models;
+using Article.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,6 +9,9 @@ public class ProcessingStepConfiguration : IEntityTypeConfiguration<ProcessingSt
 {
     public void Configure(EntityTypeBuilder<ProcessingStep> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(pc => pc.Id);
+        
+        builder.Property(r => r.Id).HasConversion(
+            processingStepId => processingStepId.Value, dbId => ProcessingStepId.Of(dbId));
     }
 }

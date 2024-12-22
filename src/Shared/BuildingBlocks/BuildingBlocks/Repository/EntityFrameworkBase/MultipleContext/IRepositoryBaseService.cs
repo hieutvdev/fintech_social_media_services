@@ -12,7 +12,7 @@ public interface IRepositoryBaseService<TContext> : IDapperCore, IDisposable whe
 
     IQueryable<T> Where<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot;
 
-    IQueryable<IQueryable<T>> WhereAsync<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot;
+    Task<IQueryable<T>> WhereAsync<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot;
     
     IQueryable<T> WhereTracking<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot;
 
@@ -48,5 +48,5 @@ public interface IRepositoryBaseService<TContext> : IDapperCore, IDisposable whe
     T? FirstOrDefault<T>(Expression<Func<T?, bool>> condition) where T : class, IAggregateRoot;
 
     Task<int> UpdateOrInsertEntities<T>(List<T> updateEntities, Expression<Func<T, bool>> condition,
-        Func<T, T, bool> isEqual, bool save = true) where T : class, IAggregateRoot;
+        Func<T, T, bool>? isEqual, bool save = true) where T : class, IAggregateRoot;
 }

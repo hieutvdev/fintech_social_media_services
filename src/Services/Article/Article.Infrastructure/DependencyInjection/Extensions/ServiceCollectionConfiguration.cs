@@ -8,6 +8,7 @@ using Article.Infrastructure.Services;
 using BuildingBlocks.DependencyInjection.Extensions;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Messaging.Messaging.Kafka;
+using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
 using BuildingBlocks.Security;
 using Microsoft.EntityFrameworkCore;
@@ -79,6 +80,7 @@ public static class ServiceCollectionConfiguration
     private static IServiceCollection RegisterRepos(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepositoryService<,,>), typeof(RepositoryService<,,>));
+        services.AddSingleton(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
         //services.AddTransient<IRepositoryServiceV2, RepositoryServiceV2>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ITagRepository, TagRepository>();
