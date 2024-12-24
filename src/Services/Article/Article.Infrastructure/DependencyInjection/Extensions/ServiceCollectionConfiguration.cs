@@ -87,6 +87,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IArticleRepository, ArticleRepository>();
         services.AddScoped<IArticleRequestPublishRepository, ArticleRequestPublishRepository>();
         //services.Decorate<ICategoryRepository, CachedCategoryRepository>();
+        services.AddScoped<IProcessingStepRepository, ProcessingStepRepository>();
         return services;
     }
 
@@ -125,6 +126,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<ITagService, TagService>();
         services.AddScoped<IArticleService, ArticleService>();
         services.AddScoped<IArticleRequestPublishService, ArticleRequestPublishService>();
+        services.AddScoped<IProcessingStepService, ProcessingStepService>();
         return services;
     }
 }

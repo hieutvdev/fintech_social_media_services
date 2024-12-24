@@ -1,6 +1,3 @@
 ﻿namespace Article.Application.DTOs.Request.ProcessingStep;
 
-public class UpdateProcessingRequestDto
-{
-    
-}
+public record UpdateProcessingRequestDto(string Id, string Description, int Status, string HandlerId);

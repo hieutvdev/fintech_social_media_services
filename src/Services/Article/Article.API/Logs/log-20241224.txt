@@ -1,0 +1,4 @@
+2024-12-24 09:11:14.138 +07:00 [ERR] An error occurred using the connection to database 'article' on server 'tcp://localhost:6001'.
+2024-12-24 09:11:18.267 +07:00 [ERR] An error occurred using the connection to database 'article' on server 'tcp://localhost:6001'.
+2024-12-24 09:11:23.435 +07:00 [ERR] An error occurred using the connection to database 'article' on server 'tcp://localhost:6001'.
+2024-12-24 09:11:30.686 +07:00 [ERR] An error occurred using the connection to database 'article' on server 'tcp://localhost:6001'.

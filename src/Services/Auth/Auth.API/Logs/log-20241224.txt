@@ -1,0 +1,70 @@
+2024-12-24 11:04:15.176 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:04:15.223 +07:00 [ERR] 2024-12-24 04:04:15 - ERROR - /signin-facebook?error_code=1349220&error_message=Feature+unavailable%3A+Facebook+Login+is+currently+unavailable+for+this+app+as+we+are+updating+additional+details+for+this+app.+Please+try+again+later. - 0HN93PVM7NU97:00000007 - IP:::1 - [GET] - 0ms - Error:An error was encountered while handling the remote login. - InputParams:{}
+2024-12-24 11:08:52.105 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:08:52.138 +07:00 [ERR] 2024-12-24 04:08:52 - ERROR - /signin-facebook?error_code=1349168&error_message=URL+b%E1%BB%8B+ch%E1%BA%B7n%3A+Qu%C3%A1+tr%C3%ACnh+chuy%E1%BB%83n+h%C6%B0%E1%BB%9Bng+n%C3%A0y+kh%C3%B4ng+th%C3%A0nh+c%C3%B4ng+v%C3%AC+URI+chuy%E1%BB%83n+h%C6%B0%E1%BB%9Bng+kh%C3%B4ng+%C4%91%C6%B0%E1%BB%A3c+%C4%91%C6%B0a+v%C3%A0o+danh+s%C3%A1ch+h%E1%BB%A3p+l%E1%BB%87+trong+C%C3%A0i+%C4%91%E1%BA%B7t+OAuth+c%E1%BB%A7a+%E1%BB%A9ng+d%E1%BB%A5ng.+H%C3%A3y+%C4%91%E1%BA%A3m+b%E1%BA%A3o+%E1%BB%A9ng+d%E1%BB%A5ng+v%C3%A0+%C4%90%C4%83ng+nh%E1%BA%ADp+OAuth+tr%C3%AAn+web+%C4%91%E1%BB%81u+b%E1%BA%ADt+v%C3%A0+th%C3%AAm+t%E1%BA%A5t+c%E1%BA%A3+c%C3%A1c+mi%E1%BB%81n+%E1%BB%A9ng+d%E1%BB%A5ng+c%E1%BB%A7a+b%E1%BA%A1n+l%C3%A0m+URI+chuy%E1%BB%83n+h%C6%B0%E1%BB%9Bng+OAuth+h%E1%BB%A3p+l%E1%BB%87. - 0HN93Q2CBHQ5L:00000007 - IP:::1 - [GET] - 0ms - Error:An error was encountered while handling the remote login. - InputParams:{}
+2024-12-24 11:12:31.693 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authentication handler is registered for the scheme 'google'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, Bearer, Cookies, Facebook, Google. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("google",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ChallengeResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Auth.API.Middlewares.AuthMiddlewareV1.InvokeAsync(HttpContext context) in D:\workspaces\backend\net\fintech_social_media\src\Services\Auth\Auth.API\Middlewares\AuthMiddlewareV1.cs:line 37
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:12:31.722 +07:00 [ERR] 2024-12-24 04:12:31 - ERROR - /api/v1/sso/login/google - 0HN93Q4CHAQU8:00000009 - IP:::1 - [GET] - 0ms - Error:No authentication handler is registered for the scheme 'google'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, Bearer, Cookies, Facebook, Google. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("google",...)? - InputParams:{}
+2024-12-24 11:15:52.307 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:15:52.334 +07:00 [ERR] 2024-12-24 04:15:52 - ERROR - /signin-facebook?error_code=1349220&error_message=Hi%E1%BB%87n+kh%C3%B4ng+d%C3%B9ng+%C4%91%C6%B0%E1%BB%A3c+t%C3%ADnh+n%C4%83ng+n%C3%A0y%3A+Ph%C6%B0%C6%A1ng+th%E1%BB%A9c+%C4%91%C4%83ng+nh%E1%BA%ADp+b%E1%BA%B1ng+Facebook+hi%E1%BB%87n+ch%C6%B0a+d%C3%B9ng+%C4%91%C6%B0%E1%BB%A3c+cho+%E1%BB%A9ng+d%E1%BB%A5ng+n%C3%A0y+v%C3%AC+ch%C3%BAng+t%C3%B4i+%C4%91ang+c%E1%BA%ADp+nh%E1%BA%ADt+c%C3%A1c+chi+ti%E1%BA%BFt+b%E1%BB%95+sung+cho+%E1%BB%A9ng+d%E1%BB%A5ng.+H%C3%A3y+th%E1%BB%AD+l%E1%BA%A1i+v%C3%A0o+l%C3%BAc+kh%C3%A1c. - 0HN93Q6G3MKQ9:00000007 - IP:::1 - [GET] - 0ms - Error:An error was encountered while handling the remote login. - InputParams:{}
+2024-12-24 11:24:46.509 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:24:46.536 +07:00 [ERR] 2024-12-24 04:24:46 - ERROR - /signin-facebook?error_code=1349220&error_message=Hi%E1%BB%87n+kh%C3%B4ng+d%C3%B9ng+%C4%91%C6%B0%E1%BB%A3c+t%C3%ADnh+n%C4%83ng+n%C3%A0y%3A+Ph%C6%B0%C6%A1ng+th%E1%BB%A9c+%C4%91%C4%83ng+nh%E1%BA%ADp+b%E1%BA%B1ng+Facebook+hi%E1%BB%87n+ch%C6%B0a+d%C3%B9ng+%C4%91%C6%B0%E1%BB%A3c+cho+%E1%BB%A9ng+d%E1%BB%A5ng+n%C3%A0y+v%C3%AC+ch%C3%BAng+t%C3%B4i+%C4%91ang+c%E1%BA%ADp+nh%E1%BA%ADt+c%C3%A1c+chi+ti%E1%BA%BFt+b%E1%BB%95+sung+cho+%E1%BB%A9ng+d%E1%BB%A5ng.+H%C3%A3y+th%E1%BB%AD+l%E1%BA%A1i+v%C3%A0o+l%C3%BAc+kh%C3%A1c. - 0HN93QB6TJNHI:00000007 - IP:::1 - [GET] - 0ms - Error:An error was encountered while handling the remote login. - InputParams:{}
+2024-12-24 11:25:47.187 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-24 11:25:47.188 +07:00 [ERR] 2024-12-24 04:25:47 - ERROR - /api/v1/sso/auth/callback?state=CfDJ8PMQZdfXvchOpN1yUdaGGWcBPEK7CaWA&code=4%2F0AanRRruqtlI3Cb3XaqYUoHw2QWyA2372maNgqrva5gj95q0WCfU_G7KH6_qtQ3Sri1_Kjw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none - 0HN93QB6TJNHI:0000000D - IP:::1 - [GET] - 0ms - Error:An error was encountered while handling the remote login. - InputParams:{}

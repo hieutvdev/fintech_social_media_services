@@ -6,8 +6,11 @@ public class PaginatedResult<TEntity>(int pageIndex, int pageSize, long totalRec
     private const int DefaultPageSize = 20;
     private const int DefaultPageIndex = 0;
     
-    public int PageIndex { get; } = pageIndex <=0 ? DefaultPageIndex : pageIndex;
-    public int PageSize { get; } = pageSize <= 0 ? DefaultPageSize : pageSize > UpperPageSize ? UpperPageSize : pageSize;
+    // public int PageIndex { get; } = pageIndex <=0 ? DefaultPageIndex : pageIndex;
+    // public int PageSize { get; } = pageSize <= 0 ? DefaultPageSize : pageSize > UpperPageSize ? UpperPageSize : pageSize;
+
+    public int PageIndex { get; } = pageIndex; //<=0 ? DefaultPageIndex : pageIndex;
+    public int PageSize { get; } = pageSize;//<= 0 ? DefaultPageSize : pageSize > UpperPageSize ? UpperPageSize : pageSize;
     public long TotalRecord { get; } = totalRecord;
     public IEnumerable<TEntity> DataResponse { get; } = dataResponse;
 }

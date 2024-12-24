@@ -15,7 +15,7 @@ public class ProcessingStep : Entity<ProcessingStepId>, IAggregateRoot
     public string HandlerId { get; private set; } = default!;
     
     
-    public static ProcessingStep Create(ProcessingStepId processingStepId, ArticleRequestPublishId articleRequestPublishId, string description, string handlerId)
+    public static ProcessingStep Create(ProcessingStepId processingStepId, ArticleRequestPublishId articleRequestPublishId, string description, string handlerId, ProcessingStepStatus status)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(description);
         ArgumentException.ThrowIfNullOrWhiteSpace(handlerId);
@@ -26,7 +26,7 @@ public class ProcessingStep : Entity<ProcessingStepId>, IAggregateRoot
             ArticleRequestPublishId = articleRequestPublishId,
             Description = description,
             HandlerId = handlerId,
-            Status = (int)ProcessingStepStatus.PEDDING
+            Status = (int)status
         };
 
         return processingStep;

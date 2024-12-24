@@ -1,6 +1,3 @@
 ﻿namespace Article.Application.DTOs.Request.ProcessingStep;
 
-public class CreateProcessingRequestDto
-{
-    
-}
+public record CreateProcessingRequestDto(string ArticleRequestPublishId, string Description, string HandlerId, int Status);

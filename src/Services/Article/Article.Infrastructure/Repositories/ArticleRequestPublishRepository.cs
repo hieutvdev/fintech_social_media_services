@@ -235,7 +235,6 @@ public class ArticleRequestPublishRepository(IRepositoryBaseService<ApplicationD
 
         try
         {
-            
             var articleRequestPublishId = ArticleRequestPublishId.Of(Guid.Parse(payload.Id));
             var articleId = ArticleId.Of(Guid.Parse(payload.ArticleId));
         
