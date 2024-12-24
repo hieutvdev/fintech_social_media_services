@@ -80,11 +80,12 @@ public static class ServiceCollectionConfiguration
     private static IServiceCollection RegisterRepos(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepositoryService<,,>), typeof(RepositoryService<,,>));
-        services.AddSingleton(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
+        services.AddScoped(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
         //services.AddTransient<IRepositoryServiceV2, RepositoryServiceV2>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ITagRepository, TagRepository>();
         services.AddScoped<IArticleRepository, ArticleRepository>();
+        services.AddScoped<IArticleRequestPublishRepository, ArticleRequestPublishRepository>();
         //services.Decorate<ICategoryRepository, CachedCategoryRepository>();
         return services;
     }
@@ -123,6 +124,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IAuthorizeExtension, AuthorizeExtension>();
         services.AddScoped<ITagService, TagService>();
         services.AddScoped<IArticleService, ArticleService>();
+        services.AddScoped<IArticleRequestPublishService, ArticleRequestPublishService>();
         return services;
     }
 }

@@ -4,7 +4,7 @@ using ShredKernel.Aggregates;
 
 namespace Article.Domain.Models;
 
-public class ProcessingStep : Entity<ProcessingStepId>
+public class ProcessingStep : Entity<ProcessingStepId>, IAggregateRoot
 {
     public ArticleRequestPublishId ArticleRequestPublishId { get; private set; } = default!;
     

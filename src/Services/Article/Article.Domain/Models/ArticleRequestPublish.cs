@@ -4,7 +4,7 @@ using ShredKernel.Aggregates;
 
 namespace Article.Domain.Models;
 
-public class ArticleRequestPublish : Entity<ArticleRequestPublishId>
+public class ArticleRequestPublish : Entity<ArticleRequestPublishId>, IAggregateRoot
 {
     public ArticleId ArticleId { get; private set; } = default!;
 
@@ -16,8 +16,9 @@ public class ArticleRequestPublish : Entity<ArticleRequestPublishId>
     
     private readonly List<ProcessingStep> _processingSteps = new();
     public IReadOnlyList<ProcessingStep> ProcessingSteps => _processingSteps.AsReadOnly();
-    
-    
+
+    public Article Article { get; } = default!;
+
     public static ArticleRequestPublish Create(ArticleRequestPublishId articleRequestPublishId, ArticleId articleId, string name, string description)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);

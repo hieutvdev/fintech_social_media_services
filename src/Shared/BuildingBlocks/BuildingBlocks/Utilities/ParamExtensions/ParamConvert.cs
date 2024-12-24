@@ -32,4 +32,13 @@ public static class ParamConvert
 
       return (searchBaseModel, paginationRequest);
    }
+
+   public static PaginationRequest ToPaginationRequest(this SearchListModel searchListModel)
+   {
+      return new PaginationRequest(
+         PageIndex: searchListModel.PageIndex ?? 0,
+         PageSize: searchListModel.PageSize ?? 10);
+   }
+
+
 }

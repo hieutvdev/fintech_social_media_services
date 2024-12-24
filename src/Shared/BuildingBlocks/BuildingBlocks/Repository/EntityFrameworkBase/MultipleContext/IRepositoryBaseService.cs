@@ -2,6 +2,7 @@
 using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Query;
 using ShredKernel.Aggregates;
 
 namespace BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
@@ -49,4 +50,11 @@ public interface IRepositoryBaseService<TContext> : IDapperCore, IDisposable whe
 
     Task<int> UpdateOrInsertEntities<T>(List<T> updateEntities, Expression<Func<T, bool>> condition,
         Func<T, T, bool>? isEqual, bool save = true) where T : class, IAggregateRoot;
+
+    Task<bool> ExecuteUpdateAsync<T>(
+        Expression<Func<T, bool>> condition,
+        Expression<Func<SetPropertyCalls<T>, SetPropertyCalls<T>>> updateExpression,
+        CancellationToken cancellationToken = default) where T : class, IAggregateRoot;
+    
+    Task<bool> ExecuteDeleteAsync<T>(Expression<Func<T, bool>> condition, CancellationToken cancellationToken = default) where T : class, IAggregateRoot;
 }

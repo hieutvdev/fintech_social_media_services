@@ -2,7 +2,7 @@
 
 public class PaginationRequest(int PageIndex = 1, int PageSize = 10)
 {
-    private const int UpperPageSize = 200;
+    private const int UpperPageSize = 30;
     private const int DefaultPageSize = 20;
     private const int DefaultPageIndex = 0;
 

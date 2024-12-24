@@ -7,6 +7,7 @@ using BuildingBlocks.Repository.EntityFrameworkBase.SingleContext;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
 using Serilog;
 using ShredKernel.Aggregates;
@@ -206,6 +207,37 @@ public class RepositoryBaseService<TContext> : IRepositoryBaseService<TContext> 
         existEntities = (List<T>)null!;
         return isSuccess;
     }
+
+    public async Task<bool> ExecuteUpdateAsync<T>(Expression<Func<T, bool>> condition, Expression<Func<SetPropertyCalls<T>, SetPropertyCalls<T>>> updateExpression,
+        CancellationToken cancellationToken = default) where T : class, IAggregateRoot
+    {
+        if (condition == null || updateExpression == null)
+        {
+            throw new ArgumentNullException(nameof(condition), "Condition and update expression must be provided.");
+        }
+
+        var updatedCount = await _context.Set<T>()
+            .Where(condition)
+            .ExecuteUpdateAsync(updateExpression, cancellationToken);
+
+        return updatedCount > 0;
+    }
+
+    public async Task<bool> ExecuteDeleteAsync<T>(Expression<Func<T, bool>> condition, CancellationToken cancellationToken = default) where T : class, IAggregateRoot
+    {
+        if (condition == null)
+        {
+            throw new ArgumentNullException(nameof(condition), "Condition must be provided.");
+        }
+
+        var deletedCount = await _context.Set<T>()
+            .Where(condition)
+            .ExecuteDeleteAsync(cancellationToken);
+        
+        return deletedCount > 0;
+    }
+
+
 
     public void Dispose() => GC.SuppressFinalize((object)this);
     

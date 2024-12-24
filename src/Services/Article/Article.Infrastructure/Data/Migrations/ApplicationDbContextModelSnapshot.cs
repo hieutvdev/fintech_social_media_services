@@ -94,6 +94,44 @@ namespace Article.Infrastructure.Data.Migrations
                     b.ToTable("ArticleCategories");
                 });
 
+            modelBuilder.Entity("Article.Domain.Models.ArticleRequestPublish", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ArticleId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("ArticleRequestPublishes");
+                });
+
             modelBuilder.Entity("Article.Domain.Models.ArticleTag", b =>
                 {
                     b.Property<Guid>("ArticleId")
@@ -148,6 +186,44 @@ namespace Article.Infrastructure.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Article.Domain.Models.ProcessingStep", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ArticleRequestPublishId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("HandlerId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleRequestPublishId");
+
+                    b.ToTable("ProcessingSteps");
+                });
+
             modelBuilder.Entity("Article.Domain.Models.Tag", b =>
                 {
                     b.Property<Guid>("Id")
@@ -195,6 +271,17 @@ namespace Article.Infrastructure.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Article.Domain.Models.ArticleRequestPublish", b =>
+                {
+                    b.HasOne("Article.Domain.Models.Article", "Article")
+                        .WithMany()
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
             modelBuilder.Entity("Article.Domain.Models.ArticleTag", b =>
                 {
                     b.HasOne("Article.Domain.Models.Article", null)
@@ -210,11 +297,25 @@ namespace Article.Infrastructure.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Article.Domain.Models.ProcessingStep", b =>
+                {
+                    b.HasOne("Article.Domain.Models.ArticleRequestPublish", null)
+                        .WithMany("ProcessingSteps")
+                        .HasForeignKey("ArticleRequestPublishId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Article.Domain.Models.Article", b =>
                 {
                     b.Navigation("ArticleCategories");
 
                     b.Navigation("ArticleTags");
+                });
+
+            modelBuilder.Entity("Article.Domain.Models.ArticleRequestPublish", b =>
+                {
+                    b.Navigation("ProcessingSteps");
                 });
 
             modelBuilder.Entity("Article.Domain.Models.Category", b =>

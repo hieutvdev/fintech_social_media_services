@@ -17,7 +17,11 @@ public class ArticleRequestPublishConfiguration : IEntityTypeConfiguration<Artic
         builder.Property(a => a.ArticleId).HasConversion(
             articleId => articleId.Value, dbId => ArticleId.Of(dbId));
         
-        
+        builder.HasOne(r => r.Article)
+            .WithMany()
+            .HasForeignKey(r => r.ArticleId)
+            .OnDelete(DeleteBehavior.Cascade);
+            
         builder.HasMany(a => a.ProcessingSteps)
             .WithOne()
             .HasForeignKey(a => a.ArticleRequestPublishId)
