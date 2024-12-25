@@ -10,7 +10,7 @@ using BuildingBlocks.Exceptions;
 using BuildingBlocks.Pagination;
 using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
 using BuildingBlocks.Security;
-using Marten;
+using Microsoft.EntityFrameworkCore;
 using ShredKernel.Specifications;
 using QueryableExtensions = ShredKernel.Specifications.QueryableExtensions;
 
@@ -144,7 +144,7 @@ public class ProcessingStepRepository(IRepositoryBaseService<ApplicationDbContex
                 Status = r.Status,
                 ArticleReqId = r.ArticleRequestPublishId,
                 HandlerId = r.HandlerId
-            }).WhereIf(!string.IsNullOrEmpty(filter.KeySearch), r => r.Description.ToLower().Contains(filter.KeySearch!));
+            }).WhereIf(!string.IsNullOrEmpty(filter.KeySearch), r => r.Description.ToLower().Contains(filter.KeySearch!.ToLower()));
 
             if (!string.IsNullOrEmpty(filter.AritcleReqPubId))
             {
@@ -200,7 +200,7 @@ public class ProcessingStepRepository(IRepositoryBaseService<ApplicationDbContex
                 Status = r.Status,
                 ArticleReqId = r.ArticleRequestPublishId,
                 HandlerId = r.HandlerId
-            }).WhereIf(!string.IsNullOrEmpty(filter.KeySearch), r => r.Description.ToLower().Contains(filter.KeySearch!))
+            }).WhereIf(!string.IsNullOrEmpty(filter.KeySearch), r => r.Description.ToLower().Contains(filter.KeySearch!.ToLower()))
             .Where(r => r.HandlerId == handlerId);
 
             if (!string.IsNullOrEmpty(filter.AritcleReqPubId))
