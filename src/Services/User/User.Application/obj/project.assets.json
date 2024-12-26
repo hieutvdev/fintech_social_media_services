@@ -69,6 +69,110 @@
           }
         }
       },
+      "AspNetCore.HealthChecks.Kafka/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Confluent.Kafka": "2.3.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/HealthChecks.Kafka.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/HealthChecks.Kafka.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AspNetCore.HealthChecks.NpgSql/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0",
+          "Npgsql": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/HealthChecks.NpgSql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HealthChecks.NpgSql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AspNetCore.HealthChecks.Redis/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0",
+          "StackExchange.Redis": "2.7.4"
+        },
+        "compile": {
+          "lib/net6.0/HealthChecks.Redis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/HealthChecks.Redis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AspNetCore.HealthChecks.UI.Client/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AspNetCore.HealthChecks.UI.Core": "8.0.1",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/HealthChecks.UI.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HealthChecks.UI.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "AspNetCore.HealthChecks.UI.Core/8.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/HealthChecks.UI.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/HealthChecks.UI.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Confluent.Kafka/2.5.3": {
         "type": "package",
         "dependencies": {
@@ -975,6 +1079,22 @@
           }
         }
       },
+      "Npgsql/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Pipelines.Sockets.Unofficial/2.2.8": {
         "type": "package",
         "dependencies": {
@@ -1183,9 +1303,10 @@
           }
         }
       },
-      "StackExchange.Redis/2.6.122": {
+      "StackExchange.Redis/2.7.4": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "Pipelines.Sockets.Unofficial": "2.2.8"
         },
         "compile": {
@@ -1520,6 +1641,104 @@
         "icon.png",
         "lib/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll",
         "lib/net8.0/Asp.Versioning.Mvc.ApiExplorer.xml"
+      ]
+    },
+    "AspNetCore.HealthChecks.Kafka/8.0.1": {
+      "sha512": "l6ebOHvOufDBlwru2x0vutbqkpOVR7xc8gLjRnK9y1a7sTh2zw8h3wj/quK3GFMpVGAXHIpMQt3fqxsLidgl9A==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.kafka/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.kafka.8.0.1.nupkg.sha512",
+        "aspnetcore.healthchecks.kafka.nuspec",
+        "icon.png",
+        "lib/net6.0/HealthChecks.Kafka.dll",
+        "lib/net6.0/HealthChecks.Kafka.xml",
+        "lib/netstandard2.0/HealthChecks.Kafka.dll",
+        "lib/netstandard2.0/HealthChecks.Kafka.xml"
+      ]
+    },
+    "AspNetCore.HealthChecks.NpgSql/8.0.1": {
+      "sha512": "SQAXxr70LjGdDzSXsr2hxYqcBRhMTddL/kHRs5ftpysdVw6UQhY2/mHl4Q+6yd8ajJsQW5My4tmqk1/zyBAY8w==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.npgsql/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "aspnetcore.healthchecks.npgsql.8.0.1.nupkg.sha512",
+        "aspnetcore.healthchecks.npgsql.nuspec",
+        "icon.png",
+        "lib/net7.0/HealthChecks.NpgSql.dll",
+        "lib/net7.0/HealthChecks.NpgSql.xml",
+        "lib/net8.0/HealthChecks.NpgSql.dll",
+        "lib/net8.0/HealthChecks.NpgSql.xml",
+        "lib/netstandard2.0/HealthChecks.NpgSql.dll",
+        "lib/netstandard2.0/HealthChecks.NpgSql.xml"
+      ]
+    },
+    "AspNetCore.HealthChecks.Redis/8.0.1": {
+      "sha512": "45jqq4ydvmm7yKpTf0jEpUuYloe2vlytN9dasmqwmQyorpNbjdvWuyvSmjVZM5nBa5e5ryF5MU+F7bXv6Zp2vQ==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.redis/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.redis.8.0.1.nupkg.sha512",
+        "aspnetcore.healthchecks.redis.nuspec",
+        "icon.png",
+        "lib/net6.0/HealthChecks.Redis.dll",
+        "lib/net6.0/HealthChecks.Redis.xml",
+        "lib/netstandard2.0/HealthChecks.Redis.dll",
+        "lib/netstandard2.0/HealthChecks.Redis.xml"
+      ]
+    },
+    "AspNetCore.HealthChecks.UI.Client/8.0.1": {
+      "sha512": "nhC6KIoB/EtTbH3uGm2J6EHEUyTJuETUARFePbmrnA+zjbwsirzIVUQl46qIjvyPABhK0e7Rk+AxcRqC6zikqA==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.ui.client/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.ui.client.8.0.1.nupkg.sha512",
+        "aspnetcore.healthchecks.ui.client.nuspec",
+        "icon.png",
+        "lib/net6.0/HealthChecks.UI.Client.dll",
+        "lib/net6.0/HealthChecks.UI.Client.xml",
+        "lib/net7.0/HealthChecks.UI.Client.dll",
+        "lib/net7.0/HealthChecks.UI.Client.xml",
+        "lib/net8.0/HealthChecks.UI.Client.dll",
+        "lib/net8.0/HealthChecks.UI.Client.xml"
+      ]
+    },
+    "AspNetCore.HealthChecks.UI.Core/8.0.1": {
+      "sha512": "Vn00MOJ1I0HSqyP7Bt9v0pr0AIgbrXMjL/KFwW+sRwLRogOtep8BWGimd8XYRCbCDLrAi7VSArU02f6pEIw69w==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.ui.core/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.ui.core.8.0.1.nupkg.sha512",
+        "aspnetcore.healthchecks.ui.core.nuspec",
+        "icon.png",
+        "lib/net6.0/HealthChecks.UI.Core.dll",
+        "lib/net6.0/HealthChecks.UI.Core.xml"
+      ]
+    },
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
       ]
     },
     "Confluent.Kafka/2.5.3": {
@@ -2894,6 +3113,29 @@
         "packageIcon.png"
       ]
     },
+    "Npgsql/8.0.0": {
+      "sha512": "Qiz74U+O7Mv4knrsXgKVYGJjgwoziK+aMFZqz7PtKR3vyGIhZA0tnW6HoUnL3X+YqtmVuhmoKkN8LDWEHMxPbw==",
+      "type": "package",
+      "path": "npgsql/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Npgsql.dll",
+        "lib/net6.0/Npgsql.xml",
+        "lib/net7.0/Npgsql.dll",
+        "lib/net7.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.8.0.0.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
     "Pipelines.Sockets.Unofficial/2.2.8": {
       "sha512": "zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
       "type": "package",
@@ -3175,10 +3417,10 @@
         "serilog.sinks.file.nuspec"
       ]
     },
-    "StackExchange.Redis/2.6.122": {
-      "sha512": "wp7mvGpFXaevfZ07/SDeh/6YHUJEgwJIGyjbDWKBYbPwKMJQYFz9zFEmBptqtVzqvSgft5nlewwutoaMaG0LPA==",
+    "StackExchange.Redis/2.7.4": {
+      "sha512": "lD6a0lGOCyV9iuvObnzStL74EDWAyK31w6lS+Md9gIz1eP4U6KChDIflzTdtrktxlvVkeOvPtkaYOcm4qjbHSw==",
       "type": "package",
-      "path": "stackexchange.redis/2.6.122",
+      "path": "stackexchange.redis/2.7.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3192,7 +3434,7 @@
         "lib/netcoreapp3.1/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.6.122.nupkg.sha512",
+        "stackexchange.redis.2.7.4.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
@@ -3538,6 +3780,11 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AspNetCore.HealthChecks.Kafka >= 8.0.1",
+      "AspNetCore.HealthChecks.NpgSql >= 8.0.1",
+      "AspNetCore.HealthChecks.Redis >= 8.0.1",
+      "AspNetCore.HealthChecks.UI.Client >= 8.0.1",
+      "AutoMapper >= 13.0.1",
       "BuildingBlocks >= 1.0.0",
       "BuildingBlocks.Messaging >= 1.0.0",
       "ShredKernel >= 1.0.0",
@@ -3599,6 +3846,28 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "AspNetCore.HealthChecks.Kafka": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "AspNetCore.HealthChecks.NpgSql": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "AspNetCore.HealthChecks.Redis": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "AspNetCore.HealthChecks.UI.Client": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

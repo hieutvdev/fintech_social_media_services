@@ -28,6 +28,7 @@ public class UserInfo : Entity<UserInfoId>, IAggregateRoot
     public int UserType { get; private set; }
 
     public string? Hobbies { get; private set; }
+    
 
 
     public static UserInfo Create(

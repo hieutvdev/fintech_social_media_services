@@ -1,0 +1,67 @@
+﻿version: '3.7'
+
+services:
+  
+#  user-api:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: user-api
+#    ports:
+#      - "6004:3000"
+#    networks:
+#      - app-network
+#    depends_on:
+#      user-db:
+#        condition: service_healthy
+#      redis:
+#        condition: service_healthy
+#    restart: unless-stopped
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+  
+  user-db:
+    image: postgres:latest
+    container_name: user-db
+    ports:
+      - "6002:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: user
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  
+  redis:
+    image: redis:latest
+    container_name: redis-user-container
+    ports:
+      - "6003:6379"
+    networks:
+      - app-network
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  app-network:
+
+volumes:
+  redis-data:
+    driver: local
+  user-db-data:
+    driver: local

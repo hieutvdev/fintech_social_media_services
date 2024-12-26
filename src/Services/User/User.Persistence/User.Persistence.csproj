@@ -7,8 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abstractions\" />
-      <Folder Include="APIs\" />
+      <Folder Include="Data\Extensions\" />
+      <Folder Include="Data\Interceptors\" />
+      <Folder Include="Data\Migrations\" />
+      <Folder Include="Repositories\" />
     </ItemGroup>
 
     <ItemGroup>

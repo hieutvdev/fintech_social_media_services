@@ -7,15 +7,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data\" />
-      <Folder Include="DependencyInjection\" />
-      <Folder Include="DTOs\" />
+        <PackageReference Include="AspNetCore.HealthChecks.Kafka" Version="8.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.1" />
+        <PackageReference Include="AutoMapper" Version="13.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="8.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="DependencyInjection\Options\" />
+      <Folder Include="DTOs\Request\" />
+      <Folder Include="DTOs\Response\" />
       <Folder Include="Exceptions\" />
       <Folder Include="Extensions\" />
-      <Folder Include="Mappers\" />
       <Folder Include="Repositories\" />
       <Folder Include="Services\" />
-      <Folder Include="UseCases\" />
+      <Folder Include="UseCases\Commands\" />
+      <Folder Include="UseCases\Models\" />
+      <Folder Include="UseCases\Queries\" />
+      <Folder Include="UseCases\Validators\" />
     </ItemGroup>
 
     <ItemGroup>

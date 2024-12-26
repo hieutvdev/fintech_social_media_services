@@ -8,6 +8,13 @@ public class UserType : Entity<int>, IAggregateRoot
     
     public string Description { get; private set; } = default!;
     
+    
+    private readonly List<UserInfo> _userInfos = new();
+    
+    public IReadOnlyCollection<UserInfo> UserInfos => _userInfos.ToList();
+    
+    
+    
     public static UserType Create(string name, string description)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(name);

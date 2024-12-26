@@ -10,7 +10,6 @@
       <Folder Include="Configuration\" />
       <Folder Include="DependencyInjection\Extensions\" />
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="Repositories\" />
       <Folder Include="Services\" />
     </ItemGroup>
 

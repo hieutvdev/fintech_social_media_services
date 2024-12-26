@@ -56,6 +56,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "AspNetCore.HealthChecks.Kafka": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCore.HealthChecks.Redis": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCore.HealthChecks.UI.Client": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
