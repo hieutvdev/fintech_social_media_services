@@ -7,9 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Extensions\" />
-      <Folder Include="Data\Interceptors\" />
       <Folder Include="Data\Migrations\" />
+      <Folder Include="DependencyInjection\Options\" />
       <Folder Include="Repositories\" />
     </ItemGroup>
 
@@ -19,6 +18,16 @@
       <ProjectReference Include="..\..\..\Shared\ShredKernel\ShredKernel\ShredKernel.csproj" />
       <ProjectReference Include="..\User.Application\User.Application.csproj" />
       <ProjectReference Include="..\User.Infrastructure\User.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+        <PackageReference Include="Scrutor" Version="4.2.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     </ItemGroup>
 
 </Project>

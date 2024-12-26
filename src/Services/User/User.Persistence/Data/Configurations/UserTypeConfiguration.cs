@@ -8,6 +8,13 @@ public class UserTypeConfiguration : IEntityTypeConfiguration<UserType>
 {
     public void Configure(EntityTypeBuilder<UserType> builder)
     {
-        throw new NotImplementedException();
+        builder.HasKey(r => r.Id);
+
+        builder.Property(r => r.Name).IsRequired();
+
+        builder.HasMany(r => r.UserInfos)
+            .WithOne()
+            .HasForeignKey(r => r.UserType)
+            .OnDelete(DeleteBehavior.ClientSetNull);
     }
 }

@@ -1,13 +1,26 @@
+using User.Application.DependencyInjection.Extensions;
+using User.Infrastructure.DependencyInjection.Extensions;
+using User.Persistence.DependencyInjection.Extensions;
+using User.Presentation.DependencyInjection.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+
+
+
+builder.Services.AddApplicationService()
+    .AddPersistenceService(builder.Configuration)
+    .AddInfrastructureService()
+    .AddPresentationService();
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -15,6 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 
 var summaries = new[]
 {

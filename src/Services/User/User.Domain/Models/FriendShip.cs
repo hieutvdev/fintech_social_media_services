@@ -3,7 +3,7 @@ using User.Domain.ValuesObjects;
 
 namespace User.Domain.Models;
 
-public class FriendShip : Entity<FriendRequestId> , IAggregateRoot
+public class FriendShip : Entity<FriendShipId> , IAggregateRoot
 {
     public string UserId { get; private set; } = default!;
     
@@ -12,7 +12,7 @@ public class FriendShip : Entity<FriendRequestId> , IAggregateRoot
     public int Status { get; private set; }
 
 
-    public static FriendShip Create(FriendRequestId id, string userId, string friendId)
+    public static FriendShip Create(FriendShipId id, string userId, string friendId)
     {
         ArgumentNullException.ThrowIfNull(id);
         ArgumentException.ThrowIfNullOrWhiteSpace(userId, nameof(userId));
@@ -23,7 +23,7 @@ public class FriendShip : Entity<FriendRequestId> , IAggregateRoot
             Id = id,
             UserId = userId,
             FriendId = friendId,
-            Status = 0
+            Status = 1
         };
     }
     
