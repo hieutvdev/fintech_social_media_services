@@ -1,0 +1,40 @@
+﻿# Stage 1: Build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+
+# Expose ports
+EXPOSE 5083
+
+
+# Copy project files
+COPY ["Services/Article", "Services/Article"]
+COPY ["Shared", "Shared"]
+
+# Set working directory
+WORKDIR /src/Services/Article/Article.API
+
+# Restore dependencies
+RUN dotnet restore
+
+# Build application
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
+
+# Stage 2: Publish
+FROM build AS publish
+RUN dotnet publish -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Stage 3: Final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+
+
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN curl -o /usr/local/bin/wait-for-it https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
+RUN chmod +x /usr/local/bin/wait-for-it
+
+
+COPY --from=publish /app/publish .
+
+
+CMD ["wait-for-it", "article-db:5432", "--", "wait-for-it", "redis:6379", "--", "dotnet", "Article.API.dll"]

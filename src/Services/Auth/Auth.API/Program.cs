@@ -67,11 +67,9 @@ app.UseHttpsRedirection();
 app.UseApplicationService();
 app.UseInfrastructureService();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 
 app.UseAuthentication();

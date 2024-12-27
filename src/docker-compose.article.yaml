@@ -1,0 +1,68 @@
+﻿version: '3.9'
+
+services:
+  article-db:
+    image: postgres:latest
+    container_name: article-db-1
+    ports:
+      - "6009:5432"
+    networks:
+      - app-network
+    environment:
+      POSTGRES_USER: article
+      POSTGRES_PASSWORD: article
+      POSTGRES_DB: article
+    volumes:
+      - article-db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U article"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: redis-container-1
+    ports:
+      - "6008:6379"
+    networks:
+      - app-network
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  article-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "6002:5083"
+    depends_on:
+      article-db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - app-network
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Database: "Server=article-db;Port=5432;Database=article;User Id=article;Password=article;Include Error Detail=true"
+      RedisConfiguration__Host: "redis"
+      RedisConfiguration__Port: 6379
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  article-db-data:
+    driver: local
