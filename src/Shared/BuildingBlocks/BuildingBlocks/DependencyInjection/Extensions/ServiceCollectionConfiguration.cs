@@ -216,10 +216,37 @@ public static class ServiceCollectionConfiguration
             throw new BadRequestException("REDIS configuration is missing required value");
         }
         Log.Information("REDIS LOADING...");
-
+        
+        
         services.AddSingleton(redisConfiguration);
-        services.AddSingleton<IConnectionMultiplexer>(_ =>
-            ConnectionMultiplexer.Connect($"{redisConfiguration.Host}:{redisConfiguration.Port}"));
+
+        var redisOptions = ConfigurationOptions.Parse($"{redisConfiguration.Host}:{redisConfiguration.Port}");
+        redisOptions.AbortOnConnectFail = false;
+        redisOptions.ConnectRetry = 5;
+        redisOptions.KeepAlive = 10; 
+        redisOptions.ReconnectRetryPolicy = new ExponentialRetry(5000);
+        
+        services.AddSingleton<IConnectionMultiplexer>(sp =>
+        {
+            var multiplexer = ConnectionMultiplexer.Connect(redisOptions);
+
+            multiplexer.ConnectionRestored += (sender, args) =>
+            {
+                Log.Warning($"Redis connection restored: {args.EndPoint}");
+            };
+
+            multiplexer.ConnectionFailed += (sender, args) =>
+            {
+                Log.Error($"Redis connection failed: {args.EndPoint}, Failure Type: {args.FailureType}");
+            };
+
+            multiplexer.InternalError += (sender, args) =>
+            {
+                Log.Fatal($"Redis internal error: {args.Exception?.Message}");
+            };
+
+            return multiplexer;
+        });
         services.AddStackExchangeRedisCache(options =>
         {
             options.Configuration = $"{redisConfiguration.Host}:{redisConfiguration.Port}";
@@ -233,7 +260,7 @@ public static class ServiceCollectionConfiguration
         return services;
     }
 
-public static WebApplication UseCompressionService(this WebApplication app)
+    public static WebApplication UseCompressionService(this WebApplication app)
     {
         app.UseResponseCompression();
         return app;

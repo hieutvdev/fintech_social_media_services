@@ -1,3 +1,5 @@
+using BuildingBlocks.Logging;
+using Serilog;
 using User.Application.DependencyInjection.Extensions;
 using User.Infrastructure.DependencyInjection.Extensions;
 using User.Persistence.DependencyInjection.Extensions;
@@ -12,47 +14,44 @@ builder.Services.AddControllers();
 
 
 
-builder.Services.AddApplicationService()
+builder.Services.AddSerilogService(builder.Configuration, builder.Host);
+
+
+
+builder.Services
+    .AddPresentationService(builder.Configuration)
+    .AddApplicationService(builder.Configuration)
     .AddPersistenceService(builder.Configuration)
-    .AddInfrastructureService()
-    .AddPresentationService();
+    .AddInfrastructureService(builder.Configuration)
+    ;
+
 
 
 var app = builder.Build();
 
+app.UsePresentationService();
+app.UseApplicationService();
+app.UseInfrastructureService();
+app.UseRouting();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
 
 
-var summaries = new[]
+try
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
-
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+    Log.Information("Application Starting");
+    await app.RunAsync();
+    Log.Information("Application Started");
+}catch(Exception e)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    Log.Fatal(e, "Application start Failed");
 }
+finally
+{
+    Log.CloseAndFlush();
+    await app.DisposeAsync();
+}
+public partial class Program { }

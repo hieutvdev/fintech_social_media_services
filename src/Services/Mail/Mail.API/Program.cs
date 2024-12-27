@@ -1,8 +1,7 @@
 using BuildingBlocks.Logging;
 using Mail.API.DependencyInjection.Extensions;
 using Mail.API.Installers;
-using Mail.API.Interfaces;
-using Mail.API.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
