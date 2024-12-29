@@ -1,3 +1,4 @@
+using BuildingBlocks.DependencyInjection.Extensions;
 using BuildingBlocks.Logging;
 using Serilog;
 using User.Application.DependencyInjection.Extensions;
@@ -12,20 +13,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSerilogService(builder.Configuration, builder.Host);
 
 
 
 builder.Services
-    .AddPresentationService(builder.Configuration)
     .AddApplicationService(builder.Configuration)
     .AddPersistenceService(builder.Configuration)
     .AddInfrastructureService(builder.Configuration)
-    ;
+    .AddPresentationService(builder.Configuration)
+    .AddSwaggerOptions();
 
 
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 

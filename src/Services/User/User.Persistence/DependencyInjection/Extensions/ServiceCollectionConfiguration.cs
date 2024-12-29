@@ -1,11 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
+using BuildingBlocks.Security;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using User.Application.Data;
+using User.Application.Repositories;
 using User.Persistence.Data;
 using User.Persistence.Data.Interceptors;
+using User.Persistence.Repositories;
 
 namespace User.Persistence.DependencyInjection.Extensions;
 
@@ -14,7 +18,7 @@ public static class ServiceCollectionConfiguration
     public static IServiceCollection AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContextService(configuration);
-        
+        services.AddRepositoryService();
         return services;
     }
     
@@ -49,6 +53,15 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
             
         
+        return services;
+    }
+    
+    
+    private static IServiceCollection AddRepositoryService(this IServiceCollection services)
+    {
+        services.AddScoped<IAuthorizeExtension, AuthorizeExtension>();
+        services.AddScoped(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
+        services.AddScoped<IUserTypeRepository, UserTypeRepository>();
         return services;
     }
 }

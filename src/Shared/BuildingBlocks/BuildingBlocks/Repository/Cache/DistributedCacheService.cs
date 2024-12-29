@@ -1,5 +1,6 @@
 ﻿using BuildingBlocks.Exceptions;
 using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 using StackExchange.Redis;
 
 namespace BuildingBlocks.Repository.Cache;
@@ -16,9 +17,17 @@ public class DistributedCacheService : IDistributedCacheService
         _connectionMultiplexer = connectionMultiplexer;
     }
     
-    public Task SetCacheAsync(string cacheKey, object? value, TimeSpan expire)
+    public async Task SetCacheAsync(string cacheKey, object? value, TimeSpan expire)
     {
-        throw new NotImplementedException();
+        var cacheValue = value is null ? "" : JsonConvert.SerializeObject(value);
+        if (string.IsNullOrWhiteSpace(cacheValue))
+        {
+            throw new ArgumentException("Value cannot be null or whitespace");
+        }
+        await _cache.SetStringAsync(cacheKey, cacheValue, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = expire
+        });
     }
 
     public async Task<string> GetCacheAsync(string cacheKey)

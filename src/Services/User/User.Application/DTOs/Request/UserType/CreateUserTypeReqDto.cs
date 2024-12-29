@@ -1,6 +1,3 @@
 ﻿namespace User.Application.DTOs.Request.UserType;
 
-public class CreateUserTypeReqDto
-{
-    
-}
+public record CreateUserTypeReqDto(string Name, string Description);

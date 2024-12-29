@@ -1,6 +1,6 @@
-﻿namespace User.Application.UseCases.Commands.UserType.Create;
+﻿using BuildingBlocks.CQRS.Commands;
+using User.Application.DTOs.Request.UserType;
 
-public class CreateUserTypeCommand
-{
-    
-}
+namespace User.Application.UseCases.Commands.UserType.Create;
+
+public record CreateUserTypeCommand(CreateUserTypeReqDto Payload) : ICommand<bool>;

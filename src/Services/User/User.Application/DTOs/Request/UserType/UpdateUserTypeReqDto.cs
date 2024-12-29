@@ -1,6 +1,3 @@
 ﻿namespace User.Application.DTOs.Request.UserType;
 
-public class UpdateUserTypeReqDto
-{
-    
-}
+public record UpdateUserTypeReqDto(int Id, string Name, string Description);

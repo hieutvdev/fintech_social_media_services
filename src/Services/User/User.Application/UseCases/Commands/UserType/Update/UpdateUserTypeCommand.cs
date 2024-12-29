@@ -1,6 +1,6 @@
-﻿namespace User.Application.UseCases.Commands.UserType.Update;
+﻿using BuildingBlocks.CQRS.Commands;
+using User.Application.DTOs.Request.UserType;
 
-public class UpdateUserTypeCommand
-{
-    
-}
+namespace User.Application.UseCases.Commands.UserType.Update;
+
+public record UpdateUserTypeCommand(UpdateUserTypeReqDto Payload) : ICommand<bool>;

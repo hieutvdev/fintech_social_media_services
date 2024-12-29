@@ -1,6 +1,6 @@
-﻿namespace User.Application.UseCases.Commands.UserType.Delete;
+﻿using BuildingBlocks.CQRS.Commands;
+using User.Application.DTOs.Request.UserType;
 
-public class DeleteUserTypeCommand
-{
-    
-}
+namespace User.Application.UseCases.Commands.UserType.Delete;
+
+public record DeleteUserTypeCommand(DeleteUserTypeReqDto Payload) : ICommand<bool>;

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using User.Application.Services;
+using User.Infrastructure.Services;
 
 namespace User.Infrastructure.DependencyInjection.Extensions;
 
@@ -11,8 +13,10 @@ public static class ServiceCollectionConfiguration
 {
     public static IServiceCollection AddInfrastructureService(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddAuthenticationService(configuration);
         services.AddDistributedCacheService(configuration);
         services.AddHealthCheckServices(configuration);
+        services.AddServiceUseCase();
         return services;
     }
     
@@ -40,6 +44,12 @@ public static class ServiceCollectionConfiguration
             ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
         });
         return app;
+    }
+    
+    private static IServiceCollection AddServiceUseCase(this IServiceCollection services)
+    {
+        services.AddScoped<IUserTypeService, UserTypeService>();
+        return services;
     }
     
 
