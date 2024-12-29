@@ -16,12 +16,9 @@
     
     <ItemGroup>
       <Folder Include="DependencyInjection\Options\" />
-      <Folder Include="DTOs\Request\" />
       <Folder Include="DTOs\Response\" />
-      <Folder Include="Exceptions\" />
       <Folder Include="Extensions\" />
       <Folder Include="Services\" />
-      <Folder Include="UseCases\Commands\" />
       <Folder Include="UseCases\Models\" />
       <Folder Include="UseCases\Queries\" />
       <Folder Include="UseCases\Validators\" />

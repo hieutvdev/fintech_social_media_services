@@ -100,4 +100,15 @@ public class AuthorizeExtension : IAuthorizeExtension
             BirthDay: principal?.FindFirst("BirthDay")!.Value ?? ""
         );
     }
+
+    public string GetToken()
+    {
+        var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"];
+        if (string.IsNullOrEmpty(token))
+        {
+            throw new BadRequestException("Invalid token");
+        }
+
+        return token.ToString()!.Replace("Bearer ", "");
+    }
 }

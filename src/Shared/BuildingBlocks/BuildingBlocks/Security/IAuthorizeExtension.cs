@@ -7,4 +7,6 @@ public interface IAuthorizeExtension
       UserLoginResponseBase GetUserFromClaimToken();
       bool ValidateToken(string token);
       UserLoginResponseBase DecodeToken(string token);
+      
+      string GetToken();
 }

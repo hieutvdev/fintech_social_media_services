@@ -1,6 +1,8 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using Auth.Application.Data;
 using Auth.Application.Repositories;
 using Auth.Application.Services;
@@ -12,6 +14,7 @@ using Auth.Infrastructure.Repositories;
 using Auth.Infrastructure.Services;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Messaging.Messaging.Kafka;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -200,6 +203,66 @@ public static class ServiceCollectionConfiguration
                         return   Task.CompletedTask;
                     }
             
+                };
+            });
+        
+        services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = "Discord";
+            })
+            .AddOAuth("Discord", options =>
+            {
+                options.ClientId = configuration["SSO:Discord:ClientId"];
+                options.ClientSecret = configuration["SSO:Discord:ClientSecret"];
+                options.CallbackPath = new PathString("/signin-discord");
+
+                options.AuthorizationEndpoint = "https://discord.com/api/oauth2/authorize";
+                options.TokenEndpoint = "https://discord.com/api/oauth2/token";
+                options.UserInformationEndpoint = "https://discord.com/api/users/@me";
+
+                options.SaveTokens = true;
+                options.Scope.Add("identify");
+                options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
+                options.ClaimActions.MapJsonKey(ClaimTypes.Name, "username");
+                options.ClaimActions.MapJsonKey("urn:discord:avatar", "avatar");
+
+                options.Events = new OAuthEvents
+                {
+                    OnRedirectToAuthorizationEndpoint = async context =>
+                    {
+                        Console.WriteLine(context.RedirectUri); 
+                    },
+                    
+                    OnCreatingTicket = async context =>
+                    {
+                        var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
+                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
+
+                        Console.WriteLine(request.Headers.Authorization);
+                        var response = await context.Backchannel.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+                        response.EnsureSuccessStatusCode();
+
+                        var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+                        context.RunClaimActions(user.RootElement);
+
+                       
+                        var userId = user.RootElement.GetProperty("id").GetString();
+                        var username = user.RootElement.GetProperty("username").GetString();
+                        var email = user.RootElement.TryGetProperty("email", out var emailProp) ? emailProp.GetString() : null;
+                        var avatar = user.RootElement.TryGetProperty("avatar", out var avatarProp) ? avatarProp.GetString() : null;
+
+                        // Thêm thông tin vào Claims
+                        if (!string.IsNullOrEmpty(email))
+                        {
+                            context.Identity.AddClaim(new Claim(ClaimTypes.Email, email));
+                        }
+                        if (!string.IsNullOrEmpty(avatar))
+                        {
+                            context.Identity.AddClaim(new Claim("urn:discord:avatar", avatar));
+                        }
+                    }
                 };
             });
         

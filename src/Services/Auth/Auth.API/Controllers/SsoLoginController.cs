@@ -37,17 +37,42 @@ namespace Auth.API.Controllers
         [HttpGet("auth/callback")]
         public async Task<IActionResult> AuthCallback()
         {
+            // var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            // if (!authenticateResult.Succeeded)
+            // {
+            //     return BadRequest("Invalid token");
+            // }
+            //
+            // var claims = authenticateResult.Principal?.Claims.ToDictionary(c => c.Type, c => c.Value);
+            // return Ok(new
+            // {
+            //     Message = "Login successful",
+            //     User = claims
+            // });
+            
             var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             if (!authenticateResult.Succeeded)
             {
                 return BadRequest("Invalid token");
             }
 
-            var claims = authenticateResult.Principal?.Claims.ToDictionary(c => c.Type, c => c.Value);
+            // Lấy thông tin từ Claims
+            var claims = authenticateResult.Principal?.Claims;
+            var username = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var avatar = claims?.FirstOrDefault(c => c.Type == "urn:discord:avatar")?.Value;
+
             return Ok(new
             {
                 Message = "Login successful",
-                User = claims
+                User = new
+                {
+                    Username = username,
+                    Email = email,
+                    AvatarUrl = !string.IsNullOrEmpty(avatar) 
+                        ? $"https://cdn.discordapp.com/avatars/{claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value}/{avatar}.png" 
+                        : null
+                }
             });
         }
 
@@ -70,6 +95,19 @@ namespace Auth.API.Controllers
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        
+        
+        [HttpGet("login-dc")]
+        public IActionResult Login()
+        {
+            return Challenge(new AuthenticationProperties { RedirectUri = "/" }, "Discord");
+        }
+
+        [HttpGet("signin-discord")]
+        public IActionResult SignInDiscord()
+        {
+            return Ok("Logged in with Discord!");
         }
     }
 }

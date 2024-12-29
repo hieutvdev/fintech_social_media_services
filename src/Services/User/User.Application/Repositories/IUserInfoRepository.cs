@@ -1,7 +1,5 @@
 ﻿namespace User.Application.Repositories;
 
-public class IUserInfoRepository
+public interface IUserInfoRepository
 {
-    
-    
 }
