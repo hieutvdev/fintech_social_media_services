@@ -64,6 +64,18 @@ public static class QueryableExtensions
 
         return Expression.Lambda<Func<T, object>>(conversion, parameter).Compile();
     }
+    
+    
+   public static Expression<Func<T, object>> GetPropertyGetterV2<T>(string propertyName)
+    {
+        var parameter = Expression.Parameter(typeof(T), "x");
+        var property = Expression.Property(parameter, propertyName);
+        var conversion = Expression.Convert(property, typeof(object)); // Convert the property to 'object'
+        return Expression.Lambda<Func<T, object>>(conversion, parameter);
+    }
+
+ 
+
 
 
 }

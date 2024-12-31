@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Exceptions;
+using BuildingBlocks.Helpers;
 using BuildingBlocks.Pagination;
 using BuildingBlocks.Repository.Cache;
 using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
@@ -26,18 +27,14 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
     {
         try
         {
-            Log.Information("Attempting to retrieve UserType from cache.");
+            
             var cacheValue = await cacheService.GetCacheAsync(CacheKey.UserType.GetAll);
             if (!string.IsNullOrEmpty(cacheValue))
             {
-                Log.Information("UserType retrieved from cache.");
                 return JsonConvert.DeserializeObject<IEnumerable<UserType>>(cacheValue) ?? new List<UserType>();
             }
-
-            Log.Information("Cache is empty, retrieving UserType from database.");
             var result = await repository.Table<UserType>().AsNoTracking().ToListAsync(cancellationToken);
             await cacheService.SetCacheAsync(CacheKey.UserType.GetAll, result, TimeSpan.FromHours(3));
-            Log.Information("UserType retrieved from database and cached.");
             return result;
         }
         catch (Exception e)
@@ -51,12 +48,21 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
     {
         try
         {
+            var cacheValue = await cacheService.GetCacheAsync(string.Format(CacheKey.UserType.GetDetail,id));
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                return JsonConvert.DeserializeObject<UserType>(cacheValue) ?? new UserType();
+            }
+            
             var result = await repository.FirstOrDefaultAsNoTrackingAsync<UserType>(r => r.Id == id, cancellationToken);
+            
             if (result is null)
             {
                 throw new UserTypeNotFoundException("User type not found");
             }
 
+            await cacheService.SetCacheAsync(string.Format(CacheKey.UserType.GetDetail, id), result,
+                TimeSpan.FromHours(2));
             return result;
         }
         catch (Exception e)
@@ -69,7 +75,16 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
     {
         try
         {
-            await Task.Yield();
+            var paramsKey = CachingHelper.ObjectToQueryString(query);
+            Log.Information("ParamsKey: {paramsKey}", paramsKey);
+            var cacheKey = string.Format(CacheKey.UserType.GetList, paramsKey);
+            Log.Information("CacheKey: {cacheKey}", cacheKey);
+            var cacheValue = await cacheService.GetCacheAsync(cacheKey);
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                return JsonConvert.DeserializeObject<PaginatedResult<UserTypeResBaseDto>>(cacheValue) ??
+                       new PaginatedResult<UserTypeResBaseDto>(0, 0, 0, new List<UserTypeResBaseDto>());
+            }
             var baseRequest = repository.Table<UserType>().Select(r => new
             {
                 Id = r.Id,
@@ -78,14 +93,14 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
             }).WhereIf(!string.IsNullOrEmpty(query.KeySearch),
                 r => r.Name.ToLower().Contains(query.KeySearch!.ToLower()) ||
                      r.Description.ToLower().Contains(query.KeySearch!.ToLower()));
-
-
+    
+    
             var resultDto = baseRequest.Select(r => new UserTypeResBaseDto(r.Id, r.Name, r.Description)).AsEnumerable();
-
+    
             if (!string.IsNullOrEmpty(query.SortBy))
             {
                 var sortBy = QueryableExtensions.GetPropertyGetter<UserTypeResBaseDto>(query.SortBy);
-
+    
                 resultDto = query.IsAscending == true ? resultDto.OrderBy(sortBy) : resultDto.OrderByDescending(sortBy);
             }
             else
@@ -95,25 +110,114 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
             
             var resultDtoToList = resultDto.ToList();
             var totalRecords = resultDtoToList.Count();
-
+    
             var paginationRequest = new PaginationRequest(query.PageIndex ?? 1, query.PageSize ?? 20);
             var paginatedResult = resultDtoToList.Skip((paginationRequest.PageIndex - 1) * paginationRequest.PageSize)
                 .Take(paginationRequest.PageSize);
-
-            return new PaginatedResult<UserTypeResBaseDto>(query.PageIndex ?? 1, query.PageSize ?? 20, totalRecords,
+    
+            var response = new PaginatedResult<UserTypeResBaseDto>(query.PageIndex ?? 1, query.PageSize ?? 20,
+                totalRecords,
                 paginatedResult);
-
+            
+            await cacheService.SetCacheAsync(cacheKey, response, TimeSpan.FromHours(2));
+            
+            
+            
+            return response;
+    
         }
         catch (Exception e)
         {
             throw new BadRequestException(e.Message);
         }
     }
+    
+    
+    
+    
+
+    // public async Task<PaginatedResult<UserTypeResBaseDto>> GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken = default)
+    // {
+    //     try
+    //     {
+    //         var paramsKey = CachingHelper.ObjectToQueryString(query);
+    //         Log.Information("ParamsKey: {paramsKey}", paramsKey);
+    //         var cacheKey = string.Format(CacheKey.UserType.GetList, paramsKey);
+    //         Log.Information("CacheKey: {cacheKey}", cacheKey);
+    //         
+    //     
+    //         var cacheValue = await cacheService.GetCacheAsync(cacheKey);
+    //         if (!string.IsNullOrEmpty(cacheValue))
+    //         {
+    //             return JsonConvert.DeserializeObject<PaginatedResult<UserTypeResBaseDto>>(cacheValue) ??
+    //                    new PaginatedResult<UserTypeResBaseDto>(0, 0, 0, new List<UserTypeResBaseDto>());
+    //         }
+    //
+    //        
+    //         var baseRequest = repository.Table<UserType>().Select(r => new
+    //             {
+    //                 Id = r.Id,
+    //                 Name = r.Name,
+    //                 Description = r.Description
+    //             })
+    //             .WhereIf(!string.IsNullOrEmpty(query.KeySearch),
+    //                 r => r.Name.ToLower().Contains(query.KeySearch!.ToLower()) ||
+    //                      r.Description.ToLower().Contains(query.KeySearch!.ToLower()));
+    //
+    //         
+    //         if (!string.IsNullOrEmpty(query.SortBy))
+    //         {
+    //             // Get the property getter expression for sorting
+    //             var sortByExpression = QueryableExtensions.GetPropertyGetterV2<UserType>(query.SortBy);
+    //         
+    //             // Check if sorting should be ascending or descending
+    //             if (query.IsAscending == true)
+    //             {
+    //                 baseRequest = baseRequest.OrderBy<UserType, object>(sortByExpression);
+    //             }
+    //             else
+    //             {
+    //                 baseRequest = baseRequest.OrderByDescending<UserType, object>(sortByExpression);
+    //             }
+    //         }
+    //         else
+    //         {
+    //             baseRequest = baseRequest.OrderBy(r => r.Id);
+    //         }
+    //
+    //        
+    //         var totalRecords = await baseRequest.CountAsync(cancellationToken);
+    //         var paginationRequest = new PaginationRequest(query.PageIndex ?? 1, query.PageSize ?? 20);
+    //         
+    //         var paginatedResult = await baseRequest.Skip((paginationRequest.PageIndex - 1) * paginationRequest.PageSize)
+    //             .Take(paginationRequest.PageSize)
+    //             .Select(r => new UserTypeResBaseDto(r.Id, r.Name, r.Description))
+    //             .ToListAsync(cancellationToken);
+    //
+    //         var response = new PaginatedResult<UserTypeResBaseDto>(query.PageIndex ?? 1, query.PageSize ?? 20, totalRecords, paginatedResult);
+    //
+    //        
+    //         await cacheService.SetCacheAsync(cacheKey, response, TimeSpan.FromHours(2));
+    //
+    //         return response;
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         
+    //         throw new BadRequestException(e.Message);
+    //     }
+    // }
+
 
     public async Task<IEnumerable<SelectListItem>> GetSelectAsync(CancellationToken cancellationToken = default)
     {
         try
         {
+            var cacheValue = await cacheService.GetCacheAsync(CacheKey.UserType.GetSelect);
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                return JsonConvert.DeserializeObject<IEnumerable<SelectListItem>>(cacheValue) ?? new List<SelectListItem>();
+            }
             var result = await repository.Table<UserType>().Select(r => new
             {
                 Id = r.Id,
@@ -121,6 +225,7 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
             }).ToListAsync(cancellationToken);
 
             var selectListItems = result.Select(r => new SelectListItem(r.Id.ToString(), r.Name)).ToList();
+            await cacheService.SetCacheAsync(CacheKey.UserType.GetSelect, selectListItems, TimeSpan.FromHours(2));
             return selectListItems;
         }
         catch (Exception e)
@@ -137,6 +242,10 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
             userType.CreatedBy = authorizeExtension.GetUserFromClaimToken().Id;
             await repository.AddAsync(userType, cancellationToken);
             var result = await repository.SaveChangesAsync(cancellationToken) > 0;
+            if (result)
+            {
+                await cacheService.RemoveCacheAsync(CacheKey.UserType.DeleteAllCache);
+            }
             return result;
         }
         catch (Exception e)
@@ -159,6 +268,10 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
             userTypeFound.UpdatedBy = authorizeExtension.GetUserFromClaimToken().Id;
             repository.Update(userTypeFound);
             var result = await repository.SaveChangesAsync(cancellationToken) > 0;
+            if (result)
+            {
+                await cacheService.RemoveCacheAsync(CacheKey.UserType.DeleteAllCache);
+            }
             return result;
         }
         catch (Exception e)
@@ -171,8 +284,12 @@ public class UserTypeRepository(IRepositoryBaseService<ApplicationDbContext> rep
     {
         try
         {
-            var IdUnique = payload.Ids.Distinct().ToList();
-            var isDeleted = await repository.ExecuteDeleteAsync<UserType>(r => IdUnique.Contains(r.Id), cancellationToken);
+            var idUnique = payload.Ids.Distinct().ToList();
+            var isDeleted = await repository.ExecuteDeleteAsync<UserType>(r => idUnique.Contains(r.Id), cancellationToken);
+            if (isDeleted)
+            {
+                await cacheService.RemoveCacheAsync(CacheKey.UserType.DeleteAllCache);
+            }
             return isDeleted;
         }
         catch (Exception e)

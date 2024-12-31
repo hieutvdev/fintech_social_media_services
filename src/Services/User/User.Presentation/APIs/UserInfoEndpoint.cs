@@ -5,127 +5,67 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using User.Application.DTOs.Request.UserInfo;
 using User.Application.DTOs.Request.UserType;
+using User.Application.UseCases.Commands.UserInfo.Create;
+using User.Application.UseCases.Commands.UserInfo.Update;
 using User.Application.UseCases.Commands.UserType.Create;
-using User.Application.UseCases.Commands.UserType.Delete;
-using User.Application.UseCases.Commands.UserType.Update;
-using User.Application.UseCases.Models.UserType;
-using User.Application.UseCases.Queries.UserType.Detail;
-using User.Application.UseCases.Queries.UserType.GetAll;
-using User.Application.UseCases.Queries.UserType.GetList;
-using User.Application.UseCases.Queries.UserType.GetSelect;
+using User.Application.UseCases.Queries.UserInfo.Detail;
 
 namespace User.Presentation.APIs;
 
-public class UserInfoEndpoint : ICarterModule
+public class UserInfoEndpoint: ICarterModule
 {
     private const string BaseUrl = "/api/v{version:apiVersion}/user-info";
     public void AddRoutes(IEndpointRouteBuilder app)
     {
         var group = app.NewVersionedApi("user-info")
             .MapGroup(BaseUrl).HasApiVersion(1);
-        
 
-        group.MapPost("/", async ([FromBody] CreateUserTypeReqDto payload, ISender sender) =>
+
+        group.MapPost("/", async ([FromBody] CreateUserInfoReqDto payload, ISender sender) =>
             {
-                var result = await sender.Send(new CreateUserTypeCommand(payload));
+                var result = await sender.Send(new CreateUserInfoCommand(payload));
                 var response = result;
                 return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-            })  .WithName("CreateUserType")
+            }).WithName("CreateUserInfo")
             .Produces<Result>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status401Unauthorized)
             .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("Create UserType")
-            .WithDescription("Create UserType")
-            .RequireAuthorization();
+            .WithSummary("Create UserInfo")
+            .WithDescription("Create UserInfo");
+            
         
-        group.MapGet("/", async (ISender sender) =>
+        
+        group.MapGet("/{id}", async (string id, ISender sender) =>
             {
-                var result = await sender.Send(new GetAllUserTypeQuery());
+                var result = await sender.Send(new GetUserInfoDetailQuery(id));
                 var response = result;
                 return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-            })  .WithName("GetAllUserType")
+            })  .WithName("GetDetailUserInfo")
             .Produces<Result>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status401Unauthorized)
             .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("GetAll UserType")
-            .WithDescription("GetAll UserType")
+            .WithSummary("GetDetail UserInfo")
+            .WithDescription("GetDetail UserInfo")
             .RequireAuthorization();
-        
-        group.MapGet("/{id}", async (int id, ISender sender) =>
+     
+        group.MapPut("/", async ([FromBody] UpdateUserInfoReqDto payload, ISender sender) =>
             {
-                var result = await sender.Send(new GetDetailUserTypeQuery(id));
+                var result = await sender.Send(new UpdateUserInfoCommand(payload));
                 var response = result;
                 return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-            })  .WithName("DetailUserType")
+            })  .WithName("UpdateUserInfo")
             .Produces<Result>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status401Unauthorized)
             .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("Detail UserType")
-            .WithDescription("Detail UserType")
+            .WithSummary("Update UserInfo")
+            .WithDescription("Update UserInfo")
             .RequireAuthorization();
         
-        group.MapGet("/get-list", async ([AsParameters] UserTypeSearchListModelQuery query, ISender sender) =>
-            {
-                var result = await sender.Send(new GetListUserTypeQuery(query));
-                var response = result;
-                return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-            })  .WithName("GetListUserType")
-            .Produces<Result>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .ProducesProblem(StatusCodes.Status401Unauthorized)
-            .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("GetList UserType")
-            .WithDescription("GetList UserType")
-            .RequireAuthorization();
-        
-        
-        group.MapGet("/get-select", async (ISender sender) =>
-            {
-                var result = await sender.Send(new GetSelectUserTypeQuery());
-                var response = result;
-                return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-            })  .WithName("GetSelectUserType")
-            .Produces<Result>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .ProducesProblem(StatusCodes.Status401Unauthorized)
-            .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("GetSelect UserType")
-            .WithDescription("GetSelect UserType")
-            .RequireAuthorization();
-        
-        
-        // group.MapPut("/", async ([FromBody] UpdateUserTypeReqDto payload, ISender sender) =>
-        //     {
-        //         var result = await sender.Send(new UpdateUserTypeCommand(payload));
-        //         var response = result;
-        //         return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-        //     })  .WithName("UpdateUserType")
-        //     .Produces<Result>(StatusCodes.Status200OK)
-        //     .ProducesProblem(StatusCodes.Status400BadRequest)
-        //     .ProducesProblem(StatusCodes.Status401Unauthorized)
-        //     .ProducesProblem(StatusCodes.Status404NotFound)
-        //     .WithSummary("Update UserType")
-        //     .WithDescription("Update UserType")
-        //     .RequireAuthorization();
-        //
-        //
-        // group.MapDelete("/", async ([FromBody] DeleteUserTypeReqDto payload, ISender sender) =>
-        //     {
-        //         var result = await sender.Send(new DeleteUserTypeCommand(payload));
-        //         var response = result;
-        //         return response.IsFailure ? Results.BadRequest(response) : Results.Ok(response);
-        //     })  .WithName("DeleteUserType")
-        //     .Produces<Result>(StatusCodes.Status200OK)
-        //     .ProducesProblem(StatusCodes.Status400BadRequest)
-        //     .ProducesProblem(StatusCodes.Status401Unauthorized)
-        //     .ProducesProblem(StatusCodes.Status404NotFound)
-        //     .WithSummary("Delete UserType")
-        //     .WithDescription("Delete UserType")
-        //     .RequireAuthorization();
 
     }
 }

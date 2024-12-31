@@ -49,6 +49,7 @@ public static class ServiceCollectionConfiguration
     private static IServiceCollection AddServiceUseCase(this IServiceCollection services)
     {
         services.AddScoped<IUserTypeService, UserTypeService>();
+        services.AddScoped<IUserInfoService, UserInfoService>();
         return services;
     }
     

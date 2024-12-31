@@ -4,6 +4,6 @@
   "password": "123456789Ab!",
   "code": "string"
 }
-
+\\wsl.localhost\Ubuntu\usr\local\go
 # Token Test
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0NDUxZjhkNy1mN2IyLTRmZWQtOTVmYi1hMjUwYTdkMzVkZTUiLCJGdWxsTmFtZSI6IkFETUlOIFNVUFBFUiIsInVuaXF1ZV9uYW1lIjoiQURNSU5fU1VQUEVSIiwiQXZhdGFyVXJsIjoic3RyaW5nIiwiQmlydGhEYXkiOiJzdHJpbmciLCJuYmYiOjE3MzMwNDkzOTgsImV4cCI6MTczNTY0MTM5OCwiaWF0IjoxNzMzMDQ5Mzk4LCJpc3MiOiJmc20tY2xpZW50IiwiYXVkIjoiZnNtLWF1dGgtc2VydmVyIn0.Hrvmq6Ola7hx35dMTHQha_QcazUxBQYUSMCK1cLywMk

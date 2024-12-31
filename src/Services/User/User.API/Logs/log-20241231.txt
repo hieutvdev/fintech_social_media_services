@@ -1,0 +1,347 @@
+2024-12-31 10:58:18.502 +07:00 [ERR] Redis connection failed: Unspecified/localhost:6003, Failure Type: UnableToConnect
+2024-12-31 10:58:18.502 +07:00 [ERR] Redis connection failed: Unspecified/localhost:6003, Failure Type: UnableToConnect
+2024-12-31 13:10:52.704 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 194
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:10:52.743 +07:00 [ERR] 2024-12-31 06:10:52 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99C7F96NS6:00000001 - IP:::1 - [GET] - 0ms - Error:The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information. - InputParams:{}
+2024-12-31 13:11:16.352 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 194
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:11:16.381 +07:00 [ERR] 2024-12-31 06:11:16 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99C7MA7ARH:00000001 - IP:::1 - [GET] - 0ms - Error:The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information. - InputParams:{}
+2024-12-31 13:13:20.574 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 196
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:13:20.606 +07:00 [ERR] 2024-12-31 06:13:20 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99C8PII78R:00000001 - IP:::1 - [GET] - 0ms - Error:The LINQ expression 'DbSet<UserType>()
+    .Where(u => u.Name.ToLower().Contains(__ToLower_0) || u.Description.ToLower().Contains(__ToLower_0))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information. - InputParams:{}
+2024-12-31 13:14:45.390 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The LINQ expression 'DbSet<UserType>()
+    .Where(u => __Functions_0
+        .Like(
+            matchExpression: u.Name, 
+            pattern: __Format_1) || __Functions_0
+        .Like(
+            matchExpression: u.Description, 
+            pattern: __Format_1))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 198
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:14:45.420 +07:00 [ERR] 2024-12-31 06:14:45 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99C9IR8PET:00000001 - IP:::1 - [GET] - 0ms - Error:The LINQ expression 'DbSet<UserType>()
+    .Where(u => __Functions_0
+        .Like(
+            matchExpression: u.Name, 
+            pattern: __Format_1) || __Functions_0
+        .Like(
+            matchExpression: u.Description, 
+            pattern: __Format_1))
+    .OrderBy(u => new UserTypeResBaseDto(
+        u.Id, 
+        u.Name, 
+        u.Description
+    ).Id)' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information. - InputParams:{}
+2024-12-31 13:15:30.594 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The source 'IQueryable' doesn't implement 'IAsyncEnumerable<User.Application.DTOs.Response.UserType.UserTypeResBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 201
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:15:30.624 +07:00 [ERR] 2024-12-31 06:15:30 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99CA29EM8H:00000001 - IP:::1 - [GET] - 0ms - Error:The source 'IQueryable' doesn't implement 'IAsyncEnumerable<User.Application.DTOs.Response.UserType.UserTypeResBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations. - InputParams:{}
+2024-12-31 13:17:05.665 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: The source 'IQueryable' doesn't implement 'IAsyncEnumerable<User.Application.DTOs.Response.UserType.UserTypeResBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations.
+   at User.Persistence.Repositories.UserTypeRepository.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserTypeRepository.cs:line 197
+   at User.Infrastructure.Services.UserTypeService.GetListAsync(UserTypeSearchListModelQuery query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserTypeService.cs:line 26
+   at User.Application.UseCases.Queries.UserType.GetList.GetListUserTypeQueryHandler.Handle(GetListUserTypeQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserType\GetList\GetListUserTypeQueryHandler.cs:line 15
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_3>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 73
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 13:17:05.703 +07:00 [ERR] 2024-12-31 06:17:05 - ERROR - /api/v1/user-info/get-list?PageIndex=1131&PageSize=10&KeySearch=hi - 0HN99CAU223V7:00000001 - IP:::1 - [GET] - 0ms - Error:The source 'IQueryable' doesn't implement 'IAsyncEnumerable<User.Application.DTOs.Response.UserType.UserTypeResBaseDto>'. Only sources that implement 'IAsyncEnumerable' can be used for Entity Framework asynchronous operations. - InputParams:{}
+2024-12-31 14:53:25.313 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 110
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 14:53:25.348 +07:00 [ERR] 2024-12-31 07:53:25 - ERROR - /api/v1/user-info/arasf - 0HN99E0I4Q80N:00000004 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 14:58:04.867 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 113
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 14:58:04.901 +07:00 [ERR] 2024-12-31 07:58:04 - ERROR - /api/v1/user-info/arasf - 0HN99E34RRTRK:00000001 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 14:59:12.717 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 118
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 14:59:12.752 +07:00 [ERR] 2024-12-31 07:59:12 - ERROR - /api/v1/user-info/arasf - 0HN99E3TH2QSB:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 14:59:20.700 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 118
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 14:59:20.702 +07:00 [ERR] 2024-12-31 07:59:20 - ERROR - /api/v1/user-info/arasf - 0HN99E3TH2QSB:00000003 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 15:04:22.025 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 118
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:04:22.062 +07:00 [ERR] 2024-12-31 08:04:22 - ERROR - /api/v1/user-info/arasf - 0HN99E6SM0JVM:00000001 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 15:05:03.690 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 115
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:05:03.719 +07:00 [ERR] 2024-12-31 08:05:03 - ERROR - /api/v1/user-info/arasf - 0HN99E795RDUE:00000001 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 15:07:54.528 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 116
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:07:54.559 +07:00 [ERR] 2024-12-31 08:07:54 - ERROR - /api/v1/user-info/arasf - 0HN99E8S4CN87:00000001 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":["FDS"],"Skills":["MASTER STOCK"],"Hobbies":["Thể thao","Chơi game","Code"],"UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 359. - InputParams:{}
+2024-12-31 15:09:39.776 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 116
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:09:39.815 +07:00 [ERR] 2024-12-31 08:09:39 - ERROR - /api/v1/user-info/arasf - 0HN99E9OFSVQI:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347. - InputParams:{}
+2024-12-31 15:11:00.950 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 116
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:11:00.980 +07:00 [ERR] 2024-12-31 08:11:00 - ERROR - /api/v1/user-info/arasf - 0HN99EAC2SR3R:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347. - InputParams:{}
+2024-12-31 15:17:20.606 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 121
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:17:20.639 +07:00 [ERR] 2024-12-31 08:17:20 - ERROR - /api/v1/user-info/arasf - 0HN99EE3MD6OE:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347. - InputParams:{}
+2024-12-31 15:19:56.540 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 121
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:19:56.573 +07:00 [ERR] 2024-12-31 08:19:56 - ERROR - /api/v1/user-info/arasf - 0HN99EFFBKBKP:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347. - InputParams:{}
+2024-12-31 15:20:01.744 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 121
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:20:01.746 +07:00 [ERR] 2024-12-31 08:20:01 - ERROR - /api/v1/user-info/arasf - 0HN99EFFBKBKP:00000003 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Thể thao||Chơi game||Code","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 347. - InputParams:{}
+2024-12-31 15:24:04.136 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Coding","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 328.
+   at User.Persistence.Repositories.UserInfoRepository.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Persistence\Repositories\UserInfoRepository.cs:line 121
+   at User.Infrastructure.Services.UserInfoService.GetUserInfoByIdAsync(String id, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\UserInfoService.cs:line 25
+   at User.Application.UseCases.Queries.UserInfo.Detail.GetUserInfoDetailQueryHandler.Handle(GetUserInfoDetailQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\UserInfo\Detail\GetUserInfoDetailQueryHandler.cs:line 17
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.UserInfoEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\UserInfoEndpoint.cs:line 43
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2024-12-31 15:24:04.138 +07:00 [ERR] 2024-12-31 08:24:04 - ERROR - /api/v1/user-info/arasf - 0HN99EFFBKBKR:00000002 - IP:::1 - [GET] - 0ms - Error:Error converting value "{"Id":"04151cc5-6347-4120-b813-553ed5e5c971","UserId":"4451f8d7-f7b2-4fed-95fb-a250a7d35de5","CoverPhoto":"string","Gender":1,"Bio":"I LOVE YOU","CurrentCity":"VIET NAM","Education":"DNU","Work":"FDS","Skills":"MASTER STOCK","Hobbies":"Coding","UserType":"1","RelationshipStatus":1}" to type 'User.Application.DTOs.Response.UserInfo.UserInfoDetailResBaseDto'. Path '', line 1, position 328. - InputParams:{}

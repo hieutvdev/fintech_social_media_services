@@ -62,6 +62,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IAuthorizeExtension, AuthorizeExtension>();
         services.AddScoped(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
         services.AddScoped<IUserTypeRepository, UserTypeRepository>();
+        services.AddScoped<IUserInfoRepository, UserInfoRepository>();
         return services;
     }
 }
