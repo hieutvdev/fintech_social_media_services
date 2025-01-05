@@ -15,6 +15,7 @@ using BuildingBlocks.Messaging.Messaging.Kafka;
 using BuildingBlocks.Utilities.EmailValidations;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Serilog;
 using ShredKernel.BaseClasses;
 
 namespace Auth.Infrastructure.Services;
@@ -458,7 +459,51 @@ public class AuthService : IAuthService
             throw new BadRequestException(e.Message);
         }
     }
-    
+
+    public async Task<UserDto> GetUserByIdAsync(string id, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var userFound = await _userManager.Users.Select(r => new
+            {
+                Id = r.Id,
+                FullName = r.FullName,
+                Avatar = r.AvatarUrl,
+                BirthDay = r.BirthDay
+            }).Where(r => r.Id == id).SingleOrDefaultAsync(cancellationToken);
+            
+            if (userFound is null)
+            {
+                throw new UserNotFoundException("User not found");
+            }
+            
+            return new UserDto(userFound.Id,"",  userFound.FullName, userFound.Avatar, userFound.BirthDay);
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
+
+    public async Task<IEnumerable<UserShareResponseDto>> GetUserShareAsync(UserShareRequestDto query, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var user = await _userManager.Users.Select(r => new
+            {
+                Id = r.Id,
+                FullName = r.FullName,
+                Avatar = r.AvatarUrl
+            }).Where(r => query.Ids.Contains(r.Id)).ToListAsync(cancellationToken);
+            var response = user.Select(r => new UserShareResponseDto(r.Id, r.FullName, r.Avatar)).ToList();
+            return response;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
+
 
     public async Task<LoginResponseDto> LoginAsync(LoginRequestDto loginRequestDto, CancellationToken cancellationToken = default)
     {
@@ -508,8 +553,8 @@ public class AuthService : IAuthService
             {
                 
             }
-
             string accessTokenCacheKey = $"{CacheKey.Domain}{CacheKey.Auth.AccessToken}{user.Id}{GetDeviceInfo()}";
+            Log.Information("KEY: " + accessTokenCacheKey);
             string refreshTokenCacheKey = $"{CacheKey.Domain}{CacheKey.Auth.RefreshToken}{user.Id}{GetDeviceInfo()}";
             string accessTokenCacheResponse =
                 await _cacheService.GetCacheAsync(accessTokenCacheKey);
@@ -545,6 +590,17 @@ public class AuthService : IAuthService
 
     public async Task<RegisterResponseDto> RegisterAsync(RegisterRequestDto registerRequestDto, CancellationToken cancellationToken = default)
     {
+        if(DateTime.TryParse(registerRequestDto.BirthDay, out DateTime bd))
+        {
+            if (bd > DateTime.UtcNow)
+            {
+                throw new BadRequestException("BirthDay is invalid");
+            }
+            else
+            {
+                throw new BadRequestException("BirthDay is invalid 1");
+            }
+        }
         var userExists = await _userManager.FindByEmailAsync(registerRequestDto.Email);
        
             

@@ -1,5 +1,4 @@
 ﻿
-using Auth.API.Attributes;
 using Auth.Application.DTOs.Request.Auth;
 using Auth.Application.DTOs.Response.Auth;
 using Auth.Application.UseCases.V1.Commands.Auth.ChangePassword;
@@ -13,6 +12,8 @@ using Auth.Application.UseCases.V1.Commands.Auth.ResetPassword;
 using Auth.Application.UseCases.V1.Commands.Auth.SwitchTwoFactor;
 using Auth.Application.UseCases.V1.Commands.Auth.VerifyCodeLogin;
 using Auth.Application.UseCases.V1.Queries.Auth.GetDeviceByUserLogin;
+using Auth.Application.UseCases.V1.Queries.Auth.GetUserShare;
+using Auth.Application.UseCases.V1.Queries.Auth.UserInfo;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +52,22 @@ public class AuthController(IMediator mediator) : Controller
     {
         
         return Ok("ok");
+    }
+    
+    [Authorize]
+    [HttpGet("user-share")]
+    public async Task<IActionResult> UserShare([FromQuery] IEnumerable<string> ids)
+    {
+        var result = await mediator.Send(new GetUserShareQuery(new UserShareRequestDto(ids)));
+        return Ok(result.Value);
+    }
+    
+    [Authorize]
+    [HttpGet("user-info/{id}")]
+    public async Task<IActionResult> UserInfo(string id)
+    {
+        var result = await mediator.Send(new GetUserInfoQuery(id));
+        return Ok(result);
     }
     
     

@@ -5,9 +5,9 @@ using User.Application.Services;
 
 namespace User.Application.UseCases.Queries.FriendRequest.GetListByReceiver;
 
-public class GetListBySenderFriendRequestQueryHandler(IFriendRequestService service) : IQueryHandler<GetListBySenderFriendRequestQuery, PaginatedResult<FriendRequestByUserResDto>>
+public class GetListBySenderFriendRequestQueryHandler(IFriendRequestService service) : IQueryHandler<GetListBySenderFriendRequestQuery, PaginatedResult<FriendRequestResBase>>
 {
-    public async Task<ResultT<PaginatedResult<FriendRequestByUserResDto>>> Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken)
+    public async Task<ResultT<PaginatedResult<FriendRequestResBase>>> Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken)
     {
         var result = await service.GetListBySenderAsync(request.Query, cancellationToken);
         var response = Result.Success(result, "Get list friend request by sender successfully");

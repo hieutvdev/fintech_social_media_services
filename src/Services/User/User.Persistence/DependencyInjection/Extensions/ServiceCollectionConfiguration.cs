@@ -17,6 +17,7 @@ public static class ServiceCollectionConfiguration
 {
     public static IServiceCollection AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddHttpClient();
         services.AddDbContextService(configuration);
         services.AddRepositoryService();
         return services;

@@ -1,0 +1,593 @@
+2025-01-05 21:37:39.560 +07:00 [ERR] Token invalid
+2025-01-05 21:37:39.583 +07:00 [ERR] Exception occurred while processing message.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-01-05 21:37:39.590 +07:00 [ERR] Token invalid
+2025-01-05 21:37:39.592 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:37:39.596 +07:00 [ERR] 2025-01-05 14:37:39 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIPRIHF1J:00000003 - IP:::1 - [GET] - 0ms - Error:Token-Invalid - InputParams:{}
+2025-01-05 21:38:23.745 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:38:23.750 +07:00 [ERR] 2025-01-05 14:38:23 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIPRIHF1J:00000004 - IP:::1 - [GET] - 0ms - Error:A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided. - InputParams:{}
+2025-01-05 21:38:32.316 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:38:32.319 +07:00 [ERR] 2025-01-05 14:38:32 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIPRIHF1J:00000005 - IP:::1 - [GET] - 0ms - Error:A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided. - InputParams:{}
+2025-01-05 21:42:03.593 +07:00 [ERR] Token invalid
+2025-01-05 21:42:03.615 +07:00 [ERR] Exception occurred while processing message.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-01-05 21:42:03.619 +07:00 [ERR] Token invalid
+2025-01-05 21:42:03.621 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.UnauthorizedException: Token-Invalid
+   at BuildingBlocks.DependencyInjection.Extensions.ServiceCollectionConfiguration.<>c.<AddAuthenticationService>b__3_2(AuthenticationFailedContext context) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\DependencyInjection\Extensions\ServiceCollectionConfiguration.cs:line 172
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.AuthenticationFailed(AuthenticationFailedContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:42:03.626 +07:00 [ERR] 2025-01-05 14:42:03 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DISB0P9LG:00000003 - IP:::1 - [GET] - 0ms - Error:Token-Invalid - InputParams:{}
+2025-01-05 21:42:27.293 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:42:27.298 +07:00 [ERR] 2025-01-05 14:42:27 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DISB0P9LG:00000004 - IP:::1 - [GET] - 0ms - Error:A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided. - InputParams:{}
+2025-01-05 21:42:53.510 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:42:53.513 +07:00 [ERR] 2025-01-05 14:42:53 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DISB0P9LG:00000005 - IP:::1 - [GET] - 0ms - Error:A suitable constructor for type 'User.Infrastructure.Services.AuthServerService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided. - InputParams:{}
+2025-01-05 21:44:34.915 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 58
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:44:34.953 +07:00 [ERR] 2025-01-05 14:44:34 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DITFUHM7N:00000003 - IP:::1 - [GET] - 0ms - Error:Request error: Response status code does not indicate success: 400 (Bad Request). - InputParams:{}
+2025-01-05 21:47:31.607 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Error while copying content to a stream.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 59
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:47:31.638 +07:00 [ERR] 2025-01-05 14:47:31 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIVD8U36U:00000003 - IP:::1 - [GET] - 0ms - Error:Request error: Error while copying content to a stream. - InputParams:{}
+2025-01-05 21:47:41.061 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Error while copying content to a stream.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 59
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:47:41.063 +07:00 [ERR] 2025-01-05 14:47:41 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIVD8U36U:00000004 - IP:::1 - [GET] - 0ms - Error:Request error: Error while copying content to a stream. - InputParams:{}
+2025-01-05 21:47:50.080 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Error while copying content to a stream.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 59
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:47:50.082 +07:00 [ERR] 2025-01-05 14:47:50 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIVD8U36U:00000005 - IP:::1 - [GET] - 0ms - Error:Request error: Error while copying content to a stream. - InputParams:{}
+2025-01-05 21:48:09.492 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Error while copying content to a stream.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 59
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:48:09.494 +07:00 [ERR] 2025-01-05 14:48:09 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIVD8U36U:00000006 - IP:::1 - [GET] - 0ms - Error:Request error: Error while copying content to a stream. - InputParams:{}
+2025-01-05 21:48:58.399 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Error while copying content to a stream.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 59
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:48:58.402 +07:00 [ERR] 2025-01-05 14:48:58 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DIVD8U36U:00000007 - IP:::1 - [GET] - 0ms - Error:Request error: Error while copying content to a stream. - InputParams:{}
+2025-01-05 21:51:40.704 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 Ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 12
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:51:40.737 +07:00 [ERR] 2025-01-05 14:51:40 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ1L87MQF:00000003 - IP:::1 - [GET] - 0ms - Error:Request error: Response status code does not indicate success: 400 (Bad Request). - InputParams:{}
+2025-01-05 21:55:15.920 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 33
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 38
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:55:15.952 +07:00 [ERR] 2025-01-05 14:55:15 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ3LA5JQD:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 21:55:32.247 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 33
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 38
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:55:32.249 +07:00 [ERR] 2025-01-05 14:55:32 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ3LA5JQD:00000004 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 21:56:41.065 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 33
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 38
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:56:41.095 +07:00 [ERR] 2025-01-05 14:56:41 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ4G0H8J1:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 21:56:46.647 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 33
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 38
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:56:46.649 +07:00 [ERR] 2025-01-05 14:56:46 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ4G0H8J1:00000004 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 21:58:08.800 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 401 (Unauthorized).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 33
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 38
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 21:58:08.838 +07:00 [ERR] 2025-01-05 14:58:08 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ55R7LOU:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:00:25.079 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 63
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 36
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 41
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:00:25.113 +07:00 [ERR] 2025-01-05 15:00:25 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ6JCLFEM:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:06:33.192 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 64
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:06:33.223 +07:00 [ERR] 2025-01-05 15:06:33 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ9TT0CR1:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:06:39.195 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 64
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:06:39.197 +07:00 [ERR] 2025-01-05 15:06:39 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ9TT0CR1:00000004 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:09:45.926 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 64
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:09:45.928 +07:00 [ERR] 2025-01-05 15:09:45 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ9TT0CR3:00000001 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:10:10.860 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 64
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:10:10.862 +07:00 [ERR] 2025-01-05 15:10:10 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ9TT0CR3:00000002 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:13:30.446 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Request error: Response status code does not indicate success: 400 (Bad Request).
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 64
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:13:30.448 +07:00 [ERR] 2025-01-05 15:13:30 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJ9TT0CR4:00000001 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:16:35.044 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Error deserializing response: The JSON value could not be converted to System.Collections.Generic.IEnumerable`1[User.Application.DTOs.Response.AuthService.UserShareResDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 68
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:16:35.078 +07:00 [ERR] 2025-01-05 15:16:35 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJFDF226B:00000003 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:16:42.781 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Error deserializing response: The JSON value could not be converted to System.Collections.Generic.IEnumerable`1[User.Application.DTOs.Response.AuthService.UserShareResDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 68
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:16:42.783 +07:00 [ERR] 2025-01-05 15:16:42 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJFDF226B:00000004 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:22:57.154 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Error deserializing response: The JSON value could not be converted to System.Collections.Generic.IEnumerable`1[User.Application.DTOs.Response.AuthService.UserShareResDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 68
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:22:57.156 +07:00 [ERR] 2025-01-05 15:22:57 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJFDF226D:00000001 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:23:07.902 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ApplicationException: Failed to fetch user shares from the API.
+ ---> BuildingBlocks.Exceptions.BadRequestException: Error deserializing response: The JSON value could not be converted to System.Collections.Generic.IEnumerable`1[User.Application.DTOs.Response.AuthService.UserShareResDto]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+   at BuildingBlocks.Repository.ClientCallApi.ClientCallApi.GetAsync[T](String url, Dictionary`2 headers, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Repository\ClientCallApi\ClientCallApi.cs:line 68
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 35
+   --- End of inner exception stack trace ---
+   at User.Infrastructure.Services.AuthServerService.GetUserShareAsync(IEnumerable`1 ids, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\AuthServerService.cs:line 40
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 31
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:23:07.903 +07:00 [ERR] 2025-01-05 15:23:07 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJFDF226D:00000002 - IP:::1 - [GET] - 0ms - Error:Failed to fetch user shares from the API. - InputParams:{}
+2025-01-05 22:35:11.511 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 33
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:35:11.546 +07:00 [ERR] 2025-01-05 15:35:11 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJQ29LLUF:00000003 - IP:::1 - [GET] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}
+2025-01-05 22:35:31.268 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at User.Infrastructure.Services.FriendRequestService.GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Infrastructure\Services\FriendRequestService.cs:line 33
+   at User.Application.UseCases.Queries.FriendRequest.GetListByReceiver.GetListBySenderFriendRequestQueryHandler.Handle(GetListBySenderFriendRequestQuery request, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Application\UseCases\Queries\FriendRequest\GetListByReceiver\GetListBySenderFriendRequestQueryHandler.cs:line 12
+   at BuildingBlocks.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\LoggingBehavior.cs:line 22
+   at BuildingBlocks.Behaviors.PerformancePipelineBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\PerformancePipelineBehavior.cs:line 24
+   at BuildingBlocks.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks\Behaviors\ValidationBehavior.cs:line 31
+   at User.Presentation.APIs.FriendRequestEndpoint.<>c.<<AddRoutes>b__1_1>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.Presentation\APIs\FriendRequestEndpoint.cs:line 36
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-05 22:35:31.270 +07:00 [ERR] 2025-01-05 15:35:31 - ERROR - /api/v1/friend-request/by-sender?PageIndex=1&PageSize=10 - 0HN9DJQ29LLUF:00000004 - IP:::1 - [GET] - 0ms - Error:Object reference not set to an instance of an object. - InputParams:{}

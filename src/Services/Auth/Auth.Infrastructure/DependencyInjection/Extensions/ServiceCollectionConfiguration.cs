@@ -168,103 +168,103 @@ public static class ServiceCollectionConfiguration
                 };
             });
         
-        services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            })
-            .AddCookie()
-            .AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = configuration["SSO:Facebook:AppId"]!;
-                facebookOptions.AppSecret = configuration["SSO:Facebook:AppSecret"]!;
-
-                facebookOptions.Events = new OAuthEvents()
-                {
-                    OnRedirectToAuthorizationEndpoint = context =>
-                    {
-                        Console.WriteLine(context.RedirectUri);
-                        return   Task.CompletedTask;
-                    }
-            
-                };
-            })
-            .AddGoogle(googleOptions =>
-            {
-                googleOptions.ClientId = configuration["SSO:Google:ClientId"]!;
-                googleOptions.ClientSecret = configuration["SSO:Google:ClientSecret"]!;
-              
-                
-                googleOptions.Events = new OAuthEvents{
-                    OnRedirectToAuthorizationEndpoint = context =>
-                    {
-                        Console.WriteLine(context.RedirectUri);
-                        return   Task.CompletedTask;
-                    }
-            
-                };
-            });
+        // services.AddAuthentication(options =>
+        //     {
+        //         options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //         options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //         options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //     })
+        //     .AddCookie()
+        //     .AddFacebook(facebookOptions =>
+        //     {
+        //         facebookOptions.AppId = configuration["SSO:Facebook:AppId"]!;
+        //         facebookOptions.AppSecret = configuration["SSO:Facebook:AppSecret"]!;
+        //
+        //         facebookOptions.Events = new OAuthEvents()
+        //         {
+        //             OnRedirectToAuthorizationEndpoint = context =>
+        //             {
+        //                 Console.WriteLine(context.RedirectUri);
+        //                 return   Task.CompletedTask;
+        //             }
+        //     
+        //         };
+        //     })
+        //     .AddGoogle(googleOptions =>
+        //     {
+        //         googleOptions.ClientId = configuration["SSO:Google:ClientId"]!;
+        //         googleOptions.ClientSecret = configuration["SSO:Google:ClientSecret"]!;
+        //       
+        //         
+        //         googleOptions.Events = new OAuthEvents{
+        //             OnRedirectToAuthorizationEndpoint = context =>
+        //             {
+        //                 Console.WriteLine(context.RedirectUri);
+        //                 return   Task.CompletedTask;
+        //             }
+        //     
+        //         };
+        //     });
         
-        services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = "Discord";
-            })
-            .AddOAuth("Discord", options =>
-            {
-                options.ClientId = configuration["SSO:Discord:ClientId"];
-                options.ClientSecret = configuration["SSO:Discord:ClientSecret"];
-                options.CallbackPath = new PathString("/signin-discord");
-
-                options.AuthorizationEndpoint = "https://discord.com/api/oauth2/authorize";
-                options.TokenEndpoint = "https://discord.com/api/oauth2/token";
-                options.UserInformationEndpoint = "https://discord.com/api/users/@me";
-
-                options.SaveTokens = true;
-                options.Scope.Add("identify");
-                options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
-                options.ClaimActions.MapJsonKey(ClaimTypes.Name, "username");
-                options.ClaimActions.MapJsonKey("urn:discord:avatar", "avatar");
-
-                options.Events = new OAuthEvents
-                {
-                    OnRedirectToAuthorizationEndpoint = async context =>
-                    {
-                        Console.WriteLine(context.RedirectUri); 
-                    },
-                    
-                    OnCreatingTicket = async context =>
-                    {
-                        var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
-                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
-
-                        Console.WriteLine(request.Headers.Authorization);
-                        var response = await context.Backchannel.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
-                        response.EnsureSuccessStatusCode();
-
-                        var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
-                        context.RunClaimActions(user.RootElement);
-
-                       
-                        var userId = user.RootElement.GetProperty("id").GetString();
-                        var username = user.RootElement.GetProperty("username").GetString();
-                        var email = user.RootElement.TryGetProperty("email", out var emailProp) ? emailProp.GetString() : null;
-                        var avatar = user.RootElement.TryGetProperty("avatar", out var avatarProp) ? avatarProp.GetString() : null;
-
-                        // Thêm thông tin vào Claims
-                        if (!string.IsNullOrEmpty(email))
-                        {
-                            context.Identity.AddClaim(new Claim(ClaimTypes.Email, email));
-                        }
-                        if (!string.IsNullOrEmpty(avatar))
-                        {
-                            context.Identity.AddClaim(new Claim("urn:discord:avatar", avatar));
-                        }
-                    }
-                };
-            });
+        // services.AddAuthentication(options =>
+        //     {
+        //         options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //         options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        //         options.DefaultChallengeScheme = "Discord";
+        //     })
+        //     .AddOAuth("Discord", options =>
+        //     {
+        //         options.ClientId = configuration["SSO:Discord:ClientId"];
+        //         options.ClientSecret = configuration["SSO:Discord:ClientSecret"];
+        //         options.CallbackPath = new PathString("/signin-discord");
+        //
+        //         options.AuthorizationEndpoint = "https://discord.com/api/oauth2/authorize";
+        //         options.TokenEndpoint = "https://discord.com/api/oauth2/token";
+        //         options.UserInformationEndpoint = "https://discord.com/api/users/@me";
+        //
+        //         options.SaveTokens = true;
+        //         options.Scope.Add("identify");
+        //         options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
+        //         options.ClaimActions.MapJsonKey(ClaimTypes.Name, "username");
+        //         options.ClaimActions.MapJsonKey("urn:discord:avatar", "avatar");
+        //
+        //         options.Events = new OAuthEvents
+        //         {
+        //             OnRedirectToAuthorizationEndpoint = async context =>
+        //             {
+        //                 Console.WriteLine(context.RedirectUri); 
+        //             },
+        //             
+        //             OnCreatingTicket = async context =>
+        //             {
+        //                 var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
+        //                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
+        //
+        //                 Console.WriteLine(request.Headers.Authorization);
+        //                 var response = await context.Backchannel.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+        //                 response.EnsureSuccessStatusCode();
+        //
+        //                 var user = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+        //                 context.RunClaimActions(user.RootElement);
+        //
+        //                
+        //                 var userId = user.RootElement.GetProperty("id").GetString();
+        //                 var username = user.RootElement.GetProperty("username").GetString();
+        //                 var email = user.RootElement.TryGetProperty("email", out var emailProp) ? emailProp.GetString() : null;
+        //                 var avatar = user.RootElement.TryGetProperty("avatar", out var avatarProp) ? avatarProp.GetString() : null;
+        //
+        //                 // Thêm thông tin vào Claims
+        //                 if (!string.IsNullOrEmpty(email))
+        //                 {
+        //                     context.Identity.AddClaim(new Claim(ClaimTypes.Email, email));
+        //                 }
+        //                 if (!string.IsNullOrEmpty(avatar))
+        //                 {
+        //                     context.Identity.AddClaim(new Claim("urn:discord:avatar", avatar));
+        //                 }
+        //             }
+        //         };
+        //     });
         
 
         return services;

@@ -47,5 +47,9 @@ public interface IAuthService
     Task<bool> ChangePasswordForAdminAsync(ChangePasswordForAdminRequestDto request,
         CancellationToken cancellationToken = default!
     );
+    
+    Task<UserDto> GetUserByIdAsync(string id, CancellationToken cancellationToken = default!);
+    
+    Task<IEnumerable<UserShareResponseDto>> GetUserShareAsync(UserShareRequestDto query, CancellationToken cancellationToken = default!);
 
 }

@@ -5,7 +5,7 @@ namespace Auth.Domain.Models;
 
 public class ApplicationUser : IdentityUser, IDateTracking
 {
-    public string AvatarUrl { get; set; } = default!;
+    public string? AvatarUrl { get; set; } = default!;
     public int Status { get; set; } = 1;
     public string FullName { get; set; } = default!;
     public string BirthDay { get; set; } = default!;

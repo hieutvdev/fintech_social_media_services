@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using BuildingBlocks.Exceptions;
 using BuildingBlocks.Security;
+using Serilog;
 
 namespace BuildingBlocks.Repository.ClientCallApi;
 
@@ -20,9 +21,13 @@ public class ClientCallApi : IClientCallApi
     
     private void SetAuthorizationHeader()
     {
-        string token = _authorizeExtension.GetToken() ?? "";
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        string token = _authorizeExtension.GetToken() ?? string.Empty;
+        if (!string.IsNullOrEmpty(token))
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        }
     }
+
 
     public async Task<T> GetAsync<T>(string url, Dictionary<string, string>? headers = null, CancellationToken cancellationToken = default)
     {
@@ -44,9 +49,10 @@ public class ClientCallApi : IClientCallApi
         try
         {
 
+            
             var response = await _httpClient.GetAsync(url, cancellationToken);
             response.EnsureSuccessStatusCode();
-
+            
             var content = await response.Content.ReadAsStringAsync(cancellationToken);
             return JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions
             {

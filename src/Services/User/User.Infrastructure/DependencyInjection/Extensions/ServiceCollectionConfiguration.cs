@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.DependencyInjection.Extensions;
+using BuildingBlocks.Repository.ClientCallApi;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -13,6 +14,7 @@ public static class ServiceCollectionConfiguration
 {
     public static IServiceCollection AddInfrastructureService(this IServiceCollection services, IConfiguration configuration)
     {
+        
         services.AddAuthenticationService(configuration);
         services.AddDistributedCacheService(configuration);
         services.AddHealthCheckServices(configuration);
@@ -48,6 +50,8 @@ public static class ServiceCollectionConfiguration
     
     private static IServiceCollection AddServiceUseCase(this IServiceCollection services)
     {
+        services.AddHttpClient<IClientCallApi, ClientCallApi>();
+        services.AddScoped<IAuthServerService, AuthServerService>();
         services.AddScoped<IUserTypeService, UserTypeService>();
         services.AddScoped<IUserInfoService, UserInfoService>();
         services.AddScoped<IFriendRequestService, FriendRequestService>();

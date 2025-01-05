@@ -103,12 +103,12 @@ public class AuthorizeExtension : IAuthorizeExtension
 
     public string GetToken()
     {
-        var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"];
-        if (string.IsNullOrEmpty(token))
+        var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].ToString();
+        if (string.IsNullOrEmpty(token) || !token.StartsWith("Bearer "))
         {
-            throw new BadRequestException("Invalid token");
+            throw new BadRequestException("Invalid or missing Authorization token.");
         }
 
-        return token.ToString()!.Replace("Bearer ", "");
+        return token.Substring("Bearer ".Length).Trim();
     }
 }

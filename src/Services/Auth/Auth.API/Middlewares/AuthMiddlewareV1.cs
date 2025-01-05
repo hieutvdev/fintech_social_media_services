@@ -1,6 +1,7 @@
 ﻿using Auth.Application.Services;
 using Auth.Infrastructure.Configuration;
 using BuildingBlocks.Exceptions;
+using Serilog;
 
 namespace Auth.API.Middlewares;
 
@@ -25,13 +26,14 @@ public class AuthMiddlewareV1
             var jwtService = context.RequestServices.GetRequiredService<IJwtTokenService>();
             
             string accessTokenCacheKey = $"{CacheKey.Domain}{CacheKey.Auth.AccessToken}{jwtService.GetUserFromClaimToken().Id}{GetDeviceInfo(context)}";
+            Log.Information("KEY: " + accessTokenCacheKey);
             var cacheResponse = await cacheService.GetCacheAsync(accessTokenCacheKey);
 
-            if (string.IsNullOrEmpty(cacheResponse))
-            {
-                throw new BadRequestException("Invalid token");
-                return;
-            }
+            // if (string.IsNullOrEmpty(cacheResponse))
+            // {
+            //     throw new BadRequestException("Invalid token 1111111111");
+            //     return;
+            // }
         }
 
         await _next(context);

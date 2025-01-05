@@ -12,7 +12,7 @@ public interface IFriendRequestService
     
     Task<bool> DeleteAsync(DeleteFriendRequestReqDto payload, CancellationToken cancellationToken = default!);
     
-    Task<PaginatedResult<FriendRequestByUserResDto>> GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken = default!);
+    Task<PaginatedResult<FriendRequestResBase>> GetListBySenderAsync(PaginationRequest query, CancellationToken cancellationToken = default!);
     
     Task<PaginatedResult<FriendRequestByUserResDto>> GetListByReceiverIdAsync(PaginationRequest query, CancellationToken cancellationToken = default!);
     
