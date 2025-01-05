@@ -12,4 +12,6 @@ public interface IUserInfoRepository
     
     Task<UserInfoDetailResBaseDto> GetUserInfoByIdAsync(string id, CancellationToken cancellationToken = default!);
     
+    Task<bool> DeleteUserInfoAsync(DeleteUserInfoReqDto payload, CancellationToken cancellationToken = default!);
+    
 }

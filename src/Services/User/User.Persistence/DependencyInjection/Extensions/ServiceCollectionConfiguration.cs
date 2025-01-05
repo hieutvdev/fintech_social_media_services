@@ -63,6 +63,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped(typeof(IRepositoryBaseService<>), typeof(RepositoryBaseService<>));
         services.AddScoped<IUserTypeRepository, UserTypeRepository>();
         services.AddScoped<IUserInfoRepository, UserInfoRepository>();
+        services.AddScoped<IFriendRequestRepository, FriendRequestRepository>();
         return services;
     }
 }

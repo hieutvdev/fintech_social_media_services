@@ -23,4 +23,6 @@ public interface IUserTypeService
     Task<bool> UpdateAsync(UpdateUserTypeReqDto payload, CancellationToken cancellationToken = default!);
     
     Task<bool> DeleteAsync(DeleteUserTypeReqDto payload, CancellationToken cancellationToken = default!);
+    
+    
 }

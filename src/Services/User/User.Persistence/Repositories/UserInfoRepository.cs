@@ -118,4 +118,23 @@ public class UserInfoRepository
             throw new BadRequestException(e.Message);
         }
     }
+
+    public async Task<bool> DeleteUserInfoAsync(DeleteUserInfoReqDto payload, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var ids = payload.Ids.Distinct();
+            var userInfoIds = ids.Select(r => UserInfoId.Of(Guid.Parse(r))).ToList();
+            var isDeleted = await repositoryBaseService.ExecuteDeleteAsync<UserInfo>(r => userInfoIds.Contains(r.Id), cancellationToken);
+            foreach (var userInfoId in userInfoIds)
+            {
+                await cache.RemoveCacheAsync(string.Format(CacheKey.UserInfo.GetDetail, userInfoId));
+            }
+            return isDeleted;
+        }   
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
 }

@@ -50,6 +50,7 @@ public static class ServiceCollectionConfiguration
     {
         services.AddScoped<IUserTypeService, UserTypeService>();
         services.AddScoped<IUserInfoService, UserInfoService>();
+        services.AddScoped<IFriendRequestService, FriendRequestService>();
         return services;
     }
     

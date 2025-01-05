@@ -1,11 +1,4 @@
-﻿using BuildingBlocks.CQRS.Common;
-using Carter;
-using MediatR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using User.Application.DTOs.Request.UserType;
+﻿using User.Application.DTOs.Request.UserType;
 using User.Application.UseCases.Commands.UserType.Create;
 using User.Application.UseCases.Commands.UserType.Delete;
 using User.Application.UseCases.Commands.UserType.Update;

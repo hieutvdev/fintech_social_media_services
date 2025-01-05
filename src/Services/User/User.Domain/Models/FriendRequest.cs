@@ -20,9 +20,7 @@ public class FriendRequest : Entity<FriendRequestId>, IAggregateRoot
     public static FriendRequest Create(
         FriendRequestId id,
         string senderId,
-        string receiverId,
-        DateTime? sendAt,
-        DateTime? responseAt)
+        string receiverId)
     {
         if (id == null)
             throw new ArgumentNullException(nameof(id), "FriendRequestId cannot be null.");
@@ -40,8 +38,7 @@ public class FriendRequest : Entity<FriendRequestId>, IAggregateRoot
             SenderId = senderId,
             ReceiverId = receiverId,
             Status = (int)FriendRequestStatus.PEDDING,
-            SendAt = sendAt,
-            ResponseAt = responseAt
+            SendAt = DateTime.UtcNow,
         };
     }
     

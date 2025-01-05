@@ -24,4 +24,9 @@ public class UserInfoService
     {
         return await repository.GetUserInfoByIdAsync(id, cancellationToken);
     }
+
+    public async Task<bool> DeleteUserInfoAsync(DeleteUserInfoReqDto payload, CancellationToken cancellationToken = default)
+    {
+        return await repository.DeleteUserInfoAsync(payload, cancellationToken);
+    }
 }
