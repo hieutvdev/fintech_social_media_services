@@ -14,6 +14,9 @@ public class UserInfoConfiguration : IEntityTypeConfiguration<UserInfo>
         builder.Property(r => r.Id)
             .HasConversion(userInfoId => userInfoId.Value, dbId => UserInfoId.Of(dbId));
 
+        builder.HasIndex(r => r.FullName);
+        builder.Property(r => r.FullName).IsRequired();
+        
         builder.HasIndex(r => r.UserId).IsUnique();
         
         builder.Property(r => r.UserId).IsRequired();

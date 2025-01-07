@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.DependencyInjection.Extensions;
+using BuildingBlocks.Messaging.Messaging.Kafka;
 using BuildingBlocks.Repository.ClientCallApi;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using User.Application.Services;
+using User.Infrastructure.Configuration;
 using User.Infrastructure.Services;
 
 namespace User.Infrastructure.DependencyInjection.Extensions;
@@ -18,7 +20,7 @@ public static class ServiceCollectionConfiguration
         services.AddAuthenticationService(configuration);
         services.AddDistributedCacheService(configuration);
         services.AddHealthCheckServices(configuration);
-        services.AddServiceUseCase();
+        services.AddServiceUseCase(configuration);
         return services;
     }
     
@@ -48,8 +50,16 @@ public static class ServiceCollectionConfiguration
         return app;
     }
     
-    private static IServiceCollection AddServiceUseCase(this IServiceCollection services)
+    private static IServiceCollection AddMessageBrokerService(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddSingleton(typeof(IKafkaConsumerService<,>), typeof(KafkaConsumerService<,>));
+        services.AddSingleton(typeof(IKafkaProducerService<,>), typeof(KafkaProducerService<,>));
+        return services;
+    }
+    
+    private static IServiceCollection AddServiceUseCase(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<MessageTopic>(configuration.GetSection("MessageTopic"));
         services.AddHttpClient<IClientCallApi, ClientCallApi>();
         services.AddScoped<IAuthServerService, AuthServerService>();
         services.AddScoped<IUserTypeService, UserTypeService>();

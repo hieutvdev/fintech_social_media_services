@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JVDnlCo9MAM=",
+  "dgSpecHash": "1flXFwvtySU=",
   "success": true,
   "projectFilePath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.API\\User.API.csproj",
   "expectedPackageFiles": [
@@ -34,12 +34,11 @@
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.1.0\\microsoft.aspnetcore.http.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.1.0\\microsoft.aspnetcore.http.features.2.1.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.7\\microsoft.aspnetcore.openapi.8.0.7.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.common\\4.11.0\\microsoft.codeanalysis.common.4.11.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.11.0\\microsoft.codeanalysis.csharp.4.11.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.5.0\\microsoft.codeanalysis.csharp.workspaces.4.5.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.5.0\\microsoft.codeanalysis.workspaces.common.4.5.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\4.11.0\\microsoft.codeanalysis.csharp.workspaces.4.11.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.11.0\\microsoft.codeanalysis.workspaces.common.4.11.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.8\\microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.8\\microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.8\\microsoft.entityframeworkcore.analyzers.8.0.8.nupkg.sha512",
@@ -96,51 +95,20 @@
     "C:\\Users\\trinh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.attributedmodel\\6.0.0\\system.composition.attributedmodel.6.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.convention\\6.0.0\\system.composition.convention.6.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.hosting\\6.0.0\\system.composition.hosting.6.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition\\8.0.0\\system.composition.8.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.attributedmodel\\8.0.0\\system.composition.attributedmodel.8.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.convention\\8.0.0\\system.composition.convention.8.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.hosting\\8.0.0\\system.composition.hosting.8.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.runtime\\8.0.0\\system.composition.runtime.8.0.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.composition.typedparts\\8.0.0\\system.composition.typedparts.8.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
-    "C:\\Users\\trinh\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.CSharp.Workspaces 4.5.0 requires Microsoft.CodeAnalysis.Common (= 4.5.0) but version Microsoft.CodeAnalysis.Common 4.11.0 was resolved.",
-      "libraryId": "Microsoft.CodeAnalysis.Common",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.CSharp.Workspaces 4.5.0 requires Microsoft.CodeAnalysis.CSharp (= 4.5.0) but version Microsoft.CodeAnalysis.CSharp 4.11.0 was resolved.",
-      "libraryId": "Microsoft.CodeAnalysis.CSharp",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Microsoft.CodeAnalysis.Workspaces.Common 4.5.0 requires Microsoft.CodeAnalysis.Common (= 4.5.0) but version Microsoft.CodeAnalysis.Common 4.11.0 was resolved.",
-      "libraryId": "Microsoft.CodeAnalysis.Common",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

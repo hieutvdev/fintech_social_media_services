@@ -1,4 +1,6 @@
 ﻿using System.Linq.Expressions;
+using System.Text.Json;
+using Microsoft.Extensions.Logging;
 
 namespace ShredKernel.Specifications;
 
@@ -66,7 +68,7 @@ public static class QueryableExtensions
     }
     
     
-   public static Expression<Func<T, object>> GetPropertyGetterV2<T>(string propertyName)
+    public static Expression<Func<T, object>> GetPropertyGetterV2<T>(string propertyName)
     {
         var parameter = Expression.Parameter(typeof(T), "x");
         var property = Expression.Property(parameter, propertyName);
@@ -74,6 +76,8 @@ public static class QueryableExtensions
         return Expression.Lambda<Func<T, object>>(conversion, parameter);
     }
 
+    
+    
  
 
 

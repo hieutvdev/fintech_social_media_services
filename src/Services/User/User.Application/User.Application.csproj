@@ -16,6 +16,7 @@
     
     <ItemGroup>
       <Folder Include="DependencyInjection\Options\" />
+      <Folder Include="DTOs\Request\AuthService\" />
       <Folder Include="Extensions\" />
       <Folder Include="UseCases\Validators\" />
     </ItemGroup>

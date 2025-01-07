@@ -1,18 +1,6 @@
-﻿using BuildingBlocks.Exceptions;
-using BuildingBlocks.Pagination;
-using BuildingBlocks.Repository.Cache;
-using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
-using BuildingBlocks.Security;
-using MassTransit.Initializers;
-using Microsoft.EntityFrameworkCore;
-using ShredKernel.BaseClasses;
-using ShredKernel.Specifications;
+﻿
 using User.Application.DTOs.Request.FriendRequest;
 using User.Application.DTOs.Response.FriendRequest;
-using User.Application.Repositories;
-using User.Domain.Models;
-using User.Domain.ValuesObjects;
-using User.Persistence.Data;
 
 namespace User.Persistence.Repositories;
 

@@ -111,7 +111,7 @@ namespace User.Persistence.Data.Migrations
                     b.Property<DateTime?>("SendAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2024, 12, 26, 11, 5, 59, 301, DateTimeKind.Utc).AddTicks(9164));
+                        .HasDefaultValue(new DateTime(2025, 1, 7, 16, 44, 32, 555, DateTimeKind.Utc).AddTicks(2509));
 
                     b.Property<string>("SenderId")
                         .IsRequired()
@@ -212,8 +212,14 @@ namespace User.Persistence.Data.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("AvatarUrl")
+                        .HasColumnType("text");
+
                     b.Property<string>("Bio")
                         .HasColumnType("text");
+
+                    b.Property<DateTime?>("BirthDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CoverPhoto")
                         .HasColumnType("text");
@@ -228,6 +234,10 @@ namespace User.Persistence.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Education")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Gender")
@@ -259,6 +269,8 @@ namespace User.Persistence.Data.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FullName");
 
                     b.HasIndex("UserId")
                         .IsUnique();

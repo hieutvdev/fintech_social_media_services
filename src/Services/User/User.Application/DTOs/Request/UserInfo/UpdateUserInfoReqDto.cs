@@ -11,5 +11,8 @@ public record UpdateUserInfoReqDto(
     string? Work,
     string Skills,
     int RelationshipStatus,
-    string? Hobbies
+    string? Hobbies,
+    string FullName,
+    string AvatarUrl,
+    string? BirthDate
     );

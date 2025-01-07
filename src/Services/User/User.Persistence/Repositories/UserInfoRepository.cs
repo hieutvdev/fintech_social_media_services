@@ -1,18 +1,8 @@
-﻿using System.Text;
-using BuildingBlocks.Exceptions;
-using BuildingBlocks.Repository.Cache;
-using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
-using BuildingBlocks.Security;
-using Newtonsoft.Json;
-using Serilog;
+﻿
+
 using User.Application.DTOs.Request.UserInfo;
 using User.Application.DTOs.Response.UserInfo;
-using User.Application.Exceptions;
-using User.Application.Repositories;
-using User.Domain.Models;
-using User.Domain.ValuesObjects;
-using User.Infrastructure.Configuration;
-using User.Persistence.Data;
+
 
 namespace User.Persistence.Repositories;
 
@@ -25,8 +15,12 @@ public class UserInfoRepository
     {
         var userInfoId = UserInfoId.Of(Guid.NewGuid());
         try
-        {   
-            var userInfo = UserInfo.Create(userInfoId, payload.UserId, null, payload.Gender, null, null, null, null, null, 1, null);
+        {
+            if (!DataConvertHelper.TryParseDateTime(payload.BirthDay, out var time))
+            {
+                throw new BadRequestException("Invalid date time format.");
+            }
+            var userInfo = UserInfo.Create(userInfoId, payload.UserId, null, payload.Gender, null, null, null, null, null, 1, null, payload.FullName, payload.AvatarUrl, time);
             await repositoryBaseService.AddAsync(userInfo, cancellationToken);
             var isSuccessful = await repositoryBaseService.SaveChangesAsync(cancellationToken) > 0;
             return isSuccessful;
@@ -42,6 +36,11 @@ public class UserInfoRepository
         var userInfoId = UserInfoId.Of(Guid.Parse(payload.Id));
         try
         {
+
+            if (!DataConvertHelper.TryParseDateTime(payload.BirthDate!, out DateTime time))
+            {
+                throw new BadRequestException("Invalid date time format.");
+            }
             var isUpdated = await repositoryBaseService.ExecuteUpdateAsync<UserInfo>(
                 condition: r => r.Id == userInfoId,
                 updateExpression: updates => updates
@@ -53,7 +52,10 @@ public class UserInfoRepository
                     .SetProperty(r => r.Work, payload.Work)
                     .SetProperty(r => r.Skills, payload.Skills)
                     .SetProperty(r => r.RelationshipStatus, payload.RelationshipStatus)
-                    .SetProperty(r => r.Hobbies, payload.Hobbies),
+                    .SetProperty(r => r.Hobbies, payload.Hobbies)
+                    .SetProperty(r => r.FullName, payload.FullName)
+                    .SetProperty(r => r.AvatarUrl, payload.AvatarUrl)
+                    .SetProperty(r => r.BirthDate, time),
                 cancellationToken: cancellationToken
             );
 

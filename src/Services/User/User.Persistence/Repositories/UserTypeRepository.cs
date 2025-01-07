@@ -1,22 +1,8 @@
-﻿using BuildingBlocks.Exceptions;
-using BuildingBlocks.Helpers;
-using BuildingBlocks.Pagination;
-using BuildingBlocks.Repository.Cache;
-using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
-using BuildingBlocks.Security;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Serilog;
-using ShredKernel.BaseClasses;
-using ShredKernel.Specifications;
+﻿
 using User.Application.DTOs.Request.UserType;
 using User.Application.DTOs.Response.UserType;
-using User.Application.Exceptions;
-using User.Application.Repositories;
 using User.Application.UseCases.Models.UserType;
-using User.Domain.Models;
-using User.Infrastructure.Configuration;
-using User.Persistence.Data;
+
 
 namespace User.Persistence.Repositories;
 

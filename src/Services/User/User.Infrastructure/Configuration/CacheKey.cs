@@ -20,4 +20,10 @@ public class CacheKey
         public static readonly string GetDetail = $"{Domain}-UserInfo-GetDetail-{{0}}";
     }
     
+    
+    public static class FriendShip
+    {
+        public static readonly string GetList = $"{Domain}-FriendShip-GetList-{{0}}";
+    }
+    
 }

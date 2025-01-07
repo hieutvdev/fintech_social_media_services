@@ -2,5 +2,8 @@
 
 public record CreateUserInfoReqDto(
     string UserId,
-    int Gender
+    int Gender,
+    string FullName,
+    string AvatarUrl,
+    string BirthDay
     );

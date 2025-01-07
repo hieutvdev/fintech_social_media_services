@@ -41,7 +41,7 @@ public class JwtTokenService : IJwtTokenService
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim("FullName", user.FullName),
             new Claim(ClaimTypes.Name, user.UserName!),
-            new Claim("AvatarUrl", user.AvatarUrl),
+            new Claim("AvatarUrl", user.AvatarUrl!),
             new Claim("BirthDay", user.BirthDay)
         };
 

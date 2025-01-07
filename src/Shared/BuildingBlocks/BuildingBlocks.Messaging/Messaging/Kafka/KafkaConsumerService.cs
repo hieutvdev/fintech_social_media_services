@@ -108,7 +108,7 @@ namespace BuildingBlocks.Messaging.Messaging.Kafka
                         {
                             _logger.LogInformation($"Consumed message: {consumerResult.Message.Key}");
                             await handleMessage(consumerResult.Message.Key, consumerResult.Message.Value);
-                            _consumer.Commit(consumerResult); // Commit offset after successful processing
+                            _consumer.Commit(consumerResult);
                         }
                     }
                     catch (ConsumeException ex)

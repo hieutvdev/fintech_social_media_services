@@ -162,7 +162,6 @@ D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\obj\De
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\obj\Debug\net8.0\User.API.genruntimeconfig.cache
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\obj\Debug\net8.0\ref\User.API.dll
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\bin\Debug\net8.0\Humanizer.dll
-D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 D:\workspaces\backend\net\fintech_social_media\src\Services\User\User.API\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll

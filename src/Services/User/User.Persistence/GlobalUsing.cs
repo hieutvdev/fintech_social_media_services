@@ -1,0 +1,17 @@
+﻿global using BuildingBlocks.Pagination;
+global using BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
+global using BuildingBlocks.Exceptions;
+global using BuildingBlocks.Repository.Cache;
+global using BuildingBlocks.Security;
+global using Microsoft.EntityFrameworkCore;
+global using Newtonsoft.Json;
+global using Serilog;
+global using ShredKernel.Specifications;
+global using User.Application.Exceptions;
+global using User.Application.Repositories;
+global using User.Domain.Models;
+global using User.Domain.ValuesObjects;
+global using User.Infrastructure.Configuration;
+global using User.Persistence.Data;
+global using BuildingBlocks.Helpers;
+global using ShredKernel.BaseClasses;

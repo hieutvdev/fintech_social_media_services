@@ -5,9 +5,16 @@ using User.Domain.ValuesObjects;
 
 namespace User.Domain.Models;
 
+#nullable disable
 public class UserInfo : Entity<UserInfoId>, IAggregateRoot
 {
     public string UserId { get; private set; } = default!;
+    
+    public string FullName { get; private set; } = default!;
+    
+    public string? AvatarUrl { get; private set; } = default!;
+    
+    public DateTime? BirthDate { get; private set; }
 
     public string? CoverPhoto { get; private set; } = default!;
 
@@ -42,7 +49,10 @@ public class UserInfo : Entity<UserInfoId>, IAggregateRoot
         string? work,
         string? skills,
         int userType,
-        string? hobbies)
+        string? hobbies,
+        string fullName,
+        string? avatarUrl,
+        DateTime? birthDate)
     {
         if (id == null)
             throw new ArgumentNullException(nameof(id), "UserInfoId cannot be null.");
@@ -69,7 +79,10 @@ public class UserInfo : Entity<UserInfoId>, IAggregateRoot
             Skills = skills,
             RelationshipStatus = (int)UserRelationShipStatus.SINGLE,
             UserType = userType,
-            Hobbies = hobbies
+            Hobbies = hobbies,
+            FullName = fullName,
+            AvatarUrl = avatarUrl,
+            BirthDate = birthDate
         };
     }
 
@@ -83,7 +96,10 @@ public class UserInfo : Entity<UserInfoId>, IAggregateRoot
         string? skills,
         int userType,
         string? hobbies,
-        int relationshipStatus)
+        int relationshipStatus,
+        string fullName,
+        string? avatarUrl,
+        DateTime? birthDate)
     {
         ArgumentOutOfRangeException.ThrowIfZero(relationshipStatus);
 
@@ -107,6 +123,9 @@ public class UserInfo : Entity<UserInfoId>, IAggregateRoot
         UserType = userType;
         Hobbies = hobbies;
         RelationshipStatus = relationshipStatus;
+        FullName = fullName;
+        AvatarUrl = avatarUrl;
+        BirthDate = birthDate;
         
     }
 
