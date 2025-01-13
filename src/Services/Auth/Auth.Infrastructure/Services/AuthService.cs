@@ -1,4 +1,5 @@
 ﻿
+using System.Text.Json;
 using Auth.Application.DTOs.Request.Auth;
 using Auth.Application.DTOs.Response.Auth;
 using Auth.Application.Services;
@@ -11,10 +12,12 @@ using Auth.Application.Exceptions;
 using Auth.Application.Extensions;
 using Auth.Infrastructure.Configuration;
 using AutoMapper;
+using BuildingBlocks.Messaging.MessageModels.AuthService;
 using BuildingBlocks.Messaging.Messaging.Kafka;
 using BuildingBlocks.Utilities.EmailValidations;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Serilog;
 using ShredKernel.BaseClasses;
 
@@ -621,7 +624,8 @@ public class AuthService : IAuthService
         try
         {
             var result = await _userManager.CreateAsync(user, registerRequestDto.Password);
-            if (!result.Succeeded) {
+            if (!result.Succeeded)
+            {
                 throw new BadRequestException(result.Errors.FirstOrDefault()!.Description.ToString());
             }
 
@@ -632,6 +636,22 @@ public class AuthService : IAuthService
             await _producer.ProduceAsync("verify-account", "token",
                 $"https://localhost:7002/api/v1/auth/confirm-email?Token={tokenConfirmEmail}&Email={registerRequestDto.Email}");
 
+            await _producer.ProduceAsync("auth-register-user-info-topic", "auth-register-user-info-topic",
+                JsonConvert.SerializeObject(new AuthRegisterRequestDto
+                {
+                    UserId = user.Id.ToString(),
+                    FullName = user.FullName,
+                    AvatarUrl = user.AvatarUrl,
+                    BirthDay = int.Parse(user.BirthDay),
+                    Gender = 1
+                }, new JsonSerializerSettings
+                {
+                    ContractResolver = new DefaultContractResolver
+                    {
+                        NamingStrategy = new CamelCaseNamingStrategy()
+                    }
+                }));
+            
             var registerResponse = new RegisterResponseDto(
                 UserData: new UserDto(user.Id, user.UserName, user.FullName, user.AvatarUrl, user.BirthDay), Token: new TokenResponse("", ""));
 

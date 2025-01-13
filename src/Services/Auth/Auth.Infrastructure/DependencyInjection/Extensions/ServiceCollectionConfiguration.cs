@@ -145,6 +145,17 @@ public static class ServiceCollectionConfiguration
 
                 x.Events = new JwtBearerEvents
                 {
+                    // OnMessageReceived = context =>
+                    // {
+                    //     if (!context.Request.Headers.ContainsKey("Authorization"))
+                    //     {
+                    //         context.Response.Headers.Append("Missing Token", "true");
+                    //         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    //         return context.Response.WriteAsync("Token is expired");
+                    //     }
+                    //
+                    //     return Task.CompletedTask;
+                    // },
                     OnAuthenticationFailed = context =>
                     {
                         if (!context.Response.HasStarted)
@@ -163,7 +174,7 @@ public static class ServiceCollectionConfiguration
                         }
 
                         return Task.CompletedTask;
-                    },
+                    }
                     
                 };
             });

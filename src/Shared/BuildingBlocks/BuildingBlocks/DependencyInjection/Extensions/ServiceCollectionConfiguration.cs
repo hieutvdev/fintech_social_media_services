@@ -18,7 +18,6 @@ using Microsoft.FeatureManagement;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using Serilog.Core;
 using ShredKernel.BaseClasses.Configurations;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;

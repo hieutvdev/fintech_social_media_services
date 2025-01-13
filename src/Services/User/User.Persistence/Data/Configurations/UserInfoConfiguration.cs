@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using User.Domain.Models;
-using User.Domain.ValuesObjects;
 
 namespace User.Persistence.Data.Configurations;
 
@@ -14,6 +12,7 @@ public class UserInfoConfiguration : IEntityTypeConfiguration<UserInfo>
         builder.Property(r => r.Id)
             .HasConversion(userInfoId => userInfoId.Value, dbId => UserInfoId.Of(dbId));
 
+        builder.Property(r => r.BirthDate).HasDefaultValue(0);
         builder.HasIndex(r => r.FullName);
         builder.Property(r => r.FullName).IsRequired();
         

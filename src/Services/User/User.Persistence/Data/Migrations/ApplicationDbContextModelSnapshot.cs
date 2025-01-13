@@ -111,7 +111,7 @@ namespace User.Persistence.Data.Migrations
                     b.Property<DateTime?>("SendAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2025, 1, 7, 16, 44, 32, 555, DateTimeKind.Utc).AddTicks(2509));
+                        .HasDefaultValue(new DateTime(2025, 1, 8, 1, 51, 37, 975, DateTimeKind.Utc).AddTicks(3637));
 
                     b.Property<string>("SenderId")
                         .IsRequired()
@@ -218,8 +218,10 @@ namespace User.Persistence.Data.Migrations
                     b.Property<string>("Bio")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("BirthDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
 
                     b.Property<string>("CoverPhoto")
                         .HasColumnType("text");

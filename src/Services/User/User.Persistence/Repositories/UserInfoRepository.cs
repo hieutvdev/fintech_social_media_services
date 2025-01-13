@@ -1,5 +1,6 @@
 ﻿
 
+using BuildingBlocks.Messaging.MessageModels.AuthService;
 using User.Application.DTOs.Request.UserInfo;
 using User.Application.DTOs.Response.UserInfo;
 
@@ -16,11 +17,11 @@ public class UserInfoRepository
         var userInfoId = UserInfoId.Of(Guid.NewGuid());
         try
         {
-            if (!DataConvertHelper.TryParseDateTime(payload.BirthDay, out var time))
-            {
-                throw new BadRequestException("Invalid date time format.");
-            }
-            var userInfo = UserInfo.Create(userInfoId, payload.UserId, null, payload.Gender, null, null, null, null, null, 1, null, payload.FullName, payload.AvatarUrl, time);
+            // if (!DataConvertHelper.TryParseDateTime(payload.BirthDay, out var time))
+            // {
+            //     throw new BadRequestException("Invalid date time format.");
+            // }
+            var userInfo = UserInfo.Create(userInfoId, payload.UserId, null, payload.Gender, null, null, null, null, null, 1, null, payload.FullName, payload.AvatarUrl, payload.BirthDay);
             await repositoryBaseService.AddAsync(userInfo, cancellationToken);
             var isSuccessful = await repositoryBaseService.SaveChangesAsync(cancellationToken) > 0;
             return isSuccessful;
@@ -37,10 +38,10 @@ public class UserInfoRepository
         try
         {
 
-            if (!DataConvertHelper.TryParseDateTime(payload.BirthDate!, out DateTime time))
-            {
-                throw new BadRequestException("Invalid date time format.");
-            }
+            // if (!DataConvertHelper.TryParseDateTime(payload.BirthDate!, out DateTime time))
+            // {
+            //     throw new BadRequestException("Invalid date time format.");
+            // }
             var isUpdated = await repositoryBaseService.ExecuteUpdateAsync<UserInfo>(
                 condition: r => r.Id == userInfoId,
                 updateExpression: updates => updates
@@ -55,7 +56,7 @@ public class UserInfoRepository
                     .SetProperty(r => r.Hobbies, payload.Hobbies)
                     .SetProperty(r => r.FullName, payload.FullName)
                     .SetProperty(r => r.AvatarUrl, payload.AvatarUrl)
-                    .SetProperty(r => r.BirthDate, time),
+                    .SetProperty(r => r.BirthDate, payload.BirthDate),
                 cancellationToken: cancellationToken
             );
 
@@ -134,6 +135,26 @@ public class UserInfoRepository
             }
             return isDeleted;
         }   
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
+
+    public async Task<bool> CreateFromAuthRegisterAsync(AuthRegisterRequestDto payload, CancellationToken cancellationToken = default)
+    {
+        var userInfoId = UserInfoId.Of(Guid.NewGuid());
+        try
+        {
+            // if (!DataConvertHelper.TryParseDateTimeYear(payload.BirthDay, out var time))
+            // {
+            //     throw new BadRequestException("Invalid date time format.");
+            // }
+            var userInfo = UserInfo.Create(userInfoId, payload.UserId, null, payload.Gender, null, null, null, null, null, 1, null, payload.FullName, payload.AvatarUrl, payload.BirthDay);
+            await repositoryBaseService.AddAsync(userInfo, cancellationToken);
+            var isSuccessful = await repositoryBaseService.SaveChangesAsync(cancellationToken) > 0;
+            return isSuccessful;
+        }
         catch (Exception e)
         {
             throw new BadRequestException(e.Message);

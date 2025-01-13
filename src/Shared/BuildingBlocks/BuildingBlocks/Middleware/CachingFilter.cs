@@ -1,4 +1,4 @@
-using System.Text;
+
 using BuildingBlocks.Helpers;
 using BuildingBlocks.Repository.Cache;
 using Microsoft.AspNetCore.Http;

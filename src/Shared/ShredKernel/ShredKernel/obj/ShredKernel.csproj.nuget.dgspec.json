@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],

@@ -1,3 +1,12 @@
 ﻿namespace BuildingBlocks.Messaging.MessageModels.AuthService;
 
-public record AuthRegisterRequestDto(string UserId, string FullName, string AvatarUrl, string BirthDay, int Gender);
+#nullable disable
+public class AuthRegisterRequestDto
+{
+    public string UserId { get; set; }
+    public string FullName { get; set; }
+    public string AvatarUrl { get; set; }
+    public int BirthDay { get; set; }
+    public int Gender { get; set; }
+}
+

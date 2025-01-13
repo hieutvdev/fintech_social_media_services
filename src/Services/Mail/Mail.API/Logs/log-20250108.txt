@@ -1,0 +1,84 @@
+2025-01-08 00:56:59.724 +07:00 [ERR] BackgroundService failed
+Newtonsoft.Json.JsonSerializationException: Error converting value "https://localhost:7002/api/v1/auth/confirm-email?Token=CfDJ8PMQZdfXvchOpN1yUdaGGWeSPSa4qmDL8XWL0pFd3qevRPeLDLkm+MSafQolv6+jmjjQV5pRXP4fJ/RVFww7dy+caSVwP3mjPwudaGKBjtp10UhGwD5kA1ugi34ty89gQEFHDGLh/0BULgRdDBXo4NMnfa0yswvczPaEIr+BJ52Xf91b12iOy77dGjdaVJCaHIx7u61Sf3Kjqoj64fXjUlcFZn6w+9ujtdJ6iz7nX54v2zA0yi5+9vNkrwNsRhoIkw==&Email=string1111@gmail.com" to type 'BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto'. Path '', line 1, position 348.
+ ---> System.ArgumentException: Could not cast or convert from System.String to BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at Mail.API.Services.SendMailService.SendMailConfirmAccountAsync(String url, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\SendMailService.cs:line 63
+   at Mail.API.Services.KafkaConsumerBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>b__0>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 38
+--- End of stack trace from previous location ---
+   at BuildingBlocks.Messaging.Messaging.Kafka.KafkaConsumerService`2.ConsumeAsync(Func`3 handleMessage) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\Messaging\Kafka\KafkaConsumerService.cs:line 110
+   at Mail.API.Services.KafkaConsumerBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 31
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2025-01-08 00:56:59.766 +07:00 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Newtonsoft.Json.JsonSerializationException: Error converting value "https://localhost:7002/api/v1/auth/confirm-email?Token=CfDJ8PMQZdfXvchOpN1yUdaGGWeSPSa4qmDL8XWL0pFd3qevRPeLDLkm+MSafQolv6+jmjjQV5pRXP4fJ/RVFww7dy+caSVwP3mjPwudaGKBjtp10UhGwD5kA1ugi34ty89gQEFHDGLh/0BULgRdDBXo4NMnfa0yswvczPaEIr+BJ52Xf91b12iOy77dGjdaVJCaHIx7u61Sf3Kjqoj64fXjUlcFZn6w+9ujtdJ6iz7nX54v2zA0yi5+9vNkrwNsRhoIkw==&Email=string1111@gmail.com" to type 'BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto'. Path '', line 1, position 348.
+ ---> System.ArgumentException: Could not cast or convert from System.String to BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at Mail.API.Services.SendMailService.SendMailConfirmAccountAsync(String url, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\SendMailService.cs:line 63
+   at Mail.API.Services.KafkaConsumerBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>b__0>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 38
+--- End of stack trace from previous location ---
+   at BuildingBlocks.Messaging.Messaging.Kafka.KafkaConsumerService`2.ConsumeAsync(Func`3 handleMessage) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\Messaging\Kafka\KafkaConsumerService.cs:line 110
+   at Mail.API.Services.KafkaConsumerBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 31
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2025-01-08 00:57:27.618 +07:00 [ERR] BackgroundService failed
+Newtonsoft.Json.JsonSerializationException: Error converting value "https://localhost:7002/api/v1/auth/confirm-email?Token=CfDJ8PMQZdfXvchOpN1yUdaGGWeSPSa4qmDL8XWL0pFd3qevRPeLDLkm+MSafQolv6+jmjjQV5pRXP4fJ/RVFww7dy+caSVwP3mjPwudaGKBjtp10UhGwD5kA1ugi34ty89gQEFHDGLh/0BULgRdDBXo4NMnfa0yswvczPaEIr+BJ52Xf91b12iOy77dGjdaVJCaHIx7u61Sf3Kjqoj64fXjUlcFZn6w+9ujtdJ6iz7nX54v2zA0yi5+9vNkrwNsRhoIkw==&Email=string1111@gmail.com" to type 'BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto'. Path '', line 1, position 348.
+ ---> System.ArgumentException: Could not cast or convert from System.String to BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at Mail.API.Services.SendMailService.SendMailConfirmAccountAsync(String url, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\SendMailService.cs:line 63
+   at Mail.API.Services.KafkaConsumerBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>b__0>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 38
+--- End of stack trace from previous location ---
+   at BuildingBlocks.Messaging.Messaging.Kafka.KafkaConsumerService`2.ConsumeAsync(Func`3 handleMessage) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\Messaging\Kafka\KafkaConsumerService.cs:line 110
+   at Mail.API.Services.KafkaConsumerBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 31
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2025-01-08 00:57:27.645 +07:00 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Newtonsoft.Json.JsonSerializationException: Error converting value "https://localhost:7002/api/v1/auth/confirm-email?Token=CfDJ8PMQZdfXvchOpN1yUdaGGWeSPSa4qmDL8XWL0pFd3qevRPeLDLkm+MSafQolv6+jmjjQV5pRXP4fJ/RVFww7dy+caSVwP3mjPwudaGKBjtp10UhGwD5kA1ugi34ty89gQEFHDGLh/0BULgRdDBXo4NMnfa0yswvczPaEIr+BJ52Xf91b12iOy77dGjdaVJCaHIx7u61Sf3Kjqoj64fXjUlcFZn6w+9ujtdJ6iz7nX54v2zA0yi5+9vNkrwNsRhoIkw==&Email=string1111@gmail.com" to type 'BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto'. Path '', line 1, position 348.
+ ---> System.ArgumentException: Could not cast or convert from System.String to BuildingBlocks.Messaging.MessageModels.AuthService.AuthRegisterRequestDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at Mail.API.Services.SendMailService.SendMailConfirmAccountAsync(String url, CancellationToken cancellationToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\SendMailService.cs:line 63
+   at Mail.API.Services.KafkaConsumerBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>b__0>d.MoveNext() in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 38
+--- End of stack trace from previous location ---
+   at BuildingBlocks.Messaging.Messaging.Kafka.KafkaConsumerService`2.ConsumeAsync(Func`3 handleMessage) in D:\workspaces\backend\net\fintech_social_media\src\Shared\BuildingBlocks\BuildingBlocks.Messaging\Messaging\Kafka\KafkaConsumerService.cs:line 110
+   at Mail.API.Services.KafkaConsumerBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\workspaces\backend\net\fintech_social_media\src\Services\Mail\Mail.API\Services\KafkaConsumerBackgroundService.cs:line 31
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)

@@ -16,7 +16,7 @@ public static class ServiceCollectionConfiguration
 {
     public static IServiceCollection AddInfrastructureService(this IServiceCollection services, IConfiguration configuration)
     {
-        
+        services.AddMessageBrokerService(configuration);
         services.AddAuthenticationService(configuration);
         services.AddDistributedCacheService(configuration);
         services.AddHealthCheckServices(configuration);
@@ -52,8 +52,10 @@ public static class ServiceCollectionConfiguration
     
     private static IServiceCollection AddMessageBrokerService(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<KafkaSettings>(configuration.GetSection("Kafka"));
         services.AddSingleton(typeof(IKafkaConsumerService<,>), typeof(KafkaConsumerService<,>));
         services.AddSingleton(typeof(IKafkaProducerService<,>), typeof(KafkaProducerService<,>));
+        services.AddHostedService<BackgroundConsumerService>();
         return services;
     }
     

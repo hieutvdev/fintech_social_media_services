@@ -3,6 +3,7 @@ using Auth.API.Middlewares;
 using Auth.Application.DependencyInjection.Extensions;
 using Auth.Infrastructure.DependencyInjection.Extensions;
 using BuildingBlocks.Logging;
+using BuildingBlocks.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
@@ -62,11 +63,11 @@ builder.Services
 
 
 var app = builder.Build();
+
 app.UseHttpsRedirection();
 
 app.UseApplicationService();
 app.UseInfrastructureService();
-
 
 app.UseSwagger();
 app.UseSwaggerUI();
@@ -74,6 +75,7 @@ app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
+// app.UseMiddleware<AuthMiddleware>();
 app.UseMiddleware<AuthMiddlewareV1>();
 app.MapControllers();
 

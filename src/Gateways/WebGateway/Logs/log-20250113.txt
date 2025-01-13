@@ -1,0 +1,56 @@
+2025-01-13 00:19:10.912 +07:00 [INF] Loading proxy data from config.
+2025-01-13 00:19:10.997 +07:00 [INF] Application starting
+2025-01-13 00:19:26.531 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/login HTTP/2 RequestVersionOrLower 
+2025-01-13 00:19:26.611 +07:00 [INF] Received HTTP/1.1 response 200.
+2025-01-13 00:24:18.785 +07:00 [INF] Loading proxy data from config.
+2025-01-13 00:24:20.151 +07:00 [INF] Application started
+2025-01-13 00:24:36.541 +07:00 [INF] Loading proxy data from config.
+2025-01-13 00:24:36.621 +07:00 [INF] Application starting
+2025-01-13 00:25:14.091 +07:00 [INF] Application started
+2025-01-13 00:25:17.435 +07:00 [INF] Loading proxy data from config.
+2025-01-13 00:25:17.492 +07:00 [INF] Application starting
+2025-01-13 00:25:22.122 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/login HTTP/2 RequestVersionOrLower 
+2025-01-13 00:25:22.211 +07:00 [INF] Received HTTP/1.1 response 200.
+2025-01-13 00:25:22.229 +07:00 [INF] 2025-01-12 17:25:22 - INFO - /auth-service/login - 0HN9J5OAL19E4:00000001 - IP:::1 -[[]]- [POST] - 127ms - InputParams:{}
+2025-01-13 00:25:28.141 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/login HTTP/2 RequestVersionOrLower 
+2025-01-13 00:25:28.195 +07:00 [INF] Received HTTP/1.1 response 200.
+2025-01-13 00:25:28.196 +07:00 [INF] 2025-01-12 17:25:28 - INFO - /auth-service/login - 0HN9J5OAL19E4:00000002 - IP:::1 -[[]]- [POST] - 55ms - InputParams:{}
+2025-01-13 00:25:29.010 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/login HTTP/2 RequestVersionOrLower 
+2025-01-13 00:25:29.057 +07:00 [INF] Received HTTP/1.1 response 200.
+2025-01-13 00:25:29.058 +07:00 [INF] 2025-01-12 17:25:29 - INFO - /auth-service/login - 0HN9J5OAL19E4:00000003 - IP:::1 -[[]]- [POST] - 47ms - InputParams:{}
+2025-01-13 01:57:21.421 +07:00 [INF] Application started
+2025-01-13 08:24:57.441 +07:00 [INF] Loading proxy data from config.
+2025-01-13 08:24:57.525 +07:00 [INF] Application starting
+2025-01-13 08:26:20.618 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:26:20.660 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:26:22.242 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:26:22.245 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:26:33.102 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:26:33.103 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:26:35.942 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/login HTTP/2 RequestVersionOrLower 
+2025-01-13 08:26:44.431 +07:00 [INF] Received HTTP/1.1 response 500.
+2025-01-13 08:26:58.007 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:26:58.009 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:00.477 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:00.479 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:01.254 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:01.255 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:01.876 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:01.877 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:02.435 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:02.436 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:03.090 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:03.092 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:03.792 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:03.793 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:27:04.634 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:27:04.636 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:36:13.414 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:36:13.443 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:36:15.412 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:36:15.418 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:36:16.290 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:36:16.292 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 08:43:22.744 +07:00 [INF] Proxying to http://localhost:5001/api/v1/auth/test-auth HTTP/2 RequestVersionOrLower 
+2025-01-13 08:43:22.750 +07:00 [INF] Received HTTP/1.1 response 401.
+2025-01-13 09:24:16.287 +07:00 [INF] Application started

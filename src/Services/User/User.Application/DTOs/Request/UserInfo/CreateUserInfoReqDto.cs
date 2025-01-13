@@ -5,5 +5,5 @@ public record CreateUserInfoReqDto(
     int Gender,
     string FullName,
     string AvatarUrl,
-    string BirthDay
+    int BirthDay
     );

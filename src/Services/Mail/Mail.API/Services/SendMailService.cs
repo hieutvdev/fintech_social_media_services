@@ -1,10 +1,12 @@
-﻿using BuildingBlocks.Messaging.Messaging.Kafka;
+﻿using BuildingBlocks.Messaging.MessageModels.AuthService;
+using BuildingBlocks.Messaging.Messaging.Kafka;
 using Mail.API.Configurations;
 using Mail.API.Helpers;
 using Mail.API.Interfaces;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using Newtonsoft.Json;
 
 namespace Mail.API.Services;
 
@@ -34,30 +36,38 @@ public class SendMailService : ISendMailService
 
     public async Task SendMailAsync(MailRequest mailRequest, CancellationToken cancellationToken = default)
     {
-        var email = new MimeMessage();
-
-        email.Sender = MailboxAddress.Parse(_emailSettings.Email);
-        email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
-        email.Subject = mailRequest.Subject;
-
-        var builder = new BodyBuilder
+        try
         {
-            HtmlBody = mailRequest.Body
-        };
-        email.Body = builder.ToMessageBody();
+            var email = new MimeMessage();
 
-        using var smtp = new SmtpClient();
-        await smtp.ConnectAsync(_emailSettings.Host, _emailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls, cancellationToken);
-        await smtp.AuthenticateAsync(_emailSettings.Email, _emailSettings.Password, cancellationToken);
+            email.Sender = MailboxAddress.Parse(_emailSettings.Email);
+            email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
+            email.Subject = mailRequest.Subject;
 
-        await smtp.SendAsync(email, cancellationToken);
-        await smtp.DisconnectAsync(true, cancellationToken);
+            var builder = new BodyBuilder
+            {
+                HtmlBody = mailRequest.Body
+            };
+            email.Body = builder.ToMessageBody();
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailSettings.Host, _emailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls, cancellationToken);
+            await smtp.AuthenticateAsync(_emailSettings.Email, _emailSettings.Password, cancellationToken);
+
+            await smtp.SendAsync(email, cancellationToken);
+            await smtp.DisconnectAsync(true, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.Message);
+        }
     }
 
     public async Task SendMailConfirmAccountAsync(string url, CancellationToken cancellationToken = default)
     {
         // var email = "nguyenhoang.miyuka@gmail.com";
         var email = "trinhhieu758@gmail.com";
+        var auth = JsonConvert.DeserializeObject<AuthRegisterRequestDto>(url);
         var mailRequest = new MailRequest
         {
             ToEmail = email,

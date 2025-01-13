@@ -14,5 +14,5 @@ public record UpdateUserInfoReqDto(
     string? Hobbies,
     string FullName,
     string AvatarUrl,
-    string? BirthDate
+    int BirthDate
     );

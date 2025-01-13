@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.API\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -128,6 +129,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -221,6 +223,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -289,6 +292,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -363,6 +367,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.Persistence\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -457,6 +462,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\User\\User.Presentation\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -551,6 +557,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks.Messaging\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -623,6 +630,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\BuildingBlocks\\BuildingBlocks\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -767,6 +775,7 @@
         "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
         "outputPath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Shared\\ShredKernel\\ShredKernel\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],

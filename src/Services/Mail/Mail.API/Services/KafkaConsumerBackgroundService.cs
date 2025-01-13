@@ -26,21 +26,34 @@ public class KafkaConsumerBackgroundService : BackgroundService
        
         _consumer.Subscribe("verify-account");
         _logger.LogInformation("Kafka Consumer Background Service is starting. 11111111");
-       
-        
-        await _consumer.ConsumeAsync(async (key, value) =>
-        {
-            _logger.LogInformation($"Received message from Kafka: {value}");
 
-            using (var scope = _serviceProvider.CreateScope())
+
+        try
+        {
+            await _consumer.ConsumeAsync(async (key, value) =>
             {
-                var sendMailService = scope.ServiceProvider.GetRequiredService<ISendMailService>();
-                await sendMailService.SendMailConfirmAccountAsync(value, stoppingToken);
-            }
-        });
+                _logger.LogInformation($"Received message from Kafka: {value}");
+
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    var sendMailService = scope.ServiceProvider.GetRequiredService<ISendMailService>();
+                    await sendMailService.SendMailConfirmAccountAsync(value, stoppingToken);
+                }
+            });
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogInformation("BackgroundConsumerService is stopping due to cancellation.");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while consuming messages.");
+        }
 
         _logger.LogInformation("Kafka Consumer Background Service is stopping.");
     }
+    
+    
 
     public override Task StopAsync(CancellationToken stoppingToken)
     {

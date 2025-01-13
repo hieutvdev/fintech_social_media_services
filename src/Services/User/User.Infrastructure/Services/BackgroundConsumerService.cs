@@ -1,10 +1,14 @@
-﻿using BuildingBlocks.Helpers;
+﻿// using BuildingBlocks.Helpers;
+
+using System.Text.Json;
+using BuildingBlocks.Helpers;
 using BuildingBlocks.Messaging.MessageModels.AuthService;
 using BuildingBlocks.Messaging.Messaging.Kafka;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using User.Application.Repositories;
 using User.Infrastructure.Configuration;
 
@@ -32,10 +36,45 @@ public class BackgroundConsumerService : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         _logger.LogInformation("BackgroundConsumerService is starting.");
+
+        // Delay nhỏ để Kafka khởi động (tuỳ chọn)
         await Task.Delay(TimeSpan.FromSeconds(10), stoppingToken);
+
+        var topics = _messageTopic.GetType()
+            .GetProperties()
+            .Select(x => x.GetValue(_messageTopic)?.ToString())
+            .Where(topic => !string.IsNullOrEmpty(topic))
+            .ToArray();
+
+        if (!topics.Any())
+        {
+            _logger.LogError("No Kafka topics configured in MessageTopic.");
+            return;
+        }
+
+        _logger.LogInformation($"Subscribing to topics: {string.Join(", ", topics)}");
+
         try
         {
-            
+            foreach (var topic in topics)
+            {
+                _consumer.Subscribe(topic);
+            }
+
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                await _consumer.ConsumeAsync(async (key, value) =>
+                {
+                    if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(value))
+                    {
+                        _logger.LogWarning("Received an empty message or key from Kafka.");
+                        return;
+                    }
+
+                    _logger.LogInformation($"Received message from Kafka. Topic: {key}, Message: {value}");
+                    await HandleMessage(key, value);
+                });
+            }
         }
         catch (OperationCanceledException)
         {
@@ -47,40 +86,55 @@ public class BackgroundConsumerService : BackgroundService
         }
     }
 
-    private void HandleMessage(string topic, string message)
+    private async Task HandleMessage(string topic, string message)
     {
         try
         {
             switch (topic)
             {
                 case var t when t == _messageTopic.AuthRegisterUserInfoTopic:
-                    _logger.LogInformation($"Handling message for {topic}: {message}");
+                    _logger.LogInformation($"Handling message for topic {topic}");
+
                     using (var scope = _serviceProvider.CreateScope())
                     {
                         var userInfoService = scope.ServiceProvider.GetRequiredService<IUserInfoRepository>();
-                        if (!DataConvertHelper.TryParseObject<AuthRegisterRequestDto>(message, out AuthRegisterRequestDto val))
+                        string mes = JsonConvert.DeserializeObject<string>(message)!;
+                        _logger.LogInformation($"Parsing message for topic {mes}");
+                        if (!DataConvertHelper.TryParseObject<AuthRegisterRequestDto>(mes, out var parsedMessage))
                         {
-                            _logger.LogWarning($"Failed to parse message for topic {topic}.");
+                            _logger.LogWarning($"Failed to parse message for topic {topic}: {mes}");
                             return;
                         }
-                        
+                        // var parsedMessage = JsonConvert.DeserializeObject<AuthRegisterRequestDto>(message);
+                
+                        var result = await userInfoService.CreateFromAuthRegisterAsync(parsedMessage);
+
+                        if (result)
+                        {
+                            _logger.LogInformation($"Successfully processed message for topic {topic}");
+                        }
+                        else
+                        {
+                            _logger.LogWarning($"Failed to process message for topic {topic}");
+                        }
                     }
                     break;
 
                 default:
-                    _logger.LogWarning($"Received message for unhandled topic: {topic}");
+                    _logger.LogWarning($"Unhandled topic: {topic}");
                     break;
             }
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"An error occurred while handling message for topic {topic}.");
+            _logger.LogError(ex, $"An error occurred while handling message for topic {topic}");
         }
     }
 
-    public override Task StopAsync(CancellationToken cancellationToken)
+    public override async Task StopAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("BackgroundConsumerService is stopping.");
-        return base.StopAsync(cancellationToken);
+
+        await base.StopAsync(cancellationToken);
     }
 }
