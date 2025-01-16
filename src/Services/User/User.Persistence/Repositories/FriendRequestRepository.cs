@@ -25,7 +25,26 @@ public class FriendRequestRepository(IRepositoryBaseService<ApplicationDbContext
 
     public async Task<bool> UpdateAsync(UpdateStatusFriendRequestReqDto payload, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var friendRequestId = FriendRequestId.Of(Guid.Parse(payload.Id));
+            var userId = authorizeExtension.GetUserFromClaimToken().Id;
+            var isUpdated = await repository
+                .ExecuteUpdateAsync<FriendRequest>(
+                    condition: r => r.Id == friendRequestId && r.ReceiverId == userId,
+                    updateExpression: updates=> 
+                        updates.SetProperty(r => r.Status, payload.Status), cancellationToken: cancellationToken);
+            if (isUpdated)
+            {
+                await cacheService.RemoveCacheAsync(CacheKey.FriendShip.GetList);
+            }
+
+            return isUpdated;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
     }
 
     public async Task<bool> DeleteAsync(DeleteFriendRequestReqDto payload, CancellationToken cancellationToken = default)
@@ -93,6 +112,29 @@ public class FriendRequestRepository(IRepositoryBaseService<ApplicationDbContext
 
     public async Task<PaginatedResult<FriendRequestByUserLoginResDto>> GetListByUserLoginAsync(PaginationRequest query, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var userId = authorizeExtension.GetUserFromClaimToken().Id;
+            var cacheValue = await cacheService.GetCacheAsync(string.Format(CacheKey.FriendRequest.GetListByUserLogin, userId));
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                var resCache = JsonConvert.DeserializeObject<PaginatedResult<FriendRequestByUserLoginResDto>>(cacheValue);
+                return resCache ?? new PaginatedResult<FriendRequestByUserLoginResDto>(query.PageIndex, query.PageSize, 0, new List<FriendRequestByUserLoginResDto>());
+            }
+            var friendRequest = await repository.Table<FriendRequest>().Select(r => new
+            {
+                SenderId = r.SenderId,
+                ReceiverId = r.ReceiverId,
+                SendAt = r.SendAt,
+            }).Where(r => r.ReceiverId == userId).OrderBy(r => r.SendAt).Skip((query.PageIndex - 1)*query.PageSize).Take(query.PageSize).ToListAsync(cancellationToken);
+            
+            var response = new PaginatedResult<FriendRequestByUserLoginResDto>(query.PageIndex, query.PageSize, 0, friendRequest.Select(r => new FriendRequestByUserLoginResDto(r.SenderId, r.SendAt)).ToList());
+            await cacheService.SetCacheAsync(string.Format(CacheKey.FriendRequest.GetListByUserLogin, userId), response, TimeSpan.FromMinutes(10));
+            return response;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
     }
 }

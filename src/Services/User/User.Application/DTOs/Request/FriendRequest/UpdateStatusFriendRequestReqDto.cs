@@ -1,3 +1,3 @@
 ﻿namespace User.Application.DTOs.Request.FriendRequest;
 
-public class UpdateStatusFriendRequestReqDto(string Id, int Status);
+public record UpdateStatusFriendRequestReqDto(string Id, int Status);

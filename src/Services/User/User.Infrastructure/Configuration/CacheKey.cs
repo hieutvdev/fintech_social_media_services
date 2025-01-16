@@ -19,6 +19,12 @@ public class CacheKey
     {
         public static readonly string GetDetail = $"{Domain}-UserInfo-GetDetail-{{0}}";
     }
+
+
+    public static class FriendRequest
+    {
+        public static readonly string GetListByUserLogin = $"{Domain}-FriendRequest-GetListByUserLogin-{{0}}";
+    }
     
     
     public static class FriendShip

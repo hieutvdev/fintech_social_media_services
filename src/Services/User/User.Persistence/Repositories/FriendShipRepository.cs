@@ -54,8 +54,32 @@ public class FriendShipRepository
         try
         {
             var userId = authorizeExtension.GetUserFromClaimToken().Id;
+            var cacheKey = $"{string.Format(CacheKey.FriendShip.GetList, userId)}{CachingHelper.ObjectToQueryString(paginationRequest)}";
+            var cacheValue = await cacheService.GetCacheAsync(cacheKey);
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                var resCache = JsonConvert.DeserializeObject<PaginatedResult<FriendShipResBase>>(cacheValue);
+                return resCache ?? new PaginatedResult<FriendShipResBase>(paginationRequest.PageIndex, paginationRequest.PageSize, 0, new List<FriendShipResBase>());
+            }
+            var friendShips = from i in  repository.Table<FriendShip>()
+                .Select(f => new
+                {
+                    Id = f.Id,
+                    FriendId = f.FriendId,
+                    UserId = f.UserId
+                })
+                .Where(f => f.UserId == userId)
 
-            throw new NotImplementedException();
+                join ii in repository.Table<UserInfo>().Select(r => new
+                {
+                    UserId = r.UserId,
+                    FullName = r.FullName,
+                    AvatarUrl = r.AvatarUrl
+                }) on i.UserId equals ii.UserId
+                    select new FriendShipResBase(i.Id.Value.ToString(),i.FriendId, ii.FullName, ii.AvatarUrl);
+            var response = new PaginatedResult<FriendShipResBase>(paginationRequest.PageIndex, paginationRequest.PageSize, friendShips.Count(), friendShips.ToList());
+            await cacheService.SetCacheAsync(cacheKey, response, TimeSpan.FromMinutes(10));
+            return response;
         }
         catch (Exception e)
         {
@@ -66,6 +90,73 @@ public class FriendShipRepository
     public async Task<PaginatedResult<FriendShipResBase>> GetFriendShipsByAnotherUserLoginAsync(PaginationRequest paginationRequest,
         CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var userId = authorizeExtension.GetUserFromClaimToken().Id;
+            var cacheKey = $"{string.Format(CacheKey.FriendShip.GetList, userId)}{CachingHelper.ObjectToQueryString(paginationRequest)}";
+            var cacheValue = await cacheService.GetCacheAsync(cacheKey);
+            if (!string.IsNullOrEmpty(cacheValue))
+            {
+                var resCache = JsonConvert.DeserializeObject<PaginatedResult<FriendShipResBase>>(cacheValue);
+                return resCache ?? new PaginatedResult<FriendShipResBase>(paginationRequest.PageIndex, paginationRequest.PageSize, 0, new List<FriendShipResBase>());
+            }
+            var friendShips = from i in  repository.Table<FriendShip>()
+                .Select(f => new
+                {
+                    Id = f.Id,
+                    FriendId = f.FriendId,
+                    UserId = f.UserId
+                })
+                .Where(f => f.FriendId == userId)
+
+                join ii in repository.Table<UserInfo>().Select(r => new
+                {
+                    UserId = r.UserId,
+                    FullName = r.FullName,
+                    AvatarUrl = r.AvatarUrl
+                }) on i.UserId equals ii.UserId
+                select new FriendShipResBase(i.Id.Value.ToString(),i.FriendId, ii.FullName, ii.AvatarUrl);
+            var response = new PaginatedResult<FriendShipResBase>(paginationRequest.PageIndex, paginationRequest.PageSize, friendShips.Count(), friendShips.ToList());
+            await cacheService.SetCacheAsync(cacheKey, response, TimeSpan.FromMinutes(10));
+            return response;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
+    }
+
+    public async Task<IEnumerable<FriendShipResBase>> GetFriendShipByUserIdsAsync(IEnumerable<string> userId, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+
+            var friendShips = await repository.Table<FriendShip>()
+                .Select(f => new
+                {
+                    Id = f.Id,
+                    FriendId = f.FriendId,
+                    UserId = f.UserId
+                })
+                .Where(f => userId.Contains(f.UserId) || userId.Contains(f.FriendId))
+                .ToListAsync(cancellationToken);
+            
+            var friendInfos = await repository.Table<UserInfo>().Select(r => new
+            {
+                UserId = r.UserId,
+                FullName = r.FullName,
+                AvatarUrl = r.AvatarUrl
+            }).Where(r => friendShips.Select(r => r.FriendId).Contains(r.UserId)).ToListAsync(cancellationToken);
+            
+            var dataMapper = from i in friendShips
+                join ii in friendInfos on i.FriendId equals ii.UserId
+                select new FriendShipResBase(i.Id.Value.ToString(), i.FriendId, ii.FullName, ii.AvatarUrl);
+            
+            return dataMapper;
+        }
+        catch (Exception e)
+        {
+            throw new BadRequestException(e.Message);
+        }
     }
 }

@@ -1,0 +1,1 @@
+2025-01-15 22:38:50.818 +07:00 [ERR] Error consuming message: Subscribed topic not available: auth-register-user-info-topic: Broker: Unknown topic or partition
