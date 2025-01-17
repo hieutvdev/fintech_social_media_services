@@ -32,4 +32,10 @@ public class CacheKey
         public static readonly string GetList = $"{Domain}-FriendShip-GetList-{{0}}";
     }
     
+    public static class Block
+    {
+        public static readonly string GetListByUserLogin = $"{Domain}-Block-GetListByUserLogin-{{0}}";
+        public static readonly string DeleteAllCache = $"{Domain}-Block-";
+    }
+    
 }

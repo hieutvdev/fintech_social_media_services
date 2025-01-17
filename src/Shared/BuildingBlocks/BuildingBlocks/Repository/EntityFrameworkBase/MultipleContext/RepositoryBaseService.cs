@@ -31,6 +31,11 @@ public class RepositoryBaseService<TContext> : IRepositoryBaseService<TContext> 
         return this._context.Set<T>().AsQueryable().AsNoTracking();
     }
 
+    public Task<int> CountAsync<T>(Expression<Func<T, bool>> expression, CancellationToken cancellationToken) where T : class, IAggregateRoot
+    {
+        return this._context.Set<T>().AsQueryable().AsNoTracking<T>().CountAsync(expression, cancellationToken);
+    }
+
     public IQueryable<T> Where<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot
     {
         return this._context.Set<T>().AsQueryable().AsNoTracking<T>().Where<T>(expression);

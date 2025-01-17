@@ -18,6 +18,8 @@
       <Folder Include="DependencyInjection\Options\" />
       <Folder Include="DTOs\Request\AuthService\" />
       <Folder Include="Extensions\" />
+      <Folder Include="UseCases\Commands\FriendShip\" />
+      <Folder Include="UseCases\Queries\FriendShip\" />
       <Folder Include="UseCases\Validators\" />
     </ItemGroup>
 

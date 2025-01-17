@@ -68,6 +68,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IUserInfoService, UserInfoService>();
         services.AddScoped<IFriendRequestService, FriendRequestService>();
         services.AddScoped<IFriendShipService, FriendShipService>();
+        services.AddScoped<IBlockService, BlockService>();
         return services;
     }
     

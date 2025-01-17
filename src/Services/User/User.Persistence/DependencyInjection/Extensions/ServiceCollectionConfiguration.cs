@@ -66,7 +66,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IUserInfoRepository, UserInfoRepository>();
         services.AddScoped<IFriendRequestRepository, FriendRequestRepository>();
         services.AddScoped<IFriendShipRepository, FriendShipRepository>();
-        services.AddScoped<IBockRepository, BlockRepository>();
+        services.AddScoped<IBlockRepository, BlockRepository>();
         return services;
     }
 }

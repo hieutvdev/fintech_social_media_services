@@ -10,6 +10,8 @@ namespace BuildingBlocks.Repository.EntityFrameworkBase.MultipleContext;
 public interface IRepositoryBaseService<TContext> : IDapperCore, IDisposable where TContext : DbContext
 {
     IQueryable<T> Table<T>() where T : class, IAggregateRoot;
+    
+    Task<int> CountAsync<T>(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default(CancellationToken)) where T : class, IAggregateRoot;
 
     IQueryable<T> Where<T>(Expression<Func<T, bool>> expression) where T : class, IAggregateRoot;
 
