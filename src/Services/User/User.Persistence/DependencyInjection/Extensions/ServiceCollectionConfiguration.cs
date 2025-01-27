@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using User.Application.Data;
+using User.Application.DTOs.Response.Follow;
 using User.Application.Repositories;
 using User.Persistence.Data;
 using User.Persistence.Data.Interceptors;
@@ -67,6 +68,7 @@ public static class ServiceCollectionConfiguration
         services.AddScoped<IFriendRequestRepository, FriendRequestRepository>();
         services.AddScoped<IFriendShipRepository, FriendShipRepository>();
         services.AddScoped<IBlockRepository, BlockRepository>();
+        services.AddScoped<IFollowRepository, FollowRepository>();
         return services;
     }
 }

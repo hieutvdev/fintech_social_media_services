@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bXsAEzfLagU=",
+  "dgSpecHash": "59fnOhCQXQY=",
   "success": true,
   "projectFilePath": "D:\\workspaces\\backend\\net\\fintech_social_media\\src\\Services\\Article\\Article.API\\Article.API.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\trinh\\.nuget\\packages\\confluent.kafka\\2.5.3\\confluent.kafka.2.5.3.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\fastexpressioncompiler\\4.1.0\\fastexpressioncompiler.4.1.0.nupkg.sha512",
+    "C:\\Users\\trinh\\.nuget\\packages\\fastguid\\1.1.0\\fastguid.1.1.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\trinh\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
